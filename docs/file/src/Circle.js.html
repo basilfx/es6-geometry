@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/Circle.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Circle.js~Circle.html">Circle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Point.js~Point.html">Point</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Circle.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+import Rectangle from &apos;./Rectangle&apos;;
+
+/**
+ * Immutable circle class.
+ */
+export default class Circle {
+    /**
+     * Construct a new circle using center point `A` and radius `r`.
+     *
+     * @param {Point} a Center point `A`.
+     * @param {number} r The radius `r`.
+     * @return {void}
+     */
+    constructor(a, r) {
+        this._a = a;
+        this._r = r;
+    }
+
+    /**
+     * Get the circle center point.
+     *
+     * @return {Point} Center point.
+     */
+    get a() {
+        return this._a;
+    }
+
+    /**
+     * Get the circle center x coordinate. Shortcut for `this.a.x`.
+     *
+     * @return {number} Circle center x coordinate.
+     */
+    get x() {
+        return this._a._x;
+    }
+
+    /**
+     * Get the circle center y coordinate. Shortcut for `this.a.y`.
+     *
+     * @return {number} Circle center y coordinate.
+     */
+    get y() {
+        return this._a._y;
+    }
+
+    /**
+     * Get the circle radius.
+     *
+     * @return {number} Circle radius.
+     */
+    get r() {
+        return this._r;
+    }
+
+    /**
+     * Get the diameter. This is a shortcut for `this.r * 2`.
+     *
+     * @return {number} The circle diameter.
+     */
+    get d() {
+        return this._r * 2;
+    }
+
+    /**
+     * Convert this circle to a rectangle that contains this circle exactly.
+     *
+     * @return {Rectangle} Converted rectangle.
+     */
+    toRectangle() {
+        const a = new Point(
+            this._a._x - this.radius, this._a._y - this.radius);
+        const b = new Point(
+            this._a._x + this.radius, this._a._y + this.radius);
+
+        return new Rectangle(a, b);
+    }
+
+    /**
+     * Convert this circle into an object.
+     *
+     * @return {object} Object representation (x, y, r).
+     */
+    toObject() {
+        return {
+            x: this._a._x,
+            y: this._a._y,
+            r: this._r,
+        };
+    }
+
+    /**
+     * Convert this circle into an array.
+     *
+     * @return {Array} Array representation (x, y, r).
+     */
+    toArray() {
+        return [this._a._x, this._a._y, this._r];
+    }
+
+    /**
+     * Convert this circle into a string representation.
+     *
+     * @return {string} String representation (x, y, r).
+     */
+    toString() {
+        return `(${this._a._x}, ${this._a._y}, ${this._r})`;
+    }
+
+    /**
+     * Create a shallow copy of this instance.
+     *
+     * @return {Circle} Cloned instance.
+     */
+    clone() {
+        return new Circle(this._a, this._r);
+    }
+
+    /**
+     * Return true if this circle is equal to another circle. Two circles are
+     * equal if and only if the center point and radius are equal.
+     *
+     * @param {object} that Other instance to compare to.
+     * @return {boolean} True if both circles are equal, false otherwise.
+     */
+    equals(that) {
+        return this.constructor.name === that.constructor.name &amp;&amp;
+            this._a.equals(that._a) &amp;&amp; this._r === that._r;
+    }
+
+    /**
+     * Return true if the circle is defined, finite and valid.
+     *
+     * @return {Boolean} True if the circle is fully defined, finite and valid.
+     */
+    isValid() {
+        return this._a.isValid() &amp;&amp; typeof(this._r) === &apos;number&apos; &amp;&amp;
+            isFinite(this._r) &amp;&amp; this._r &gt;= 0;
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

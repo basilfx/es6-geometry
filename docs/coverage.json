@@ -1,0 +1,59 @@
+{
+  "coverage": "71.96%",
+  "expectCount": 107,
+  "actualCount": 77,
+  "files": {
+    "src/Circle.js": {
+      "expectCount": 14,
+      "actualCount": 14,
+      "undocumentLines": []
+    },
+    "src/Point.js": {
+      "expectCount": 30,
+      "actualCount": 16,
+      "undocumentLines": [
+        74,
+        128,
+        132,
+        102,
+        106,
+        124,
+        90,
+        110,
+        94,
+        98,
+        114,
+        136,
+        118,
+        82
+      ]
+    },
+    "src/Rectangle.js": {
+      "expectCount": 29,
+      "actualCount": 29,
+      "undocumentLines": []
+    },
+    "src/Vector.js": {
+      "expectCount": 34,
+      "actualCount": 18,
+      "undocumentLines": [
+        139,
+        143,
+        113,
+        117,
+        135,
+        101,
+        183,
+        121,
+        105,
+        109,
+        187,
+        125,
+        191,
+        147,
+        129,
+        97
+      ]
+    }
+  }
+}
