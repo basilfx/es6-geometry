@@ -413,7 +413,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Vector from './Vector';\n\n/**\n * Immutable point class.\n */\nexport default class Point {\n    /**\n     * Construct a new point, using an x and y coordinate.\n     *\n     * An point is immutable. All subsequent operations will return a new point\n     * instance.\n     *\n     * @param {number} x The x coordinate.\n     * @param {number} y The y coordinate.\n     * @return {void}\n     */\n    constructor(x, y) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new point from an array. The first index is considered the x\n     * coordinate, the second index is considered the y coordinate.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Point} Resulting point.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Point(array[0], array[1]);\n    }\n\n    /**\n     * Create a new point from an object. The object should have an x and y\n     * property.\n     *\n     * @param {object} object Input object with x and y property.\n     * @return {Point} Resulting point.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Point(object.x, object.y);\n    }\n\n    /**\n     * Get the x coordinate.\n     *\n     * @return {number} The x coordinate.\n     */\n    get x() {\n        return this._x;\n    }\n\n    /**\n     * Get the y coordinate.\n     *\n     * @return {number} The y coordinate.\n     */\n    get y() {\n        return this._y;\n    }\n\n    add(that) {\n        if (that instanceof Point) {\n            throw new Error('Addition of two points is undefined.');\n        }\n\n        return new Point(this._x + that._x, this._y + that._y);\n    }\n\n    subtract(that) {\n        if (that instanceof Point) {\n            return this.toVector().subtract(that);\n        }\n\n        return new Point(this._x - that._x, this._y - that._y);\n    }\n\n    invert() {\n        return new Point(-this._x, -this._y);\n    }\n\n    multiply(scalar) {\n        return new Point(this._x * scalar, this._y * scalar);\n    }\n\n    multiplyXY(scalarX, scalarY) {\n        return new Point(this._x * scalarX, this._y * scalarY);\n    }\n\n    divide(scalar) {\n        return new Point(this._x / scalar, this._y / scalar);\n    }\n\n    divideXY(scalarX, scalarY) {\n        return new Point(this._x / scalarX, this._y / scalarY);\n    }\n\n    mix(that, amount = 0.5) {\n        return this.multiply(1 - amount).add(that.multiply(amount));\n    }\n\n    perpendicular() {\n        return new Point(-this._y, this._x);\n    }\n\n    snap(to) {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Point(round(this._x), round(this._y));\n    }\n\n    dot(that) {\n        return this._x * that._x + this._y * that._y;\n    }\n\n    angle() {\n        return Math.atan2(this._y, this._x);\n    }\n\n    angleDeg() {\n        return Math.atan2(this._y, this._x) * 180 / Math.PI;\n    }\n\n    slope() {\n        return this._y / this._x;\n    }\n\n\n\n\n\n\n    /**\n     * Calculate the squared distance between two points.\n     *\n     * If the exact distance doesn't matter, this method is slightly faster\n     * than `this.distance`.\n     *\n     * @param {Point} point The other point.\n     * @return {number} The distance between both points.\n     */\n    distanceSq(point) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(point instanceof Point)) {\n                throw new Error('Must be a point.');\n            }\n        }\n\n        const dX = (this._x - point._x);\n        const dY = (this._y - point._y);\n\n        return dX * dX + dY * dY;\n    }\n\n    /**\n     * Calculate the distance between two points.\n     *\n     * @param {Point} point The other point.\n     * @return {number} The distance between both points.\n     */\n    distance(point) {\n        return Math.sqrt(this.distanceSq(point));\n    }\n\n    /**\n     * Convert point into a vector.\n     *\n     * Note: this is an utility method. A proper conversion does not exist.\n     *\n     * @return {Vector} The point converted as vector.\n     */\n    toVector() {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Convert this point into an array.\n     *\n     * @return {Array} Array representation (x, y).\n     */\n    toArray() {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this point into an object.\n     *\n     * @return {object} Object representation (x, y).\n     */\n    toObject() {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this point into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString() {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this point into a string representation, using a fixed number of\n     * digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(digits) !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Point} Cloned instance.\n     */\n    clone() {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Return true if this point is equal to another point. Two points are\n     * equal when both x and y coordinates are equal.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the point is defined and finite.\n     *\n     * @return {Boolean} True if point is fully defined and valid.\n     */\n    isValid() {\n        return typeof(this._x) === 'number' && isFinite(this._x) &&\n            typeof(this._y) === 'number' && isFinite(this._y);\n    }\n}\n"
+    "content": "import Vector from './Vector';\n\n/**\n * Immutable point class.\n *\n * A point is an absolute place in space, at a given x and y coordinate.\n * \n * The difference between a Point and a vector is explained in this source:\n * http://math.stackexchange.com/a/645827\n */\nexport default class Point {\n    /**\n     * Construct a new point, using a x and y coordinate.\n     *\n     * An point is immutable. All subsequent operations will return a new point\n     * instance.\n     *\n     * @param {number} x The x coordinate.\n     * @param {number} y The y coordinate.\n     * @return {void}\n     */\n    constructor(x, y) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new point from an array. The first index is considered the x\n     * coordinate, the second index is considered the y coordinate.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Point} Resulting point.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Point(array[0], array[1]);\n    }\n\n    /**\n     * Create a new point from an object. The object should have an x and y\n     * property.\n     *\n     * @param {object} object Input object with x and y property.\n     * @return {Point} Resulting point.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Point(object.x, object.y);\n    }\n\n    /**\n     * Get the x coordinate.\n     *\n     * @return {number} The x coordinate.\n     */\n    get x() {\n        return this._x;\n    }\n\n    /**\n     * Get the y coordinate.\n     *\n     * @return {number} The y coordinate.\n     */\n    get y() {\n        return this._y;\n    }\n\n    /**\n     * Add a vector to a point.\n     *\n     * Note that addition of two points is undefined.\n     * \n     * @param {Vector} vector Vector to add to this point.\n     * @return {Point} Point with the vector added to it. \n     */\n    add(vector) {\n        if (vector instanceof Point) {\n            throw new Error('Addition of two points is undefined.');\n        }\n\n        return new Point(this._x + vector._x, this._y + vector._y);\n    }\n\n    /**\n     * Subtract a Point or a Vector.\n     * \n     * @param {Point|Vector} that Point or vector to subtract.\n     * @return {Point} If `that` is a Vector, it will return the new point.\n     * @return {Vector} If `that` is a Point, it will return the displacement.\n     */\n    subtract(that) {\n        if (that instanceof Point) {\n            return this.toVector().subtract(that);\n        }\n\n        return new Point(this._x - that._x, this._y - that._y);\n    }\n\n    /**\n     * Invert the x and y coordinate, relative to (0, 0).\n     * \n     * @return {Point} Inverted point.\n     */\n    invert() {\n        return new Point(-this._x, -this._y);\n    }\n\n    /**\n     * @return {Point}\n     */\n    multiply(scalar) {\n        return new Point(this._x * scalar, this._y * scalar);\n    }\n\n    /**\n     * @return {Point}\n     */\n    multiplyXY(scalarX, scalarY) {\n        return new Point(this._x * scalarX, this._y * scalarY);\n    }\n\n    /**\n     * @return {Point}\n     */\n    divide(scalar) {\n        return new Point(this._x / scalar, this._y / scalar);\n    }\n\n    /**\n     * @return {Point}\n     */\n    divideXY(scalarX, scalarY) {\n        return new Point(this._x / scalarX, this._y / scalarY);\n    }\n\n    /**\n     * @return {Point}\n     */\n    mix(that, amount = 0.5) {\n        return this.multiply(1 - amount).add(that.multiply(amount));\n    }\n\n    /**\n     * @return {Point}\n     */\n    perpendicular() {\n        return new Point(-this._y, this._x);\n    }\n\n    /**\n     * @return {Point}\n     */\n    snap(to) {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Point(round(this._x), round(this._y));\n    }\n\n    /**\n     * @return {number}\n     */\n    dot(that) {\n        return this._x * that._x + this._y * that._y;\n    }\n\n    /**\n     * @return {number}\n     */\n    angle() {\n        return Math.atan2(this._y, this._x);\n    }\n\n    /**\n     * @return {number}\n     */\n    angleDeg() {\n        return Math.atan2(this._y, this._x) * 180 / Math.PI;\n    }\n\n    /**\n     * @return {number}\n     */\n    slope() {\n        return this._y / this._x;\n    }\n\n    /**\n     * Calculate the squared distance between two points.\n     *\n     * If the exact distance doesn't matter, this method is slightly faster\n     * than `this.distance`.\n     *\n     * @param {Point} point The other point.\n     * @return {number} The distance between both points.\n     */\n    distanceSq(point) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(point instanceof Point)) {\n                throw new Error('Must be a point.');\n            }\n        }\n\n        const dX = (this._x - point._x);\n        const dY = (this._y - point._y);\n\n        return dX * dX + dY * dY;\n    }\n\n    /**\n     * Calculate the distance between two points.\n     *\n     * @param {Point} point The other point.\n     * @return {number} The distance between both points.\n     */\n    distance(point) {\n        return Math.sqrt(this.distanceSq(point));\n    }\n\n    /**\n     * Convert point into a vector.\n     *\n     * Note: this is an utility method. A proper conversion does not exist.\n     *\n     * @return {Vector} The point converted as vector.\n     */\n    toVector() {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Convert this point into an array.\n     *\n     * @return {Array} Array representation (x, y).\n     */\n    toArray() {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this point into an object.\n     *\n     * @return {object} Object representation (x, y).\n     */\n    toObject() {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this point into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString() {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this point into a string representation, using a fixed number of\n     * digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(digits) !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Point} Cloned instance.\n     */\n    clone() {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Return true if this point is equal to another point. Two points are\n     * equal when both x and y coordinates are equal.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the point is defined and finite.\n     *\n     * @return {Boolean} True if point is fully defined and valid.\n     */\n    isValid() {\n        return typeof(this._x) === 'number' && isFinite(this._x) &&\n            typeof(this._y) === 'number' && isFinite(this._y);\n    }\n}\n"
   },
   {
     "__docId__": 18,
@@ -427,8 +427,8 @@
     "export": true,
     "importPath": "es6-geometry/src/Point.js",
     "importStyle": "Point",
-    "description": "Immutable point class.",
-    "lineNumber": 6,
+    "description": "Immutable point class.\n\nA point is an absolute place in space, at a given x and y coordinate.\n\nThe difference between a Point and a vector is explained in this source:\nhttp://math.stackexchange.com/a/645827",
+    "lineNumber": 11,
     "interface": false
   },
   {
@@ -440,8 +440,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#constructor",
     "access": null,
-    "description": "Construct a new point, using an x and y coordinate.\n\nAn point is immutable. All subsequent operations will return a new point\ninstance.",
-    "lineNumber": 17,
+    "description": "Construct a new point, using a x and y coordinate.\n\nAn point is immutable. All subsequent operations will return a new point\ninstance.",
+    "lineNumber": 22,
     "params": [
       {
         "nullable": null,
@@ -484,7 +484,7 @@
     "longname": "src/Point.js~Point#_x",
     "access": null,
     "description": null,
-    "lineNumber": 18,
+    "lineNumber": 23,
     "undocument": true,
     "type": {
       "types": [
@@ -502,7 +502,7 @@
     "longname": "src/Point.js~Point#_y",
     "access": null,
     "description": null,
-    "lineNumber": 19,
+    "lineNumber": 24,
     "undocument": true,
     "type": {
       "types": [
@@ -520,7 +520,7 @@
     "longname": "src/Point.js~Point.fromArray",
     "access": null,
     "description": "Create a new point from an array. The first index is considered the x\ncoordinate, the second index is considered the y coordinate.",
-    "lineNumber": 29,
+    "lineNumber": 34,
     "params": [
       {
         "nullable": null,
@@ -553,7 +553,7 @@
     "longname": "src/Point.js~Point.fromObject",
     "access": null,
     "description": "Create a new point from an object. The object should have an x and y\nproperty.",
-    "lineNumber": 46,
+    "lineNumber": 51,
     "params": [
       {
         "nullable": null,
@@ -586,7 +586,7 @@
     "longname": "src/Point.js~Point#x",
     "access": null,
     "description": "Get the x coordinate.",
-    "lineNumber": 61,
+    "lineNumber": 66,
     "return": {
       "nullable": null,
       "types": [
@@ -612,7 +612,7 @@
     "longname": "src/Point.js~Point#y",
     "access": null,
     "description": "Get the y coordinate.",
-    "lineNumber": 70,
+    "lineNumber": 75,
     "return": {
       "nullable": null,
       "types": [
@@ -637,21 +637,27 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#add",
     "access": null,
-    "description": null,
-    "lineNumber": 74,
-    "undocument": true,
+    "description": "Add a vector to a point.\n\nNote that addition of two points is undefined.",
+    "lineNumber": 87,
     "params": [
       {
-        "name": "that",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vector",
+        "description": "Vector to add to this point."
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point with the vector added to it."
     },
     "generator": false
   },
@@ -664,21 +670,28 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#subtract",
     "access": null,
-    "description": null,
-    "lineNumber": 82,
-    "undocument": true,
+    "description": "Subtract a Point or a Vector.",
+    "lineNumber": 102,
     "params": [
       {
-        "name": "that",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Point",
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Point or vector to subtract."
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": "If `that` is a Point, it will return the displacement."
     },
     "generator": false
   },
@@ -691,14 +704,16 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#invert",
     "access": null,
-    "description": null,
-    "lineNumber": 90,
-    "undocument": true,
+    "description": "Invert the x and y coordinate, relative to (0, 0).",
+    "lineNumber": 115,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": "Inverted point."
     },
     "generator": false
   },
@@ -711,9 +726,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#multiply",
     "access": null,
-    "description": null,
-    "lineNumber": 94,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 122,
     "params": [
       {
         "name": "scalar",
@@ -723,9 +737,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -738,9 +755,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#multiplyXY",
     "access": null,
-    "description": null,
-    "lineNumber": 98,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 129,
     "params": [
       {
         "name": "scalarX",
@@ -756,9 +772,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -771,9 +790,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#divide",
     "access": null,
-    "description": null,
-    "lineNumber": 102,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 136,
     "params": [
       {
         "name": "scalar",
@@ -783,9 +801,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -798,9 +819,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#divideXY",
     "access": null,
-    "description": null,
-    "lineNumber": 106,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 143,
     "params": [
       {
         "name": "scalarX",
@@ -816,9 +836,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -831,9 +854,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#mix",
     "access": null,
-    "description": null,
-    "lineNumber": 110,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 150,
     "params": [
       {
         "name": "that",
@@ -852,9 +874,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -867,14 +892,16 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#perpendicular",
     "access": null,
-    "description": null,
-    "lineNumber": 114,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 157,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -887,9 +914,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#snap",
     "access": null,
-    "description": null,
-    "lineNumber": 118,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 164,
     "params": [
       {
         "name": "to",
@@ -899,9 +925,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Point"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -914,9 +943,8 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#dot",
     "access": null,
-    "description": null,
-    "lineNumber": 124,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 173,
     "params": [
       {
         "name": "that",
@@ -926,9 +954,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -941,14 +972,16 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#angle",
     "access": null,
-    "description": null,
-    "lineNumber": 128,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 180,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -961,14 +994,16 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#angleDeg",
     "access": null,
-    "description": null,
-    "lineNumber": 132,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 187,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -981,14 +1016,16 @@
     "memberof": "src/Point.js~Point",
     "longname": "src/Point.js~Point#slope",
     "access": null,
-    "description": null,
-    "lineNumber": 136,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 194,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -1002,7 +1039,7 @@
     "longname": "src/Point.js~Point#distanceSq",
     "access": null,
     "description": "Calculate the squared distance between two points.\n\nIf the exact distance doesn't matter, this method is slightly faster\nthan `this.distance`.",
-    "lineNumber": 154,
+    "lineNumber": 207,
     "params": [
       {
         "nullable": null,
@@ -1035,7 +1072,7 @@
     "longname": "src/Point.js~Point#distance",
     "access": null,
     "description": "Calculate the distance between two points.",
-    "lineNumber": 173,
+    "lineNumber": 226,
     "params": [
       {
         "nullable": null,
@@ -1068,7 +1105,7 @@
     "longname": "src/Point.js~Point#toVector",
     "access": null,
     "description": "Convert point into a vector.\n\nNote: this is an utility method. A proper conversion does not exist.",
-    "lineNumber": 184,
+    "lineNumber": 237,
     "params": [],
     "return": {
       "nullable": null,
@@ -1090,7 +1127,7 @@
     "longname": "src/Point.js~Point#toArray",
     "access": null,
     "description": "Convert this point into an array.",
-    "lineNumber": 193,
+    "lineNumber": 246,
     "params": [],
     "return": {
       "nullable": null,
@@ -1112,7 +1149,7 @@
     "longname": "src/Point.js~Point#toObject",
     "access": null,
     "description": "Convert this point into an object.",
-    "lineNumber": 202,
+    "lineNumber": 255,
     "params": [],
     "return": {
       "nullable": null,
@@ -1134,7 +1171,7 @@
     "longname": "src/Point.js~Point#toString",
     "access": null,
     "description": "Convert this point into a string representation.",
-    "lineNumber": 211,
+    "lineNumber": 264,
     "params": [],
     "return": {
       "nullable": null,
@@ -1156,7 +1193,7 @@
     "longname": "src/Point.js~Point#toFixed",
     "access": null,
     "description": "Convert this point into a string representation, using a fixed number of\ndigits for displaying.",
-    "lineNumber": 222,
+    "lineNumber": 275,
     "params": [
       {
         "nullable": null,
@@ -1189,7 +1226,7 @@
     "longname": "src/Point.js~Point#clone",
     "access": null,
     "description": "Create a shallow copy of this instance.",
-    "lineNumber": 237,
+    "lineNumber": 290,
     "params": [],
     "return": {
       "nullable": null,
@@ -1211,7 +1248,7 @@
     "longname": "src/Point.js~Point#equals",
     "access": null,
     "description": "Return true if this point is equal to another point. Two points are\nequal when both x and y coordinates are equal.",
-    "lineNumber": 248,
+    "lineNumber": 301,
     "params": [
       {
         "nullable": null,
@@ -1244,7 +1281,7 @@
     "longname": "src/Point.js~Point#isValid",
     "access": null,
     "description": "Return true if the point is defined and finite.",
-    "lineNumber": 258,
+    "lineNumber": 311,
     "params": [],
     "return": {
       "nullable": null,
@@ -2121,7 +2158,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Point from './Point';\n\n/**\n * Immutable vector class.\n */\nexport default class Vector {\n    /**\n     * Definition of the unit vector.\n     */\n    static Unit = new Vector(1, 1);\n\n    /**\n     * Construct a new vector, using an x and y component to represent the\n     * length (magnitude) and direction relative to (0, 0).\n     *\n     * An vector is immutable. All subsequent operations will return a new\n     * vector instance.\n     *\n     * @param {number} x The x component.\n     * @param {number} y The y component.\n     * @return {void}\n     */\n    constructor(x, y) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new vector from an array. The first index is considered the x\n     * component, the second index is considered the y component.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Vector} Resulting vector.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Vector(array[0], array[1]);\n    }\n\n    /**\n     * Create a new vector from an object. The object should have an x and y\n     * property.\n     *\n     * @param {object} object Input object with x and y property.\n     * @return {Vector} Resulting vector.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Vector(object.x, object.y);\n    }\n\n    /**\n     * Get the x component.\n     *\n     * @return {number} The x component.\n     */\n    get x() {\n        return this._x;\n    }\n\n    /**\n     * Get the y component.\n     *\n     * @return {number} The y component.\n     */\n    get y() {\n        return this._y;\n    }\n\n    /**\n     * Add another vector or point to this vector.\n     *\n     * If the input is a point, the result will be a point with this vector\n     * as offset.\n     *\n     * @param {Point|Vector} that Point or vector to add.\n     * @return {Point|Vector} New Vector if adding vector, point otherwise.\n     */\n    add(that) {\n        if (that instanceof Point) {\n            return that.add(this);\n        }\n\n        return new Vector(this._x + that._x, this._y + that._y);\n    }\n\n    subtract(that) {\n        return new Vector(this._x - that._x, this._y - that._y);\n    }\n\n    invert() {\n        return new Vector(-this._x, -this._y);\n    }\n\n    multiply(scalar) {\n        return new Vector(this._x * scalar, this._y * scalar);\n    }\n\n    multiplyXY(scalarX, scalarY) {\n        return new Vector(this._x * scalarX, this._y * scalarY);\n    }\n\n    divide(scalar) {\n        return new Vector(this._x / scalar, this._y / scalar);\n    }\n\n    divideXY(scalarX, scalarY) {\n        return new Vector(this._x / scalarX, this._y / scalarY);\n    }\n\n    mix(that, amount = 0.5) {\n        return this.multiply(1 - amount).add(that.multiply(amount));\n    }\n\n    perpendicular() {\n        return new Vector(-this._y, this._x);\n    }\n\n    snap(to) {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Vector(round(this._x), round(this._y));\n    }\n\n    dot(that) {\n        return this._x * that._x + this._y * that._y;\n    }\n\n    angle() {\n        return Math.atan2(this._y, this._x);\n    }\n\n    angleDeg() {\n        return Math.atan2(this._y, this._x) * 180 / Math.PI;\n    }\n\n    slope() {\n        return this._y / this._x;\n    }\n\n\n\n    /**\n     * Calculate the squared length of this vector.\n     *\n     * If the exact length doesn't matter, this method is slightly faster\n     * than `this.length`.\n     *\n     * @return {number} The squared length of this vector.\n     */\n    lengthSq() {\n        return this._x * this._x + this._y * this._y;\n    }\n\n    /**\n     * Calculate the length (or magnitude) of the vector.\n     *\n     * @return {number} The length of the vector.\n     */\n    length() {\n        return Math.sqrt(this.lengthSq());\n    }\n\n    /**\n     * [minLength description]\n     * @param {[type]} length [description]\n     * @return {[type]}\n     */\n    minLength(length) {\n        return this.length() < length ? this.normalize(length) : this;\n    }\n\n    maxLength(length) {\n        return this.length() > length ? this.normalize(length) : this;\n    }\n\n    normalize(scalar = 1) {\n        return this.divide(this.length()).multiply(scalar);\n    }\n\n    projectOnto(that) {\n        return that.multiply(this.dot(that) / that.lengthSq());\n    }\n\n    /**\n     * Convert vector into a point.\n     *\n     * Note: this is an utility method. A proper conversion does not exist.\n     *\n     * @return {Point} The vector converted as point.\n     */\n    toPoint() {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Convert this vector into an array.\n     *\n     * @return {Array} Array representation (x, y).\n     */\n    toArray() {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this vector into an object.\n     *\n     * @return {object} Object representation (x, y).\n     */\n    toObject() {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this vector into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString() {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this vector into a string representation, using a fixed number\n     * of digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(digits) !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Vector} Cloned instance.\n     */\n    clone() {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Return true if this vector is equal to another vector. Two vectors are\n     * equal when both x and y components are equal.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the vector is defined and finite.\n     *\n     * @return {Boolean} True if vector is fully defined and valid.\n     */\n    isValid() {\n        return typeof(this._x) === 'number' && isFinite(this._x) &&\n            typeof(this._y) === 'number' && isFinite(this._y);\n    }\n}\n"
+    "content": "import Point from './Point';\n\n/**\n * Immutable vector class.\n *\n * A vector represents a displacement, using a x an y component to represent\n * the length (magnitude) and direction.\n * \n * The difference between a Vector and a Point is explained in this source:\n * http://math.stackexchange.com/a/645827\n */\nexport default class Vector {\n    /**\n     * Definition of the unit vector.\n     */\n    static Unit = new Vector(1, 1);\n\n    /**\n     * Construct a new vector, using a x and y component to represent the\n     * length (magnitude) and direction relative to (0, 0).\n     *\n     * An vector is immutable. All subsequent operations will return a new\n     * vector instance.\n     *\n     * @param {number} x The x component.\n     * @param {number} y The y component.\n     * @return {void}\n     */\n    constructor(x, y) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new vector from an array. The first index is considered the x\n     * component, the second index is considered the y component.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Vector} Resulting vector.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Vector(array[0], array[1]);\n    }\n\n    /**\n     * Create a new vector from an object. The object should have an x and y\n     * property.\n     *\n     * @param {object} object Input object with x and y property.\n     * @return {Vector} Resulting vector.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Vector(object.x, object.y);\n    }\n\n    /**\n     * Get the x component.\n     *\n     * @return {number} The x component.\n     */\n    get x() {\n        return this._x;\n    }\n\n    /**\n     * Get the y component.\n     *\n     * @return {number} The y component.\n     */\n    get y() {\n        return this._y;\n    }\n\n    /**\n     * Add another vector or point to this vector.\n     *\n     * If the input is a point, the result will be a point with this vector\n     * as offset.\n     *\n     * @param {Point|Vector} that Point or vector to add.\n     * @return {Point|Vector} New Vector if adding vector, point otherwise.\n     */\n    add(that) {\n        if (that instanceof Point) {\n            return that.add(this);\n        }\n\n        return new Vector(this._x + that._x, this._y + that._y);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    subtract(that) {\n        return new Vector(this._x - that._x, this._y - that._y);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    invert() {\n        return new Vector(-this._x, -this._y);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    multiply(scalar) {\n        return new Vector(this._x * scalar, this._y * scalar);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    multiplyXY(scalarX, scalarY) {\n        return new Vector(this._x * scalarX, this._y * scalarY);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    divide(scalar) {\n        return new Vector(this._x / scalar, this._y / scalar);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    divideXY(scalarX, scalarY) {\n        return new Vector(this._x / scalarX, this._y / scalarY);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    mix(that, amount = 0.5) {\n        return this.multiply(1 - amount).add(that.multiply(amount));\n    }\n\n    /**\n     * @return {Vector}\n     */\n    perpendicular() {\n        return new Vector(-this._y, this._x);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    snap(to) {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Vector(round(this._x), round(this._y));\n    }\n\n    /**\n     * @return {number}\n     */\n    dot(that) {\n        return this._x * that._x + this._y * that._y;\n    }\n\n    /**\n     * @return {number}\n     */\n    angle() {\n        return Math.atan2(this._y, this._x);\n    }\n\n    /**\n     * @return {number}\n     */\n    angleDeg() {\n        return Math.atan2(this._y, this._x) * 180 / Math.PI;\n    }\n\n    /**\n     * @return {number}\n     */\n    slope() {\n        return this._y / this._x;\n    }\n\n    /**\n     * Calculate the squared length of this vector.\n     *\n     * If the exact length doesn't matter, this method is slightly faster\n     * than `this.length`.\n     *\n     * @return {number} The squared length of this vector.\n     */\n    lengthSq() {\n        return this._x * this._x + this._y * this._y;\n    }\n\n    /**\n     * Calculate the length (magnitude) of the vector.\n     *\n     * @return {number} The length of the vector.\n     */\n    length() {\n        return Math.sqrt(this.lengthSq());\n    }\n\n    /**\n     * [minLength description]\n     * @param {[type]} length [description]\n     * @return {[type]}\n     */\n    minLength(length) {\n        return this.length() < length ? this.normalize(length) : this;\n    }\n\n    maxLength(length) {\n        return this.length() > length ? this.normalize(length) : this;\n    }\n\n    normalize(scalar = 1) {\n        return this.divide(this.length()).multiply(scalar);\n    }\n\n    projectOnto(that) {\n        return that.multiply(this.dot(that) / that.lengthSq());\n    }\n\n    /**\n     * Convert vector into a point.\n     *\n     * Note: this is an utility method. A proper conversion does not exist.\n     *\n     * @return {Point} The vector converted as point.\n     */\n    toPoint() {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Convert this vector into an array.\n     *\n     * @return {Array} Array representation (x, y).\n     */\n    toArray() {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this vector into an object.\n     *\n     * @return {object} Object representation (x, y).\n     */\n    toObject() {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this vector into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString() {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this vector into a string representation, using a fixed number\n     * of digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(digits) !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Vector} Cloned instance.\n     */\n    clone() {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Return true if this vector is equal to another vector. Two vectors are\n     * equal when both x and y components are equal.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the vector is defined and finite.\n     *\n     * @return {Boolean} True if vector is fully defined and valid.\n     */\n    isValid() {\n        return typeof(this._x) === 'number' && isFinite(this._x) &&\n            typeof(this._y) === 'number' && isFinite(this._y);\n    }\n}\n"
   },
   {
     "__docId__": 83,
@@ -2135,8 +2172,8 @@
     "export": true,
     "importPath": "es6-geometry/src/Vector.js",
     "importStyle": "Vector",
-    "description": "Immutable vector class.",
-    "lineNumber": 6,
+    "description": "Immutable vector class.\n\nA vector represents a displacement, using a x an y component to represent\nthe length (magnitude) and direction.\n\nThe difference between a Vector and a Point is explained in this source:\nhttp://math.stackexchange.com/a/645827",
+    "lineNumber": 12,
     "interface": false
   },
   {
@@ -2148,8 +2185,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#constructor",
     "access": null,
-    "description": "Construct a new vector, using an x and y component to represent the\nlength (magnitude) and direction relative to (0, 0).\n\nAn vector is immutable. All subsequent operations will return a new\nvector instance.",
-    "lineNumber": 23,
+    "description": "Construct a new vector, using a x and y component to represent the\nlength (magnitude) and direction relative to (0, 0).\n\nAn vector is immutable. All subsequent operations will return a new\nvector instance.",
+    "lineNumber": 29,
     "params": [
       {
         "nullable": null,
@@ -2192,7 +2229,7 @@
     "longname": "src/Vector.js~Vector#_x",
     "access": null,
     "description": null,
-    "lineNumber": 24,
+    "lineNumber": 30,
     "undocument": true,
     "type": {
       "types": [
@@ -2210,7 +2247,7 @@
     "longname": "src/Vector.js~Vector#_y",
     "access": null,
     "description": null,
-    "lineNumber": 25,
+    "lineNumber": 31,
     "undocument": true,
     "type": {
       "types": [
@@ -2228,7 +2265,7 @@
     "longname": "src/Vector.js~Vector.fromArray",
     "access": null,
     "description": "Create a new vector from an array. The first index is considered the x\ncomponent, the second index is considered the y component.",
-    "lineNumber": 35,
+    "lineNumber": 41,
     "params": [
       {
         "nullable": null,
@@ -2261,7 +2298,7 @@
     "longname": "src/Vector.js~Vector.fromObject",
     "access": null,
     "description": "Create a new vector from an object. The object should have an x and y\nproperty.",
-    "lineNumber": 52,
+    "lineNumber": 58,
     "params": [
       {
         "nullable": null,
@@ -2294,7 +2331,7 @@
     "longname": "src/Vector.js~Vector#x",
     "access": null,
     "description": "Get the x component.",
-    "lineNumber": 67,
+    "lineNumber": 73,
     "return": {
       "nullable": null,
       "types": [
@@ -2320,7 +2357,7 @@
     "longname": "src/Vector.js~Vector#y",
     "access": null,
     "description": "Get the y component.",
-    "lineNumber": 76,
+    "lineNumber": 82,
     "return": {
       "nullable": null,
       "types": [
@@ -2346,7 +2383,7 @@
     "longname": "src/Vector.js~Vector#add",
     "access": null,
     "description": "Add another vector or point to this vector.\n\nIf the input is a point, the result will be a point with this vector\nas offset.",
-    "lineNumber": 89,
+    "lineNumber": 95,
     "params": [
       {
         "nullable": null,
@@ -2380,9 +2417,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#subtract",
     "access": null,
-    "description": null,
-    "lineNumber": 97,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 106,
     "params": [
       {
         "name": "that",
@@ -2392,9 +2428,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2407,14 +2446,16 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#invert",
     "access": null,
-    "description": null,
-    "lineNumber": 101,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 113,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2427,9 +2468,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#multiply",
     "access": null,
-    "description": null,
-    "lineNumber": 105,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 120,
     "params": [
       {
         "name": "scalar",
@@ -2439,9 +2479,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2454,9 +2497,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#multiplyXY",
     "access": null,
-    "description": null,
-    "lineNumber": 109,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 127,
     "params": [
       {
         "name": "scalarX",
@@ -2472,9 +2514,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2487,9 +2532,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#divide",
     "access": null,
-    "description": null,
-    "lineNumber": 113,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 134,
     "params": [
       {
         "name": "scalar",
@@ -2499,9 +2543,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2514,9 +2561,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#divideXY",
     "access": null,
-    "description": null,
-    "lineNumber": 117,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 141,
     "params": [
       {
         "name": "scalarX",
@@ -2532,9 +2578,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2547,9 +2596,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#mix",
     "access": null,
-    "description": null,
-    "lineNumber": 121,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 148,
     "params": [
       {
         "name": "that",
@@ -2568,9 +2616,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2583,14 +2634,16 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#perpendicular",
     "access": null,
-    "description": null,
-    "lineNumber": 125,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 155,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2603,9 +2656,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#snap",
     "access": null,
-    "description": null,
-    "lineNumber": 129,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 162,
     "params": [
       {
         "name": "to",
@@ -2615,9 +2667,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Vector"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2630,9 +2685,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#dot",
     "access": null,
-    "description": null,
-    "lineNumber": 135,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 171,
     "params": [
       {
         "name": "that",
@@ -2642,9 +2696,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2657,14 +2714,16 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#angle",
     "access": null,
-    "description": null,
-    "lineNumber": 139,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 178,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2677,14 +2736,16 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#angleDeg",
     "access": null,
-    "description": null,
-    "lineNumber": 143,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 185,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2697,14 +2758,16 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#slope",
     "access": null,
-    "description": null,
-    "lineNumber": 147,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 192,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -2718,7 +2781,7 @@
     "longname": "src/Vector.js~Vector#lengthSq",
     "access": null,
     "description": "Calculate the squared length of this vector.\n\nIf the exact length doesn't matter, this method is slightly faster\nthan `this.length`.",
-    "lineNumber": 161,
+    "lineNumber": 204,
     "params": [],
     "return": {
       "nullable": null,
@@ -2739,8 +2802,8 @@
     "memberof": "src/Vector.js~Vector",
     "longname": "src/Vector.js~Vector#length",
     "access": null,
-    "description": "Calculate the length (or magnitude) of the vector.",
-    "lineNumber": 170,
+    "description": "Calculate the length (magnitude) of the vector.",
+    "lineNumber": 213,
     "params": [],
     "return": {
       "nullable": null,
@@ -2762,7 +2825,7 @@
     "longname": "src/Vector.js~Vector#minLength",
     "access": null,
     "description": "[minLength description]",
-    "lineNumber": 179,
+    "lineNumber": 222,
     "params": [
       {
         "nullable": null,
@@ -2795,7 +2858,7 @@
     "longname": "src/Vector.js~Vector#maxLength",
     "access": null,
     "description": null,
-    "lineNumber": 183,
+    "lineNumber": 226,
     "undocument": true,
     "params": [
       {
@@ -2822,7 +2885,7 @@
     "longname": "src/Vector.js~Vector#normalize",
     "access": null,
     "description": null,
-    "lineNumber": 187,
+    "lineNumber": 230,
     "undocument": true,
     "params": [
       {
@@ -2852,7 +2915,7 @@
     "longname": "src/Vector.js~Vector#projectOnto",
     "access": null,
     "description": null,
-    "lineNumber": 191,
+    "lineNumber": 234,
     "undocument": true,
     "params": [
       {
@@ -2879,7 +2942,7 @@
     "longname": "src/Vector.js~Vector#toPoint",
     "access": null,
     "description": "Convert vector into a point.\n\nNote: this is an utility method. A proper conversion does not exist.",
-    "lineNumber": 202,
+    "lineNumber": 245,
     "params": [],
     "return": {
       "nullable": null,
@@ -2901,7 +2964,7 @@
     "longname": "src/Vector.js~Vector#toArray",
     "access": null,
     "description": "Convert this vector into an array.",
-    "lineNumber": 211,
+    "lineNumber": 254,
     "params": [],
     "return": {
       "nullable": null,
@@ -2923,7 +2986,7 @@
     "longname": "src/Vector.js~Vector#toObject",
     "access": null,
     "description": "Convert this vector into an object.",
-    "lineNumber": 220,
+    "lineNumber": 263,
     "params": [],
     "return": {
       "nullable": null,
@@ -2945,7 +3008,7 @@
     "longname": "src/Vector.js~Vector#toString",
     "access": null,
     "description": "Convert this vector into a string representation.",
-    "lineNumber": 229,
+    "lineNumber": 272,
     "params": [],
     "return": {
       "nullable": null,
@@ -2967,7 +3030,7 @@
     "longname": "src/Vector.js~Vector#toFixed",
     "access": null,
     "description": "Convert this vector into a string representation, using a fixed number\nof digits for displaying.",
-    "lineNumber": 240,
+    "lineNumber": 283,
     "params": [
       {
         "nullable": null,
@@ -3000,7 +3063,7 @@
     "longname": "src/Vector.js~Vector#clone",
     "access": null,
     "description": "Create a shallow copy of this instance.",
-    "lineNumber": 255,
+    "lineNumber": 298,
     "params": [],
     "return": {
       "nullable": null,
@@ -3022,7 +3085,7 @@
     "longname": "src/Vector.js~Vector#equals",
     "access": null,
     "description": "Return true if this vector is equal to another vector. Two vectors are\nequal when both x and y components are equal.",
-    "lineNumber": 266,
+    "lineNumber": 309,
     "params": [
       {
         "nullable": null,
@@ -3055,7 +3118,7 @@
     "longname": "src/Vector.js~Vector#isValid",
     "access": null,
     "description": "Return true if the vector is defined and finite.",
-    "lineNumber": 276,
+    "lineNumber": 319,
     "params": [],
     "return": {
       "nullable": null,

@@ -41,13 +41,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Point from &apos;<span><a href="file/src/Point.js.html#lineNumber6">es6-geometry/src/Point.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Point from &apos;<span><a href="file/src/Point.js.html#lineNumber11">es6-geometry/src/Point.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/Point.js.html#lineNumber6">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/Point.js.html#lineNumber11">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -68,6 +68,9 @@
   
   
   <div class="description" data-ice="description"><p>Immutable point class.</p>
+<p>A point is an absolute place in space, at a given x and y coordinate.</p>
+<p>The difference between a Point and a vector is explained in this source:
+<a href="http://math.stackexchange.com/a/645827">http://math.stackexchange.com/a/645827</a></p>
 </div>
 
   
@@ -160,7 +163,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Construct a new point, using an x and y coordinate.</p>
+        <div data-ice="description"><p>Construct a new point, using a x and y coordinate.</p>
 </div>
       </div>
     </td>
@@ -246,7 +249,33 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-add">add</a></span></span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-add">add</a></span></span><span data-ice="signature">(vector: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Add a vector to a point.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-angle">angle</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -271,32 +300,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-angle">angle</a></span></span><span data-ice="signature">(): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-angleDeg">angleDeg</a></span></span><span data-ice="signature">(): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-angleDeg">angleDeg</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -399,7 +403,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-divide">divide</a></span></span><span data-ice="signature">(scalar: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-divide">divide</a></span></span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -424,7 +428,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-divideXY">divideXY</a></span></span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-divideXY">divideXY</a></span></span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -449,7 +453,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-dot">dot</a></span></span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-dot">dot</a></span></span><span data-ice="signature">(that: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -500,13 +504,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-invert">invert</a></span></span><span data-ice="signature">(): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-invert">invert</a></span></span><span data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Invert the x and y coordinate, relative to (0, 0).</p>
+</div>
       </div>
     </td>
     <td>
@@ -551,7 +556,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-mix">mix</a></span></span><span data-ice="signature">(that: <span>*</span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-mix">mix</a></span></span><span data-ice="signature">(that: <span>*</span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -576,7 +581,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-multiply">multiply</a></span></span><span data-ice="signature">(scalar: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-multiply">multiply</a></span></span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -601,7 +606,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-multiplyXY">multiplyXY</a></span></span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-multiplyXY">multiplyXY</a></span></span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -626,7 +631,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-perpendicular">perpendicular</a></span></span><span data-ice="signature">(): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-perpendicular">perpendicular</a></span></span><span data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -651,7 +656,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-slope">slope</a></span></span><span data-ice="signature">(): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-slope">slope</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -676,7 +681,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-snap">snap</a></span></span><span data-ice="signature">(to: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-snap">snap</a></span></span><span data-ice="signature">(to: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -701,13 +706,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-subtract">subtract</a></span></span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Point.js~Point.html#instance-method-subtract">subtract</a></span></span><span data-ice="signature">(that: <span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Subtract a Point or a Vector.</p>
+</div>
       </div>
     </td>
     <td>
@@ -866,7 +872,7 @@ digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
@@ -936,7 +942,7 @@ coordinate, the second index is considered the y coordinate.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber51">source</a></span></span>
     </span>
   </h3>
 
@@ -1009,14 +1015,14 @@ property.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Construct a new point, using an x and y coordinate.</p>
+  <div data-ice="description"><p>Construct a new point, using a x and y coordinate.</p>
 <p>An point is immutable. All subsequent operations will return a new point
 instance.</p>
 </div>
@@ -1089,7 +1095,7 @@ instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber61">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber66">source</a></span></span>
     </span>
   </h3>
 
@@ -1141,7 +1147,7 @@ instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber70">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber75">source</a></span></span>
     </span>
   </h3>
 
@@ -1192,18 +1198,20 @@ instance.</p>
     
     
     
-    <span data-ice="name">add</span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">add</span><span data-ice="signature">(vector: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber74">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber87">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Add a vector to a point.</p>
+<p>Note that addition of two points is undefined.</p>
+</div>
 
   
 
@@ -1216,10 +1224,11 @@ instance.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" data-depth="0">vector</td>
+      <td data-ice="type"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Vector to add to this point.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1230,8 +1239,9 @@ instance.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>Point with the vector added to it.</p>
+</td>
       </tr>
     </table>
     <div data-ice="returnProperties">
@@ -1258,11 +1268,11 @@ instance.</p>
     
     
     
-    <span data-ice="name">angle</span><span data-ice="signature">(): <span>*</span></span>
+    <span data-ice="name">angle</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber128">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber180">source</a></span></span>
     </span>
   </h3>
 
@@ -1280,7 +1290,7 @@ instance.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
         
       </tr>
     </table>
@@ -1308,11 +1318,11 @@ instance.</p>
     
     
     
-    <span data-ice="name">angleDeg</span><span data-ice="signature">(): <span>*</span></span>
+    <span data-ice="name">angleDeg</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber132">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber187">source</a></span></span>
     </span>
   </h3>
 
@@ -1330,7 +1340,7 @@ instance.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
         
       </tr>
     </table>
@@ -1362,7 +1372,7 @@ instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber237">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber290">source</a></span></span>
     </span>
   </h3>
 
@@ -1414,7 +1424,7 @@ instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber173">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber226">source</a></span></span>
     </span>
   </h3>
 
@@ -1483,7 +1493,7 @@ instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber154">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber207">source</a></span></span>
     </span>
   </h3>
 
@@ -1550,11 +1560,11 @@ than <code>this.distance</code>.</p>
     
     
     
-    <span data-ice="name">divide</span><span data-ice="signature">(scalar: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">divide</span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber102">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber136">source</a></span></span>
     </span>
   </h3>
 
@@ -1588,7 +1598,7 @@ than <code>this.distance</code>.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -1616,11 +1626,11 @@ than <code>this.distance</code>.</p>
     
     
     
-    <span data-ice="name">divideXY</span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">divideXY</span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber106">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber143">source</a></span></span>
     </span>
   </h3>
 
@@ -1660,7 +1670,7 @@ than <code>this.distance</code>.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -1688,11 +1698,11 @@ than <code>this.distance</code>.</p>
     
     
     
-    <span data-ice="name">dot</span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">dot</span><span data-ice="signature">(that: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber124">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber173">source</a></span></span>
     </span>
   </h3>
 
@@ -1726,7 +1736,7 @@ than <code>this.distance</code>.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
         
       </tr>
     </table>
@@ -1758,7 +1768,7 @@ than <code>this.distance</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber248">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber301">source</a></span></span>
     </span>
   </h3>
 
@@ -1824,18 +1834,19 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">invert</span><span data-ice="signature">(): <span>*</span></span>
+    <span data-ice="name">invert</span><span data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber90">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber115">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Invert the x and y coordinate, relative to (0, 0).</p>
+</div>
 
   
 
@@ -1846,8 +1857,9 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>Inverted point.</p>
+</td>
       </tr>
     </table>
     <div data-ice="returnProperties">
@@ -1878,7 +1890,7 @@ equal when both x and y coordinates are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber258">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber311">source</a></span></span>
     </span>
   </h3>
 
@@ -1926,11 +1938,11 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">mix</span><span data-ice="signature">(that: <span>*</span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
+    <span data-ice="name">mix</span><span data-ice="signature">(that: <span>*</span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber110">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber150">source</a></span></span>
     </span>
   </h3>
 
@@ -1971,7 +1983,7 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -1999,11 +2011,11 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">multiply</span><span data-ice="signature">(scalar: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">multiply</span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber94">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber122">source</a></span></span>
     </span>
   </h3>
 
@@ -2037,7 +2049,7 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -2065,11 +2077,11 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">multiplyXY</span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">multiplyXY</span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber98">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber129">source</a></span></span>
     </span>
   </h3>
 
@@ -2109,7 +2121,7 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -2137,11 +2149,11 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">perpendicular</span><span data-ice="signature">(): <span>*</span></span>
+    <span data-ice="name">perpendicular</span><span data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber114">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber157">source</a></span></span>
     </span>
   </h3>
 
@@ -2159,7 +2171,7 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -2187,11 +2199,11 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">slope</span><span data-ice="signature">(): <span>*</span></span>
+    <span data-ice="name">slope</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber136">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber194">source</a></span></span>
     </span>
   </h3>
 
@@ -2209,7 +2221,7 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
         
       </tr>
     </table>
@@ -2237,11 +2249,11 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">snap</span><span data-ice="signature">(to: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">snap</span><span data-ice="signature">(to: <span>*</span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber118">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber164">source</a></span></span>
     </span>
   </h3>
 
@@ -2275,7 +2287,7 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
         
       </tr>
     </table>
@@ -2303,18 +2315,19 @@ equal when both x and y coordinates are equal.</p>
     
     
     
-    <span data-ice="name">subtract</span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">subtract</span><span data-ice="signature">(that: <span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber82">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber102">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Subtract a Point or a Vector.</p>
+</div>
 
   
 
@@ -2328,9 +2341,10 @@ equal when both x and y coordinates are equal.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Point or vector to subtract.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2341,8 +2355,9 @@ equal when both x and y coordinates are equal.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>If <code>that</code> is a Point, it will return the displacement.</p>
+</td>
       </tr>
     </table>
     <div data-ice="returnProperties">
@@ -2373,7 +2388,7 @@ equal when both x and y coordinates are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber193">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber246">source</a></span></span>
     </span>
   </h3>
 
@@ -2425,7 +2440,7 @@ equal when both x and y coordinates are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber222">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber275">source</a></span></span>
     </span>
   </h3>
 
@@ -2495,7 +2510,7 @@ digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber202">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber255">source</a></span></span>
     </span>
   </h3>
 
@@ -2547,7 +2562,7 @@ digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber211">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber264">source</a></span></span>
     </span>
   </h3>
 
@@ -2599,7 +2614,7 @@ digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber184">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Point.js.html#lineNumber237">source</a></span></span>
     </span>
   </h3>
 
