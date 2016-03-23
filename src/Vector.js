@@ -2,6 +2,12 @@ import Point from './Point';
 
 /**
  * Immutable vector class.
+ *
+ * A vector represents a displacement, using a x an y component to represent
+ * the length (magnitude) and direction.
+ * 
+ * The difference between a Vector and a Point is explained in this source:
+ * http://math.stackexchange.com/a/645827
  */
 export default class Vector {
     /**
@@ -10,7 +16,7 @@ export default class Vector {
     static Unit = new Vector(1, 1);
 
     /**
-     * Construct a new vector, using an x and y component to represent the
+     * Construct a new vector, using a x and y component to represent the
      * length (magnitude) and direction relative to (0, 0).
      *
      * An vector is immutable. All subsequent operations will return a new
@@ -94,61 +100,98 @@ export default class Vector {
         return new Vector(this._x + that._x, this._y + that._y);
     }
 
+    /**
+     * @return {Vector}
+     */
     subtract(that) {
         return new Vector(this._x - that._x, this._y - that._y);
     }
 
+    /**
+     * @return {Vector}
+     */
     invert() {
         return new Vector(-this._x, -this._y);
     }
 
+    /**
+     * @return {Vector}
+     */
     multiply(scalar) {
         return new Vector(this._x * scalar, this._y * scalar);
     }
 
+    /**
+     * @return {Vector}
+     */
     multiplyXY(scalarX, scalarY) {
         return new Vector(this._x * scalarX, this._y * scalarY);
     }
 
+    /**
+     * @return {Vector}
+     */
     divide(scalar) {
         return new Vector(this._x / scalar, this._y / scalar);
     }
 
+    /**
+     * @return {Vector}
+     */
     divideXY(scalarX, scalarY) {
         return new Vector(this._x / scalarX, this._y / scalarY);
     }
 
+    /**
+     * @return {Vector}
+     */
     mix(that, amount = 0.5) {
         return this.multiply(1 - amount).add(that.multiply(amount));
     }
 
+    /**
+     * @return {Vector}
+     */
     perpendicular() {
         return new Vector(-this._y, this._x);
     }
 
+    /**
+     * @return {Vector}
+     */
     snap(to) {
         const round = (val) => Math.round(val / to) * to;
 
         return new Vector(round(this._x), round(this._y));
     }
 
+    /**
+     * @return {number}
+     */
     dot(that) {
         return this._x * that._x + this._y * that._y;
     }
 
+    /**
+     * @return {number}
+     */
     angle() {
         return Math.atan2(this._y, this._x);
     }
 
+    /**
+     * @return {number}
+     */
     angleDeg() {
         return Math.atan2(this._y, this._x) * 180 / Math.PI;
     }
 
+    /**
+     * @return {number}
+     */
     slope() {
         return this._y / this._x;
     }
-
-
 
     /**
      * Calculate the squared length of this vector.
@@ -163,7 +206,7 @@ export default class Vector {
     }
 
     /**
-     * Calculate the length (or magnitude) of the vector.
+     * Calculate the length (magnitude) of the vector.
      *
      * @return {number} The length of the vector.
      */

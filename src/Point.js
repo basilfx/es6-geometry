@@ -2,10 +2,15 @@ import Vector from './Vector';
 
 /**
  * Immutable point class.
+ *
+ * A point is an absolute place in space, at a given x and y coordinate.
+ * 
+ * The difference between a Point and a vector is explained in this source:
+ * http://math.stackexchange.com/a/645827
  */
 export default class Point {
     /**
-     * Construct a new point, using an x and y coordinate.
+     * Construct a new point, using a x and y coordinate.
      *
      * An point is immutable. All subsequent operations will return a new point
      * instance.
@@ -71,14 +76,29 @@ export default class Point {
         return this._y;
     }
 
-    add(that) {
-        if (that instanceof Point) {
+    /**
+     * Add a vector to a point.
+     *
+     * Note that addition of two points is undefined.
+     * 
+     * @param {Vector} vector Vector to add to this point.
+     * @return {Point} Point with the vector added to it. 
+     */
+    add(vector) {
+        if (vector instanceof Point) {
             throw new Error('Addition of two points is undefined.');
         }
 
-        return new Point(this._x + that._x, this._y + that._y);
+        return new Point(this._x + vector._x, this._y + vector._y);
     }
 
+    /**
+     * Subtract a Point or a Vector.
+     * 
+     * @param {Point|Vector} that Point or vector to subtract.
+     * @return {Point} If `that` is a Vector, it will return the new point.
+     * @return {Vector} If `that` is a Point, it will return the displacement.
+     */
     subtract(that) {
         if (that instanceof Point) {
             return this.toVector().subtract(that);
@@ -87,60 +107,93 @@ export default class Point {
         return new Point(this._x - that._x, this._y - that._y);
     }
 
+    /**
+     * Invert the x and y coordinate, relative to (0, 0).
+     * 
+     * @return {Point} Inverted point.
+     */
     invert() {
         return new Point(-this._x, -this._y);
     }
 
+    /**
+     * @return {Point}
+     */
     multiply(scalar) {
         return new Point(this._x * scalar, this._y * scalar);
     }
 
+    /**
+     * @return {Point}
+     */
     multiplyXY(scalarX, scalarY) {
         return new Point(this._x * scalarX, this._y * scalarY);
     }
 
+    /**
+     * @return {Point}
+     */
     divide(scalar) {
         return new Point(this._x / scalar, this._y / scalar);
     }
 
+    /**
+     * @return {Point}
+     */
     divideXY(scalarX, scalarY) {
         return new Point(this._x / scalarX, this._y / scalarY);
     }
 
+    /**
+     * @return {Point}
+     */
     mix(that, amount = 0.5) {
         return this.multiply(1 - amount).add(that.multiply(amount));
     }
 
+    /**
+     * @return {Point}
+     */
     perpendicular() {
         return new Point(-this._y, this._x);
     }
 
+    /**
+     * @return {Point}
+     */
     snap(to) {
         const round = (val) => Math.round(val / to) * to;
 
         return new Point(round(this._x), round(this._y));
     }
 
+    /**
+     * @return {number}
+     */
     dot(that) {
         return this._x * that._x + this._y * that._y;
     }
 
+    /**
+     * @return {number}
+     */
     angle() {
         return Math.atan2(this._y, this._x);
     }
 
+    /**
+     * @return {number}
+     */
     angleDeg() {
         return Math.atan2(this._y, this._x) * 180 / Math.PI;
     }
 
+    /**
+     * @return {number}
+     */
     slope() {
         return this._y / this._x;
     }
-
-
-
-
-
 
     /**
      * Calculate the squared distance between two points.
