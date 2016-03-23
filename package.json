@@ -8,10 +8,15 @@
     "lib": "lib"
   },
   "scripts": {
-    "compile": "babel -d lib/ src/",
+    "compile": "npm run compile-src && npm run compile-docs",
+    "compile-src": "babel -d lib/ src/",
     "compile-docs": "esdoc -c esdoc.json",
+    "bundle": "npm run bundle-prod && npm run bundle-dev",
+    "bundle-prod": "NODE_ENV=production webpack --config webpack.config.production.js",
+    "bundle-dev": "webpack --config webpack.config.js",
     "lint": "eslint ./",
-    "prepublish": "npm run compile && npm run compile-docs"
+    "test": "karma run",
+    "prepublish": "npm run compile && npm run bundle"
   },
   "keywords": [
     "geometry",
@@ -22,10 +27,27 @@
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-0": "^6.5.0",
     "esdoc": "^0.4.6",
     "esdoc-es7-plugin": "0.0.3",
-    "eslint": "^2.4.0"
+    "eslint": "^2.4.0",
+    "eslint-import-resolver-webpack": "^0.1.5",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-import": "^1.2.0",
+    "eslint-plugin-react": "^4.2.3",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-jasmine": "^0.3.8",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.4.5",
+    "webpack": "^1.12.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/basilfx/es6-geometry.git"
   }
 }
