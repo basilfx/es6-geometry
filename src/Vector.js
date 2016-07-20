@@ -5,7 +5,7 @@ import Point from './Point';
  *
  * A vector represents a displacement, using a x an y component to represent
  * the length (magnitude) and direction.
- * 
+ *
  * The difference between a Vector and a Point is explained in this source:
  * http://math.stackexchange.com/a/645827
  */
@@ -66,6 +66,17 @@ export default class Vector {
     }
 
     /**
+     * Create a new vector form a single value. In that case, both the x and y
+     * property will have the same value.
+     *
+     * @param {number} number Input number for x and y property.
+     * @return {Vector} Resulting vector.
+     */
+    static fromNumber(number) {
+        return new Vector(number, number);
+    }
+
+    /**
      * Get the x component.
      *
      * @return {number} The x component.
@@ -101,6 +112,9 @@ export default class Vector {
     }
 
     /**
+     * Subtract a given scalar from the `x` and `y` component of this vector.
+     *
+     * @param {number} that Scalar value to subtract.
      * @return {Vector}
      */
     subtract(that) {
@@ -108,6 +122,8 @@ export default class Vector {
     }
 
     /**
+     * Invert a vector, returning a copy with inverted magnitude and direction.
+     *
      * @return {Vector}
      */
     invert() {

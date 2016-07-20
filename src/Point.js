@@ -4,7 +4,7 @@ import Vector from './Vector';
  * Immutable point class.
  *
  * A point is an absolute place in space, at a given x and y coordinate.
- * 
+ *
  * The difference between a Point and a vector is explained in this source:
  * http://math.stackexchange.com/a/645827
  */
@@ -80,9 +80,9 @@ export default class Point {
      * Add a vector to a point.
      *
      * Note that addition of two points is undefined.
-     * 
+     *
      * @param {Vector} vector Vector to add to this point.
-     * @return {Point} Point with the vector added to it. 
+     * @return {Point} Point with the vector added to it.
      */
     add(vector) {
         if (vector instanceof Point) {
@@ -94,7 +94,7 @@ export default class Point {
 
     /**
      * Subtract a Point or a Vector.
-     * 
+     *
      * @param {Point|Vector} that Point or vector to subtract.
      * @return {Point} If `that` is a Vector, it will return the new point.
      * @return {Vector} If `that` is a Point, it will return the displacement.
@@ -109,7 +109,7 @@ export default class Point {
 
     /**
      * Invert the x and y coordinate, relative to (0, 0).
-     * 
+     *
      * @return {Point} Inverted point.
      */
     invert() {
