@@ -1,6 +1,6 @@
 {
   "name": "es6-geometry",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Collection of immutable ES6 classes for simple 2D geometric objects and calculations.",
   "main": "lib/index.js",
   "directories": {

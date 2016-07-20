@@ -1304,7 +1304,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Point from './Point';\nimport Vector from './Vector';\nimport Circle from './Circle';\n\n/**\n * Immutable rectangle class.\n */\nexport default class Rectangle {\n    /**\n     * Construct a new immutable rectangle of two points.\n     *\n     * @param {Point} a The `A` point..\n     * @param {Point} b The `B` point.\n     * @return {void}\n     */\n    constructor(a, b) {\n        this._a = a;\n        this._b = b;\n    }\n\n    /**\n     * Create a new rectangle from an array. The first index should be point\n     * `A` and the second index should be point `B`.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Rectangle} Resulting rectangle.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Rectangle(\n            Point.fromArray(array[0]),\n            Point.fromArray(array[1])\n        );\n    }\n\n    /**\n     * Create a new rectangle from an object. The object should have an `a` and\n     * `b` property.\n     *\n     * @param {object} object Input object with `a` and `b` property.\n     * @return {Rectangle} Resulting rectangle.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Rectangle(\n            Point.fromObject(object.a),\n            Point.fromObject(object.b)\n        );\n    }\n\n    /**\n     * Create a new rectangle from a (client) bounding rect from an element.\n     * However, it accepts any object with a `left`, `top, `width` and `height`\n     * property.\n     *\n     * @param {object} boundingRect Input bounding rectangle.\n     * @return {Rectangle}\n     */\n    static fromBoundingRect(boundingRect) {\n        return new Rectangle(\n            new Point(boundingRect.left, boundingRect.top),\n            new Point(\n                boundingRect.left + boundingRect.width,\n                boundingRect.top + boundingRect.height\n            )\n        );\n    }\n\n    /**\n     * Return point `A`.\n     *\n     * @return {Point} Point `A`.\n     */\n    get a() {\n        return this._a;\n    }\n\n    /**\n     * Return point `B`.\n     *\n     * @return {Point} Point `B`.\n     */\n    get b() {\n        return this._b;\n    }\n\n    /**\n     * Return the left x coordinate.\n     *\n     * @return {number} Left x coordinate.\n     */\n    get left() {\n        //return Math.min(this._a._x, this._b._x);\n        return this._a._x;\n    }\n\n    /**\n     * Return the right x coordinate.\n     *\n     * @return {number} Right x coordinate.\n     */\n    get right() {\n        //return Math.max(this._a._x, this._b._x);\n        return this._b._x;\n    }\n\n    /**\n     * Return the top y coordinate.\n     *\n     * @return {number} Top y coordinate.\n     */\n    get top() {\n        //return Math.min(this._a._y, this._b._y);\n        return this._a._y;\n    }\n\n    /**\n     * Return the bottom y coordinate.\n     *\n     * @return {number} Bottom y coordinate.\n     */\n    get bottom() {\n        //return Math.max(this._a._y, this._b._y);\n        return this._b._y;\n    }\n\n    /**\n     * Return the width of this rectangle, which is the difference between\n     * `this.right` and `this.left`.\n     *\n     * @return {number} Width of the rectangle.\n     */\n    get width() {\n        return this.right - this.left;\n    }\n\n    /**\n     * Return the height of this rectangle, which is the difference between\n     * `this.bottom` and `this.top`.\n     *\n     * @return {number} Height of the rectangle.\n     */\n    get height() {\n        return this.bottom - this.top;\n    }\n\n    /**\n     * Calculate the center point of this rectangle.\n     *\n     * @return {Point} Center of this rectangle.\n     */\n    center() {\n        const x = (this._a._x + this._b._x) / 2;\n        const y = (this._a._y + this._b._y) / 2;\n\n        return new Point(x, y);\n    }\n\n    /**\n     * Calculate the center point offset.\n     *\n     * @return {Vector} Relative center point offset of this rectangle.\n     */\n    centerOffset() {\n        return this.center().subtract(this._a);\n    }\n\n    /**\n     * Merge two rectangles, taking the bouding box that contains both\n     * rectangles.\n     *\n     * @param {Rectangle} rectangle Other rectangle to merge with.\n     * @return {Rectangle} New rectangle containing both rectangles.\n     */\n    merge(rectangle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must merge with another rectangle.');\n            }\n        }\n\n        const a = new Point(\n            Math.min(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),\n            Math.min(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)\n        );\n        const b = new Point(\n            Math.max(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),\n            Math.max(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)\n        );\n\n        return new Rectangle(a, b);\n    }\n\n    /**\n     * Move the rectangle by applying an offset to the points `a` and `b`.\n     *\n     * @param {Vector} vector Offset vector.\n     * @return {Rectangle} Moved rectangle.\n     */\n    move(vector) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(vector instanceof Vector)) {\n                throw new Error('Offset must be a vector.');\n            }\n        }\n\n        return new Rectangle(this._a.add(vector), this._b.add(vector));\n    }\n\n    /**\n     * Move the `a` point and `b` point of this rectangle individually.\n     *\n     * @param {Vector} vectorA Offset vector for `a` point.\n     * @param {Vector} vectorB Offset vector for `b` point.\n     * @return {Rectangle} Moved rectangle.\n     */\n    moveAB(vectorA, vectorB) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(vectorA instanceof Vector) || !(vectorB instanceof Vector)) {\n                throw new Error('Offset must be a vector.');\n            }\n        }\n\n        return new Rectangle(this._a.add(vectorA), this._b.add(vectorB));\n    }\n\n    /**\n     * Similar to move, but moves `a` and `b` in opposite directions by\n     * inverting the vector for `a`.\n     *\n     * This method may shrink the rectangle if the vector is negative, or if\n     * points `a` and `b` have been swapped. Normalize the\n     *\n     * @param {Vector} vector The offset vector to expand with.\n     * @return {Rectangle} Expanded rectangle.\n     */\n    expand(vector) {\n        return this.moveAB(vector.invert(), vector);\n    }\n\n    /**\n     * Returns true if a given point is on this rectangle.\n     *\n     * @param {Point} point Point to test with.\n     * @return {boolean} True if point is within rectangle.\n     */\n    containsPoint(point) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(point instanceof Point)) {\n                throw new Error('Must be a point.');\n            }\n        }\n\n        return (\n            (point._x >= this._a._x && point._x <= this._b._x) ||\n            (point._x >= this._b._x && point._x <= this._a._x)\n        ) && (\n            (point._y >= this._a._y && point._y <= this._b._y) ||\n            (point._y >= this._b._y && point._y <= this._a._y)\n        );\n    }\n\n    /**\n     * Returns true if a given rectangle is within this rectangle. That is,\n     * both point `A` and `B` are within this rectangle.\n     *\n     * @param {Rectangle} rectangle The rectangle to check for.\n     * @return {booleam} True if the rectangle is within this rectangle.\n     */\n    containsRectangle(rectangle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must be a rectangle.');\n            }\n        }\n\n        return this.containsPoint(rectangle.a) &&\n            this.containsPoint(rectangle.b);\n    }\n\n    /**\n     * Returns true if a given rectangle collides with this rectangle.\n     *\n     * @param {Rectangle} rectangle Other rectangle to compare with.\n     * @return {boolean} True if the given rectangle collides with this one.\n     */\n    collidesRectangle(rectangle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must be a rectangle.');\n            }\n        }\n\n        return (this._a._x < rectangle._b._x && this._b._x > rectangle._a._x &&\n            this._a._y < rectangle._b._y && this._b._y > rectangle._a._y);\n    }\n\n    /**\n     * Returns true if a given circle collides with this rectangle.\n     *\n     * @param {Circle} circle Other circle to compare with.\n     * @return {boolean} True if the given circles collides with this one.\n     */\n    collidesCircle(circle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(circle instanceof Circle)) {\n                throw new Error('Must be a circle.');\n            }\n        }\n\n        const clamp = (value, min, max) => Math.max(min, Math.min(max, value));\n\n        const closest = new Point(\n            clamp(circle._a._x, this._a._x, this._b._x),\n            clamp(circle._a._y, this._a._y, this._b._y)\n        );\n\n        return closest.distanceSq(circle._a) < (circle._r * circle._r);\n    }\n\n    /**\n     * Calculate the area of the given rectangle.\n     *\n     * @return {number} The rectangle area.\n     */\n    area() {\n        return (this._b._x - this._a._x) * (this._b._y - this._a._y);\n    }\n\n    /**\n     * Return an array representation of this instance.\n     *\n     * @return {Array} Array representation ([a, b]).\n     */\n    toArray() {\n        return [this._a.toArray(), this._b.toArray()];\n    }\n\n    /**\n     * Return an object representation of this instance.\n     *\n     * @return {object} Object representation (a, b).\n     */\n    toObject() {\n        return {\n            a: this._a.toObject(),\n            b: this._b.toObject(),\n        };\n    }\n\n    /**\n     * Return a string representation of this rectangle.\n     *\n     * @return {string} String representation.\n     */\n    toString() {\n        return `(${this._a.toString()}, ${this._b.toString()})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Rectangle} Cloned instance.\n     */\n    clone() {\n        return new Rectangle(this._a, this._b);\n    }\n\n    /**\n     * Return a normalize rectangle, with the `A` point in the top-left\n     * position and the `B` point in the bottom-right position.\n     *\n     * @return {Rectangle} The normalized rectangle.\n     */\n    normalize() {\n        return new Rectangle(\n            new Point(this.left, this.top),\n            new Point(this.right, this.bottom)\n        );\n    }\n\n    /**\n     * Return true if this rectangle is equal to another rectangle. Two\n     * rectangles are equal if and only if both points are equal. This means\n     * if two rectangles have the same left, right, top and bottom, they\n     * may not be equal, becaus they can be defined from different points.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both rectangles are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._a.equals(that._b) && this._b.equals(that._b);\n    }\n\n    /**\n     * Return true if the rectangle is defined and finite.\n     *\n     * @return {Boolean} True if rectangle is valid.\n     */\n    isValid() {\n        return this._a.isValid() && this._b.isValid();\n    }\n}\n"
+    "content": "import Point from './Point';\nimport Vector from './Vector';\nimport Circle from './Circle';\n\n/**\n * Immutable rectangle class.\n */\nexport default class Rectangle {\n    /**\n     * Construct a new immutable rectangle of two points.\n     *\n     * @param {Point} a The `A` point..\n     * @param {Point} b The `B` point.\n     * @return {void}\n     */\n    constructor(a, b) {\n        this._a = a;\n        this._b = b;\n    }\n\n    /**\n     * Create a new rectangle from an array. The first index should be point\n     * `A` and the second index should be point `B`.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Rectangle} Resulting rectangle.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Rectangle(\n            Point.fromArray(array[0]),\n            Point.fromArray(array[1])\n        );\n    }\n\n    /**\n     * Create a new rectangle from an object. The object should have an `a` and\n     * `b` property.\n     *\n     * @param {object} object Input object with `a` and `b` property.\n     * @return {Rectangle} Resulting rectangle.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Rectangle(\n            Point.fromObject(object.a),\n            Point.fromObject(object.b)\n        );\n    }\n\n    /**\n     * Create a new rectangle from a (client) bounding rect from an element.\n     * However, it accepts any object with a `left`, `top, `width` and `height`\n     * property.\n     *\n     * @param {object} boundingRect Input bounding rectangle.\n     * @return {Rectangle}\n     */\n    static fromBoundingRect(boundingRect) {\n        return new Rectangle(\n            new Point(boundingRect.left, boundingRect.top),\n            new Point(\n                boundingRect.left + boundingRect.width,\n                boundingRect.top + boundingRect.height\n            )\n        );\n    }\n\n    /**\n     * Return point `A`.\n     *\n     * @return {Point} Point `A`.\n     */\n    get a() {\n        return this._a;\n    }\n\n    /**\n     * Return point `B`.\n     *\n     * @return {Point} Point `B`.\n     */\n    get b() {\n        return this._b;\n    }\n\n    /**\n     * Return the left x coordinate.\n     *\n     * @return {number} Left x coordinate.\n     */\n    get left() {\n        //return Math.min(this._a._x, this._b._x);\n        return this._a._x;\n    }\n\n    /**\n     * Return the right x coordinate.\n     *\n     * @return {number} Right x coordinate.\n     */\n    get right() {\n        //return Math.max(this._a._x, this._b._x);\n        return this._b._x;\n    }\n\n    /**\n     * Return the top y coordinate.\n     *\n     * @return {number} Top y coordinate.\n     */\n    get top() {\n        //return Math.min(this._a._y, this._b._y);\n        return this._a._y;\n    }\n\n    /**\n     * Return the bottom y coordinate.\n     *\n     * @return {number} Bottom y coordinate.\n     */\n    get bottom() {\n        //return Math.max(this._a._y, this._b._y);\n        return this._b._y;\n    }\n\n    /**\n     * Return the width of this rectangle, which is the difference between\n     * `this.right` and `this.left`.\n     *\n     * @return {number} Width of the rectangle.\n     */\n    get width() {\n        return this.right - this.left;\n    }\n\n    /**\n     * Return the height of this rectangle, which is the difference between\n     * `this.bottom` and `this.top`.\n     *\n     * @return {number} Height of the rectangle.\n     */\n    get height() {\n        return this.bottom - this.top;\n    }\n\n    /**\n     * Calculate the center point of this rectangle.\n     *\n     * @return {Point} Center of this rectangle.\n     */\n    center() {\n        const x = (this._a._x + this._b._x) / 2;\n        const y = (this._a._y + this._b._y) / 2;\n\n        return new Point(x, y);\n    }\n\n    /**\n     * Calculate the center point offset.\n     *\n     * @return {Vector} Relative center point offset of this rectangle.\n     */\n    centerOffset() {\n        return this.center().subtract(this._a);\n    }\n\n    /**\n     * Merge two rectangles, taking the bouding box that contains both\n     * rectangles.\n     *\n     * @param {Rectangle} rectangle Other rectangle to merge with.\n     * @return {Rectangle} New rectangle containing both rectangles.\n     */\n    merge(rectangle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must merge with another rectangle.');\n            }\n        }\n\n        const a = new Point(\n            Math.min(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),\n            Math.min(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)\n        );\n        const b = new Point(\n            Math.max(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),\n            Math.max(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)\n        );\n\n        return new Rectangle(a, b);\n    }\n\n    /**\n     * Move the rectangle by applying an offset to the points `a` and `b`.\n     *\n     * @param {Vector} vector Offset vector.\n     * @return {Rectangle} Moved rectangle.\n     */\n    move(vector) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(vector instanceof Vector)) {\n                throw new Error('Offset must be a vector.');\n            }\n        }\n\n        return new Rectangle(this._a.add(vector), this._b.add(vector));\n    }\n\n    /**\n     * Move the `a` point and `b` point of this rectangle individually.\n     *\n     * @param {Vector} vectorA Offset vector for `a` point.\n     * @param {Vector} vectorB Offset vector for `b` point.\n     * @return {Rectangle} Moved rectangle.\n     */\n    moveAB(vectorA, vectorB) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(vectorA instanceof Vector) || !(vectorB instanceof Vector)) {\n                throw new Error('Offset must be a vector.');\n            }\n        }\n\n        return new Rectangle(this._a.add(vectorA), this._b.add(vectorB));\n    }\n\n    /**\n     * Similar to move, but moves `a` and `b` in opposite directions by\n     * inverting the vector for `a`.\n     *\n     * This method may shrink the rectangle if the vector is negative, or if\n     * points `a` and `b` have been swapped. Normalize the\n     *\n     * @param {Vector} vector The offset vector to expand with.\n     * @return {Rectangle} Expanded rectangle.\n     */\n    expand(vector) {\n        return this.moveAB(vector.invert(), vector);\n    }\n\n    /**\n     * Returns true if a given point is on this rectangle.\n     *\n     * @param {Point} point Point to test with.\n     * @return {boolean} True if point is within rectangle.\n     */\n    containsPoint(point) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(point instanceof Point)) {\n                throw new Error('Must be a point.');\n            }\n        }\n\n        return (\n            (point._x >= this._a._x && point._x <= this._b._x) ||\n            (point._x >= this._b._x && point._x <= this._a._x)\n        ) && (\n            (point._y >= this._a._y && point._y <= this._b._y) ||\n            (point._y >= this._b._y && point._y <= this._a._y)\n        );\n    }\n\n    /**\n     * Returns true if a given rectangle is within this rectangle. That is,\n     * both point `A` and `B` are within this rectangle.\n     *\n     * @param {Rectangle} rectangle The rectangle to check for.\n     * @return {booleam} True if the rectangle is within this rectangle.\n     */\n    containsRectangle(rectangle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must be a rectangle.');\n            }\n        }\n\n        return this.containsPoint(rectangle.a) &&\n            this.containsPoint(rectangle.b);\n    }\n\n    /**\n     * Returns true if a given rectangle collides with this rectangle.\n     *\n     * @param {Rectangle} rectangle Other rectangle to compare with.\n     * @return {boolean} True if the given rectangle collides with this one.\n     */\n    collidesRectangle(rectangle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must be a rectangle.');\n            }\n        }\n\n        return (this._a._x < rectangle._b._x && this._b._x > rectangle._a._x &&\n            this._a._y < rectangle._b._y && this._b._y > rectangle._a._y);\n    }\n\n    /**\n     * Returns true if a given circle collides with this rectangle.\n     *\n     * @param {Circle} circle Other circle to compare with.\n     * @return {boolean} True if the given circles collides with this one.\n     */\n    collidesCircle(circle) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(circle instanceof Circle)) {\n                throw new Error('Must be a circle.');\n            }\n        }\n\n        const clamp = (value, min, max) => Math.max(min, Math.min(max, value));\n\n        const closest = new Point(\n            clamp(circle._a._x, this._a._x, this._b._x),\n            clamp(circle._a._y, this._a._y, this._b._y)\n        );\n\n        return closest.distanceSq(circle._a) < (circle._r * circle._r);\n    }\n\n    /**\n     * Calculate the area of the given rectangle.\n     *\n     * @return {number} The rectangle area.\n     */\n    area() {\n        return (this._b._x - this._a._x) * (this._b._y - this._a._y);\n    }\n\n    /**\n     * Return an array representation of this instance.\n     *\n     * @return {Array} Array representation [a, b].\n     */\n    toArray() {\n        return [this._a.toArray(), this._b.toArray()];\n    }\n\n    /**\n     * Return an object representation of this instance.\n     *\n     * @return {object} Object representation {a, b}.\n     */\n    toObject() {\n        return {\n            a: this._a.toObject(),\n            b: this._b.toObject(),\n        };\n    }\n\n    /**\n     * Return an object representation of the bounding rectangle of this\n     * instance.\n     *\n     * @return {object} Object representation { left, top, width, height }.\n     */\n    toBoundingRect() {\n        return {\n            left: this.left,\n            top: this.top,\n            width: this.width,\n            height: this.height,\n        };\n    }\n\n    /**\n     * Return a string representation of this rectangle.\n     *\n     * @return {string} String representation.\n     */\n    toString() {\n        return `(${this._a.toString()}, ${this._b.toString()})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Rectangle} Cloned instance.\n     */\n    clone() {\n        return new Rectangle(this._a, this._b);\n    }\n\n    /**\n     * Return a normalize rectangle, with the `A` point in the top-left\n     * position and the `B` point in the bottom-right position.\n     *\n     * @return {Rectangle} The normalized rectangle.\n     */\n    normalize() {\n        return new Rectangle(\n            new Point(this.left, this.top),\n            new Point(this.right, this.bottom)\n        );\n    }\n\n    /**\n     * Return true if this rectangle is equal to another rectangle. Two\n     * rectangles are equal if and only if both points are equal. This means\n     * if two rectangles have the same left, right, top and bottom, they\n     * may not be equal, because they may have been defined from different\n     * points.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both rectangles are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._a.equals(that._b) && this._b.equals(that._b);\n    }\n\n    /**\n     * Return true if the rectangle is defined and finite.\n     *\n     * @return {Boolean} True if rectangle is valid.\n     */\n    isValid() {\n        return this._a.isValid() && this._b.isValid();\n    }\n}\n"
   },
   {
     "__docId__": 51,
@@ -2066,7 +2066,7 @@
         "Array"
       ],
       "spread": false,
-      "description": "Array representation ([a, b])."
+      "description": "Array representation [a, b]."
     },
     "generator": false
   },
@@ -2088,7 +2088,7 @@
         "object"
       ],
       "spread": false,
-      "description": "Object representation (a, b)."
+      "description": "Object representation {a, b}."
     },
     "generator": false
   },
@@ -2097,12 +2097,34 @@
     "kind": "method",
     "static": false,
     "variation": null,
+    "name": "toBoundingRect",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "longname": "src/Rectangle.js~Rectangle#toBoundingRect",
+    "access": null,
+    "description": "Return an object representation of the bounding rectangle of this\ninstance.",
+    "lineNumber": 367,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "Object representation { left, top, width, height }."
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 80,
+    "kind": "method",
+    "static": false,
+    "variation": null,
     "name": "toString",
     "memberof": "src/Rectangle.js~Rectangle",
     "longname": "src/Rectangle.js~Rectangle#toString",
     "access": null,
     "description": "Return a string representation of this rectangle.",
-    "lineNumber": 366,
+    "lineNumber": 381,
     "params": [],
     "return": {
       "nullable": null,
@@ -2115,7 +2137,7 @@
     "generator": false
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2124,7 +2146,7 @@
     "longname": "src/Rectangle.js~Rectangle#clone",
     "access": null,
     "description": "Create a shallow copy of this instance.",
-    "lineNumber": 375,
+    "lineNumber": 390,
     "params": [],
     "return": {
       "nullable": null,
@@ -2137,7 +2159,7 @@
     "generator": false
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2146,7 +2168,7 @@
     "longname": "src/Rectangle.js~Rectangle#normalize",
     "access": null,
     "description": "Return a normalize rectangle, with the `A` point in the top-left\nposition and the `B` point in the bottom-right position.",
-    "lineNumber": 385,
+    "lineNumber": 400,
     "params": [],
     "return": {
       "nullable": null,
@@ -2159,7 +2181,7 @@
     "generator": false
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2167,8 +2189,8 @@
     "memberof": "src/Rectangle.js~Rectangle",
     "longname": "src/Rectangle.js~Rectangle#equals",
     "access": null,
-    "description": "Return true if this rectangle is equal to another rectangle. Two\nrectangles are equal if and only if both points are equal. This means\nif two rectangles have the same left, right, top and bottom, they\nmay not be equal, becaus they can be defined from different points.",
-    "lineNumber": 401,
+    "description": "Return true if this rectangle is equal to another rectangle. Two\nrectangles are equal if and only if both points are equal. This means\nif two rectangles have the same left, right, top and bottom, they\nmay not be equal, because they may have been defined from different\npoints.",
+    "lineNumber": 417,
     "params": [
       {
         "nullable": null,
@@ -2192,7 +2214,7 @@
     "generator": false
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2201,7 +2223,7 @@
     "longname": "src/Rectangle.js~Rectangle#isValid",
     "access": null,
     "description": "Return true if the rectangle is defined and finite.",
-    "lineNumber": 411,
+    "lineNumber": 427,
     "params": [],
     "return": {
       "nullable": null,
@@ -2214,7 +2236,7 @@
     "generator": false
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2227,7 +2249,7 @@
     "content": "import Point from './Point';\n\n/**\n * Immutable vector class.\n *\n * A vector represents a displacement, using a x an y component to represent\n * the length (magnitude) and direction.\n *\n * The difference between a Vector and a Point is explained in this source:\n * http://math.stackexchange.com/a/645827\n */\nexport default class Vector {\n    /**\n     * Definition of the unit vector.\n     */\n    static Unit = new Vector(1, 1);\n\n    /**\n     * Construct a new vector, using a x and y component to represent the\n     * length (magnitude) and direction relative to (0, 0).\n     *\n     * An vector is immutable. All subsequent operations will return a new\n     * vector instance.\n     *\n     * @param {number} x The x component.\n     * @param {number} y The y component.\n     * @return {void}\n     */\n    constructor(x, y) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new vector from an array. The first index is considered the x\n     * component, the second index is considered the y component.\n     *\n     * @param {Array} array Input array with at least two values.\n     * @return {Vector} Resulting vector.\n     */\n    static fromArray(array) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Vector(array[0], array[1]);\n    }\n\n    /**\n     * Create a new vector from an object. The object should have an x and y\n     * property.\n     *\n     * @param {object} object Input object with x and y property.\n     * @return {Vector} Resulting vector.\n     */\n    static fromObject(object) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(object) !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Vector(object.x, object.y);\n    }\n\n    /**\n     * Create a new vector form a single value. In that case, both the x and y\n     * property will have the same value.\n     *\n     * @param {number} number Input number for x and y property.\n     * @return {Vector} Resulting vector.\n     */\n    static fromNumber(number) {\n        return new Vector(number, number);\n    }\n\n    /**\n     * Get the x component.\n     *\n     * @return {number} The x component.\n     */\n    get x() {\n        return this._x;\n    }\n\n    /**\n     * Get the y component.\n     *\n     * @return {number} The y component.\n     */\n    get y() {\n        return this._y;\n    }\n\n    /**\n     * Add another vector or point to this vector.\n     *\n     * If the input is a point, the result will be a point with this vector\n     * as offset.\n     *\n     * @param {Point|Vector} that Point or vector to add.\n     * @return {Point|Vector} New Vector if adding vector, point otherwise.\n     */\n    add(that) {\n        if (that instanceof Point) {\n            return that.add(this);\n        }\n\n        return new Vector(this._x + that._x, this._y + that._y);\n    }\n\n    /**\n     * Subtract a given scalar from the `x` and `y` component of this vector.\n     *\n     * @param {number} that Scalar value to subtract.\n     * @return {Vector}\n     */\n    subtract(that) {\n        return new Vector(this._x - that._x, this._y - that._y);\n    }\n\n    /**\n     * Invert a vector, returning a copy with inverted magnitude and direction.\n     *\n     * @return {Vector}\n     */\n    invert() {\n        return new Vector(-this._x, -this._y);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    multiply(scalar) {\n        return new Vector(this._x * scalar, this._y * scalar);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    multiplyXY(scalarX, scalarY) {\n        return new Vector(this._x * scalarX, this._y * scalarY);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    divide(scalar) {\n        return new Vector(this._x / scalar, this._y / scalar);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    divideXY(scalarX, scalarY) {\n        return new Vector(this._x / scalarX, this._y / scalarY);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    mix(that, amount = 0.5) {\n        return this.multiply(1 - amount).add(that.multiply(amount));\n    }\n\n    /**\n     * @return {Vector}\n     */\n    perpendicular() {\n        return new Vector(-this._y, this._x);\n    }\n\n    /**\n     * @return {Vector}\n     */\n    snap(to) {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Vector(round(this._x), round(this._y));\n    }\n\n    /**\n     * @return {number}\n     */\n    dot(that) {\n        return this._x * that._x + this._y * that._y;\n    }\n\n    /**\n     * @return {number}\n     */\n    angle() {\n        return Math.atan2(this._y, this._x);\n    }\n\n    /**\n     * @return {number}\n     */\n    angleDeg() {\n        return Math.atan2(this._y, this._x) * 180 / Math.PI;\n    }\n\n    /**\n     * @return {number}\n     */\n    slope() {\n        return this._y / this._x;\n    }\n\n    /**\n     * Calculate the squared length of this vector.\n     *\n     * If the exact length doesn't matter, this method is slightly faster\n     * than `this.length`.\n     *\n     * @return {number} The squared length of this vector.\n     */\n    lengthSq() {\n        return this._x * this._x + this._y * this._y;\n    }\n\n    /**\n     * Calculate the length (magnitude) of the vector.\n     *\n     * @return {number} The length of the vector.\n     */\n    length() {\n        return Math.sqrt(this.lengthSq());\n    }\n\n    /**\n     * [minLength description]\n     * @param {[type]} length [description]\n     * @return {[type]}\n     */\n    minLength(length) {\n        return this.length() < length ? this.normalize(length) : this;\n    }\n\n    maxLength(length) {\n        return this.length() > length ? this.normalize(length) : this;\n    }\n\n    normalize(scalar = 1) {\n        return this.divide(this.length()).multiply(scalar);\n    }\n\n    projectOnto(that) {\n        return that.multiply(this.dot(that) / that.lengthSq());\n    }\n\n    /**\n     * Convert vector into a point.\n     *\n     * Note: this is an utility method. A proper conversion does not exist.\n     *\n     * @return {Point} The vector converted as point.\n     */\n    toPoint() {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Convert this vector into an array.\n     *\n     * @return {Array} Array representation (x, y).\n     */\n    toArray() {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this vector into an object.\n     *\n     * @return {object} Object representation (x, y).\n     */\n    toObject() {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this vector into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString() {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this vector into a string representation, using a fixed number\n     * of digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits) {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof(digits) !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Vector} Cloned instance.\n     */\n    clone() {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Return true if this vector is equal to another vector. Two vectors are\n     * equal when both x and y components are equal.\n     *\n     * @param {object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that) {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the vector is defined and finite.\n     *\n     * @return {Boolean} True if vector is fully defined and valid.\n     */\n    isValid() {\n        return typeof(this._x) === 'number' && isFinite(this._x) &&\n            typeof(this._y) === 'number' && isFinite(this._y);\n    }\n}\n"
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -2243,7 +2265,7 @@
     "interface": false
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -2286,7 +2308,7 @@
     "generator": false
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -2304,7 +2326,7 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -2322,7 +2344,7 @@
     }
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
     "kind": "method",
     "static": true,
     "variation": null,
@@ -2355,7 +2377,7 @@
     "generator": false
   },
   {
-    "__docId__": 90,
+    "__docId__": 91,
     "kind": "method",
     "static": true,
     "variation": null,
@@ -2388,7 +2410,7 @@
     "generator": false
   },
   {
-    "__docId__": 91,
+    "__docId__": 92,
     "kind": "method",
     "static": true,
     "variation": null,
@@ -2421,7 +2443,7 @@
     "generator": false
   },
   {
-    "__docId__": 92,
+    "__docId__": 93,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -2447,7 +2469,7 @@
     "generator": false
   },
   {
-    "__docId__": 93,
+    "__docId__": 94,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -2473,7 +2495,7 @@
     "generator": false
   },
   {
-    "__docId__": 94,
+    "__docId__": 95,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2508,7 +2530,7 @@
     "generator": false
   },
   {
-    "__docId__": 95,
+    "__docId__": 96,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2541,7 +2563,7 @@
     "generator": false
   },
   {
-    "__docId__": 96,
+    "__docId__": 97,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2563,7 +2585,7 @@
     "generator": false
   },
   {
-    "__docId__": 97,
+    "__docId__": 98,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2592,7 +2614,7 @@
     "generator": false
   },
   {
-    "__docId__": 98,
+    "__docId__": 99,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2627,7 +2649,7 @@
     "generator": false
   },
   {
-    "__docId__": 99,
+    "__docId__": 100,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2656,7 +2678,7 @@
     "generator": false
   },
   {
-    "__docId__": 100,
+    "__docId__": 101,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2691,7 +2713,7 @@
     "generator": false
   },
   {
-    "__docId__": 101,
+    "__docId__": 102,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2729,7 +2751,7 @@
     "generator": false
   },
   {
-    "__docId__": 102,
+    "__docId__": 103,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2751,7 +2773,7 @@
     "generator": false
   },
   {
-    "__docId__": 103,
+    "__docId__": 104,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2780,7 +2802,7 @@
     "generator": false
   },
   {
-    "__docId__": 104,
+    "__docId__": 105,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2809,7 +2831,7 @@
     "generator": false
   },
   {
-    "__docId__": 105,
+    "__docId__": 106,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2831,7 +2853,7 @@
     "generator": false
   },
   {
-    "__docId__": 106,
+    "__docId__": 107,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2853,7 +2875,7 @@
     "generator": false
   },
   {
-    "__docId__": 107,
+    "__docId__": 108,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2875,7 +2897,7 @@
     "generator": false
   },
   {
-    "__docId__": 108,
+    "__docId__": 109,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2897,7 +2919,7 @@
     "generator": false
   },
   {
-    "__docId__": 109,
+    "__docId__": 110,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2919,7 +2941,7 @@
     "generator": false
   },
   {
-    "__docId__": 110,
+    "__docId__": 111,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2952,7 +2974,7 @@
     "generator": false
   },
   {
-    "__docId__": 111,
+    "__docId__": 112,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2979,7 +3001,7 @@
     "generator": false
   },
   {
-    "__docId__": 112,
+    "__docId__": 113,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3009,7 +3031,7 @@
     "generator": false
   },
   {
-    "__docId__": 113,
+    "__docId__": 114,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3036,7 +3058,7 @@
     "generator": false
   },
   {
-    "__docId__": 114,
+    "__docId__": 115,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3058,7 +3080,7 @@
     "generator": false
   },
   {
-    "__docId__": 115,
+    "__docId__": 116,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3080,7 +3102,7 @@
     "generator": false
   },
   {
-    "__docId__": 116,
+    "__docId__": 117,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3102,7 +3124,7 @@
     "generator": false
   },
   {
-    "__docId__": 117,
+    "__docId__": 118,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3124,7 +3146,7 @@
     "generator": false
   },
   {
-    "__docId__": 118,
+    "__docId__": 119,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3157,7 +3179,7 @@
     "generator": false
   },
   {
-    "__docId__": 119,
+    "__docId__": 120,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3179,7 +3201,7 @@
     "generator": false
   },
   {
-    "__docId__": 120,
+    "__docId__": 121,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3212,7 +3234,7 @@
     "generator": false
   },
   {
-    "__docId__": 121,
+    "__docId__": 122,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -3234,7 +3256,7 @@
     "generator": false
   },
   {
-    "__docId__": 122,
+    "__docId__": 123,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3247,7 +3269,7 @@
     "content": "import Circle from './Circle';\nimport Point from './Point';\nimport Rectangle from './Rectangle';\nimport Vector from './Vector';\n\nexport {\n    Circle, Point, Rectangle, Vector,\n};\n"
   },
   {
-    "__docId__": 124,
+    "__docId__": 125,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3260,7 +3282,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 126,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3273,7 +3295,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 127,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3286,7 +3308,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 127,
+    "__docId__": 128,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3299,7 +3321,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 129,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3312,7 +3334,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 129,
+    "__docId__": 130,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3325,7 +3347,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 130,
+    "__docId__": 131,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3338,7 +3360,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 132,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3351,7 +3373,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 132,
+    "__docId__": 133,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3364,7 +3386,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 133,
+    "__docId__": 134,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3377,7 +3399,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 134,
+    "__docId__": 135,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3390,7 +3412,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 136,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3403,7 +3425,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 136,
+    "__docId__": 137,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3416,7 +3438,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 137,
+    "__docId__": 138,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3429,7 +3451,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 138,
+    "__docId__": 139,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3442,7 +3464,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 139,
+    "__docId__": 140,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3455,7 +3477,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 140,
+    "__docId__": 141,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3468,7 +3490,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 141,
+    "__docId__": 142,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3481,7 +3503,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 142,
+    "__docId__": 143,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3494,7 +3516,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 143,
+    "__docId__": 144,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3507,7 +3529,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 144,
+    "__docId__": 145,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3520,7 +3542,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 145,
+    "__docId__": 146,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3533,7 +3555,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 146,
+    "__docId__": 147,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3546,7 +3568,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 147,
+    "__docId__": 148,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3559,7 +3581,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 148,
+    "__docId__": 149,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3572,7 +3594,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 149,
+    "__docId__": 150,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3585,7 +3607,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 150,
+    "__docId__": 151,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3598,7 +3620,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 151,
+    "__docId__": 152,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3611,7 +3633,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 152,
+    "__docId__": 153,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3624,7 +3646,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 153,
+    "__docId__": 154,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3637,7 +3659,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 154,
+    "__docId__": 155,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3650,7 +3672,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 155,
+    "__docId__": 156,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3663,7 +3685,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 156,
+    "__docId__": 157,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3676,7 +3698,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 157,
+    "__docId__": 158,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3689,7 +3711,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 158,
+    "__docId__": 159,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3702,7 +3724,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 159,
+    "__docId__": 160,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3715,7 +3737,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 160,
+    "__docId__": 161,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3728,7 +3750,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 161,
+    "__docId__": 162,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3741,7 +3763,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 162,
+    "__docId__": 163,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3754,7 +3776,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 163,
+    "__docId__": 164,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3767,7 +3789,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 164,
+    "__docId__": 165,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3780,7 +3802,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 165,
+    "__docId__": 166,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3793,7 +3815,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 166,
+    "__docId__": 167,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3806,7 +3828,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 167,
+    "__docId__": 168,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3819,7 +3841,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 168,
+    "__docId__": 169,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3832,7 +3854,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 169,
+    "__docId__": 170,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3845,7 +3867,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 170,
+    "__docId__": 171,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3858,7 +3880,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 172,
+    "__docId__": 173,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3871,7 +3893,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 173,
+    "__docId__": 174,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3884,7 +3906,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 174,
+    "__docId__": 175,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3897,7 +3919,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 175,
+    "__docId__": 176,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3910,7 +3932,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 176,
+    "__docId__": 177,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3923,7 +3945,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 177,
+    "__docId__": 178,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3936,7 +3958,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 178,
+    "__docId__": 179,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3949,7 +3971,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 179,
+    "__docId__": 180,
     "kind": "external",
     "static": true,
     "variation": null,

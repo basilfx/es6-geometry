@@ -1,7 +1,7 @@
 {
-  "coverage": "97.27%",
-  "expectCount": 110,
-  "actualCount": 107,
+  "coverage": "97.29%",
+  "expectCount": 111,
+  "actualCount": 108,
   "files": {
     "src/Circle.js": {
       "expectCount": 14,
@@ -14,8 +14,8 @@
       "undocumentLines": []
     },
     "src/Rectangle.js": {
-      "expectCount": 31,
-      "actualCount": 31,
+      "expectCount": 32,
+      "actualCount": 32,
       "undocumentLines": []
     },
     "src/Vector.js": {

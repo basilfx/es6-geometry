@@ -762,6 +762,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/rectangle.js~rectangle#toboundingrect",
+    "class/src/Rectangle.js~Rectangle.html#instance-method-toBoundingRect",
+    "src/Rectangle.js~Rectangle#toBoundingRect",
+    "method"
+  ],
+  [
     "src/rectangle.js~rectangle#toobject",
     "class/src/Rectangle.js~Rectangle.html#instance-method-toObject",
     "src/Rectangle.js~Rectangle#toObject",
