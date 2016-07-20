@@ -50,6 +50,23 @@
 </ul>
 <h2 id="installation">Installation</h2>
 <p><code>npm install --save git+https://github.com/basilfx/es6-geometry</code></p>
+<h2 id="usage">Usage</h2>
+<p>As an example:</p>
+<pre><code class="lang-es6"><code class="source-code prettyprint">import { Point, Rectangle, Vector } from &apos;es6-geometry&apos;;
+
+// A vector is an offset with a certain length (magnitude) and direction.
+const vector = Vector.fromArray([100, 100]);
+
+// A rectangle is defined by two points.
+const rectangle = new Rectangle(
+    new Point(10, 10),
+    new Point(20, 20)
+);
+
+// Operations are immutable.
+const newRectangle = rectangle.move(vector);</code>
+</code></pre>
+<p>See the documentation for more information.</p>
 <h2 id="license">License</h2>
 <p>See the <code>LICENSE.md</code> file (MIT).</p>
 </div>
