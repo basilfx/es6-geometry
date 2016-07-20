@@ -125,6 +125,32 @@ the length (magnitude) and direction.</p>
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromNumber">fromNumber</a></span></span><span data-ice="signature">(number: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a new vector form a single value.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromObject">fromObject</a></span></span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
@@ -460,7 +486,8 @@ length (magnitude) and direction relative to (0, 0).</p>
       <div>
         
         
-        
+        <div data-ice="description"><p>Invert a vector, returning a copy with inverted magnitude and direction.</p>
+</div>
       </div>
     </td>
     <td>
@@ -808,13 +835,14 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-subtract">subtract</a></span></span><span data-ice="signature">(that: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-subtract">subtract</a></span></span><span data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Subtract a given scalar from the <code>x</code> and <code>y</code> component of this vector.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1033,6 +1061,76 @@ component, the second index is considered the y component.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-fromNumber">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    <span data-ice="name">fromNumber</span><span data-ice="signature">(number: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber75">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create a new vector form a single value. In that case, both the x and y
+property will have the same value.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">number</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Input number for x and y property.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
+</td>
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-method-fromObject">
     <span class="access" data-ice="access">public</span>
     <span data-ice="static">static</span>
@@ -1197,7 +1295,7 @@ vector instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber73">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber84">source</a></span></span>
     </span>
   </h3>
 
@@ -1249,7 +1347,7 @@ vector instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber82">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber93">source</a></span></span>
     </span>
   </h3>
 
@@ -1304,7 +1402,7 @@ vector instance.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber95">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber106">source</a></span></span>
     </span>
   </h3>
 
@@ -1375,7 +1473,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber178">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber194">source</a></span></span>
     </span>
   </h3>
 
@@ -1425,7 +1523,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber185">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber201">source</a></span></span>
     </span>
   </h3>
 
@@ -1475,7 +1573,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber298">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber314">source</a></span></span>
     </span>
   </h3>
 
@@ -1527,7 +1625,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber134">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber150">source</a></span></span>
     </span>
   </h3>
 
@@ -1593,7 +1691,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber157">source</a></span></span>
     </span>
   </h3>
 
@@ -1665,7 +1763,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber171">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber187">source</a></span></span>
     </span>
   </h3>
 
@@ -1731,7 +1829,7 @@ as offset.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber309">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber325">source</a></span></span>
     </span>
   </h3>
 
@@ -1801,14 +1899,15 @@ equal when both x and y components are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber113">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber129">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Invert a vector, returning a copy with inverted magnitude and direction.</p>
+</div>
 
   
 
@@ -1851,7 +1950,7 @@ equal when both x and y components are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber319">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber335">source</a></span></span>
     </span>
   </h3>
 
@@ -1903,7 +2002,7 @@ equal when both x and y components are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber213">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber229">source</a></span></span>
     </span>
   </h3>
 
@@ -1955,7 +2054,7 @@ equal when both x and y components are equal.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber204">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber220">source</a></span></span>
     </span>
   </h3>
 
@@ -2009,7 +2108,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber226">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber242">source</a></span></span>
     </span>
   </h3>
 
@@ -2075,7 +2174,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber222">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber238">source</a></span></span>
     </span>
   </h3>
 
@@ -2143,7 +2242,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber148">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber164">source</a></span></span>
     </span>
   </h3>
 
@@ -2216,7 +2315,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber120">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber136">source</a></span></span>
     </span>
   </h3>
 
@@ -2282,7 +2381,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber127">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber143">source</a></span></span>
     </span>
   </h3>
 
@@ -2354,7 +2453,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber230">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber246">source</a></span></span>
     </span>
   </h3>
 
@@ -2421,7 +2520,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber155">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber171">source</a></span></span>
     </span>
   </h3>
 
@@ -2471,7 +2570,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber234">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber250">source</a></span></span>
     </span>
   </h3>
 
@@ -2537,7 +2636,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber192">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber208">source</a></span></span>
     </span>
   </h3>
 
@@ -2587,7 +2686,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber162">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber178">source</a></span></span>
     </span>
   </h3>
 
@@ -2649,18 +2748,19 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">subtract</span><span data-ice="signature">(that: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    <span data-ice="name">subtract</span><span data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber106">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber120">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Subtract a given scalar from the <code>x</code> and <code>y</code> component of this vector.</p>
+</div>
 
   
 
@@ -2674,9 +2774,10 @@ than <code>this.length</code>.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Scalar value to subtract.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2719,7 +2820,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber254">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber270">source</a></span></span>
     </span>
   </h3>
 
@@ -2771,7 +2872,7 @@ than <code>this.length</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber283">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber299">source</a></span></span>
     </span>
   </h3>
 
@@ -2841,7 +2942,7 @@ of digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber263">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber279">source</a></span></span>
     </span>
   </h3>
 
@@ -2893,7 +2994,7 @@ of digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber245">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber261">source</a></span></span>
     </span>
   </h3>
 
@@ -2946,7 +3047,7 @@ of digits for displaying.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber272">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber288">source</a></span></span>
     </span>
   </h3>
 
@@ -2991,7 +3092,7 @@ of digits for displaying.</p>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
 </footer>
 
 <script src="script/search_index.js"></script>

@@ -121,7 +121,33 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html#static-method-fromObject">fromObject</a></span></span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+           <span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html#static-method-fromBoundingRect">fromBoundingRect</a></span></span><span data-ice="signature">(boundingRect: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a new rectangle from a (client) bounding rect from an element.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html#static-method-fromObject">fromObject</a></span></span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span>
         </p>
       </div>
       <div>
@@ -638,6 +664,33 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html#instance-method-expand">expand</a></span></span><span data-ice="signature">(vector: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Similar to move, but moves <code>a</code> and <code>b</code> in opposite directions by
+inverting the vector for <code>a</code>.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html#instance-method-isValid">isValid</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
         </p>
       </div>
@@ -917,13 +970,83 @@ position and the <code>B</code> point in the bottom-right position.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-fromBoundingRect">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    <span data-ice="name">fromBoundingRect</span><span data-ice="signature">(boundingRect: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber69">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create a new rectangle from a (client) bounding rect from an element.
+However, it accepts any object with a <code>left</code>, <code>top,</code>width<code>and</code>height`
+property.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">boundingRect</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Input bounding rectangle.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-method-fromObject">
     <span class="access" data-ice="access">public</span>
     <span data-ice="static">static</span>
     
     
     
-    <span data-ice="name">fromObject</span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    <span data-ice="name">fromObject</span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span>
     <span class="right-info">
       
       
@@ -964,7 +1087,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></td>
         <td class="return-desc" data-ice="returnDescription"><p>Resulting rectangle.</p>
 </td>
       </tr>
@@ -1078,7 +1201,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber66">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber84">source</a></span></span>
     </span>
   </h3>
 
@@ -1130,7 +1253,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber93">source</a></span></span>
     </span>
   </h3>
 
@@ -1182,7 +1305,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber114">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber132">source</a></span></span>
     </span>
   </h3>
 
@@ -1234,7 +1357,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber135">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber153">source</a></span></span>
     </span>
   </h3>
 
@@ -1287,7 +1410,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber84">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber102">source</a></span></span>
     </span>
   </h3>
 
@@ -1339,7 +1462,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber94">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber112">source</a></span></span>
     </span>
   </h3>
 
@@ -1391,7 +1514,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber104">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber122">source</a></span></span>
     </span>
   </h3>
 
@@ -1443,7 +1566,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber125">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber143">source</a></span></span>
     </span>
   </h3>
 
@@ -1499,7 +1622,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber304">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber336">source</a></span></span>
     </span>
   </h3>
 
@@ -1551,7 +1674,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber144">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber162">source</a></span></span>
     </span>
   </h3>
 
@@ -1603,7 +1726,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber156">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber174">source</a></span></span>
     </span>
   </h3>
 
@@ -1655,7 +1778,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber343">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber375">source</a></span></span>
     </span>
   </h3>
 
@@ -1707,7 +1830,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber282">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber314">source</a></span></span>
     </span>
   </h3>
 
@@ -1776,7 +1899,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber265">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber297">source</a></span></span>
     </span>
   </h3>
 
@@ -1845,7 +1968,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber225">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber257">source</a></span></span>
     </span>
   </h3>
 
@@ -1914,7 +2037,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber248">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber280">source</a></span></span>
     </span>
   </h3>
 
@@ -1984,7 +2107,7 @@ both point <code>A</code> and <code>B</code> are within this rectangle.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber369">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber401">source</a></span></span>
     </span>
   </h3>
 
@@ -2046,6 +2169,78 @@ may not be equal, becaus they can be defined from different points.</p>
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-expand">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">expand</span><span data-ice="signature">(vector: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber247">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Similar to move, but moves <code>a</code> and <code>b</code> in opposite directions by
+inverting the vector for <code>a</code>.</p>
+<p>This method may shrink the rectangle if the vector is negative, or if
+points <code>a</code> and <code>b</code> have been swapped. Normalize the</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">vector</td>
+      <td data-ice="type"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The offset vector to expand with.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></td>
+        <td class="return-desc" data-ice="returnDescription"><p>Expanded rectangle.</p>
+</td>
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-isValid">
     <span class="access" data-ice="access">public</span>
     
@@ -2056,7 +2251,7 @@ may not be equal, becaus they can be defined from different points.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber379">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber411">source</a></span></span>
     </span>
   </h3>
 
@@ -2108,7 +2303,7 @@ may not be equal, becaus they can be defined from different points.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber167">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber185">source</a></span></span>
     </span>
   </h3>
 
@@ -2178,7 +2373,7 @@ rectangles.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber192">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber210">source</a></span></span>
     </span>
   </h3>
 
@@ -2247,7 +2442,7 @@ rectangles.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber209">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber227">source</a></span></span>
     </span>
   </h3>
 
@@ -2323,7 +2518,7 @@ rectangles.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber353">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber385">source</a></span></span>
     </span>
   </h3>
 
@@ -2376,7 +2571,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber313">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber345">source</a></span></span>
     </span>
   </h3>
 
@@ -2428,7 +2623,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber322">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber354">source</a></span></span>
     </span>
   </h3>
 
@@ -2480,7 +2675,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber334">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Rectangle.js.html#lineNumber366">source</a></span></span>
     </span>
   </h3>
 
@@ -2525,7 +2720,7 @@ position and the <code>B</code> point in the bottom-right position.</p>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
 </footer>
 
 <script src="script/search_index.js"></script>

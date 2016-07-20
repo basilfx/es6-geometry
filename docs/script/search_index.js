@@ -702,6 +702,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/rectangle.js~rectangle#expand",
+    "class/src/Rectangle.js~Rectangle.html#instance-method-expand",
+    "src/Rectangle.js~Rectangle#expand",
+    "method"
+  ],
+  [
     "src/rectangle.js~rectangle#height",
     "class/src/Rectangle.js~Rectangle.html#instance-get-height",
     "src/Rectangle.js~Rectangle#height",
@@ -783,6 +789,12 @@ window.esdocSearchIndex = [
     "src/rectangle.js~rectangle.fromarray",
     "class/src/Rectangle.js~Rectangle.html#static-method-fromArray",
     "src/Rectangle.js~Rectangle.fromArray",
+    "method"
+  ],
+  [
+    "src/rectangle.js~rectangle.fromboundingrect",
+    "class/src/Rectangle.js~Rectangle.html#static-method-fromBoundingRect",
+    "src/Rectangle.js~Rectangle.fromBoundingRect",
     "method"
   ],
   [
@@ -987,6 +999,12 @@ window.esdocSearchIndex = [
     "src/vector.js~vector.fromarray",
     "class/src/Vector.js~Vector.html#static-method-fromArray",
     "src/Vector.js~Vector.fromArray",
+    "method"
+  ],
+  [
+    "src/vector.js~vector.fromnumber",
+    "class/src/Vector.js~Vector.html#static-method-fromNumber",
+    "src/Vector.js~Vector.fromNumber",
     "method"
   ],
   [
