@@ -22,11 +22,12 @@
         "templateStrings": true,
         "unicodePointEscapes": true,
         "globalReturn": false,
-        "jsx": true
+        "jsx": true,
     },
     "env": {
         "browser": true,
-        "node": true
+        "jasmine": true,
+        "node": true,
     },
     "globals": {
         "DEBUG": false,
@@ -34,8 +35,9 @@
     "parser": "babel-eslint",
     "plugins": [
         "babel",
-        "react",
         "import",
+        "jasmine",
+        "react",
     ],
     "settings": {
         /* Imports */
