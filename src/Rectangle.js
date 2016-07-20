@@ -340,7 +340,7 @@ export default class Rectangle {
     /**
      * Return an array representation of this instance.
      *
-     * @return {Array} Array representation ([a, b]).
+     * @return {Array} Array representation [a, b].
      */
     toArray() {
         return [this._a.toArray(), this._b.toArray()];
@@ -349,12 +349,27 @@ export default class Rectangle {
     /**
      * Return an object representation of this instance.
      *
-     * @return {object} Object representation (a, b).
+     * @return {object} Object representation {a, b}.
      */
     toObject() {
         return {
             a: this._a.toObject(),
             b: this._b.toObject(),
+        };
+    }
+
+    /**
+     * Return an object representation of the bounding rectangle of this
+     * instance.
+     *
+     * @return {object} Object representation { left, top, width, height }.
+     */
+    toBoundingRect() {
+        return {
+            left: this.left,
+            top: this.top,
+            width: this.width,
+            height: this.height,
         };
     }
 
@@ -393,7 +408,8 @@ export default class Rectangle {
      * Return true if this rectangle is equal to another rectangle. Two
      * rectangles are equal if and only if both points are equal. This means
      * if two rectangles have the same left, right, top and bottom, they
-     * may not be equal, becaus they can be defined from different points.
+     * may not be equal, because they may have been defined from different
+     * points.
      *
      * @param {object} that Other instance to compare to.
      * @return {boolean} True if both rectangles are equal, false otherwise.
