@@ -2,12 +2,12 @@
 Collection of immutable ES6 classes for simple 2D geometric objects and calculations.
 
 ## Features
-* Immutable classes
-* Optional checking (zero overhead in production)
-* Inspired by [Victor.js](http://victorjs.org/)
+* Immutable classes.
+* Arguments checking (zero overhead in production).
+* Inspired by [Victor.js](http://victorjs.org/).
 
 ## Installation
-`npm install --save git+https://github.com/basilfx/es6-geometry`
+`npm install --save es6-geometry`
 
 ## Usage
 As an example:
@@ -24,11 +24,16 @@ const rectangle = new Rectangle(
     new Point(20, 20)
 );
 
-// Operations are immutable.
+// Operations are immutable: rectangle remains untouched.
 const newRectangle = rectangle.move(vector);
 ```
 
 See the documentation for more information.
+
+## Development
+To (re)compile, run `npm run compile`. If you prefer to have a Webpack bundle, run `npm run bundle`.
+
+Tests can be invoked using `npm run test`. Karma is used as a test runner.
 
 ## License
 See the `LICENSE.md` file (MIT).
