@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/LineSegment.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Circle.js~Circle.html">Circle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Line.js~Line.html">Line</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Point.js~Point.html">Point</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/LineSegment.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+
+/**
+ * Immutable line class.
+ *
+ * A line is defined by two points, `a` and `b`. It has no thickness and its
+ * length is inifite (e.g. it extends beyond point `a` and `b`).
+ */
+export default class LineSegment {
+    /**
+     * Construct a new immutable line out of two points.
+     *
+     * @param {Point} a The `A` point..
+     * @param {Point} b The `B` point.
+     * @return {void}
+     */
+    constructor(a, b) {
+        this._a = a;
+        this._b = b;
+    }
+
+    /**
+     * Return point `A`.
+     *
+     * @return {Point} Point `A`.
+     */
+    get a() {
+        return this._a;
+    }
+
+    /**
+     * Return point `B`.
+     *
+     * @return {Point} Point `B`.
+     */
+    get b() {
+        return this._b;
+    }
+
+    /**
+     * Return the length.
+     *
+     * @return {float} length of line, which is infinity, per definition.
+     */
+    get length() {
+        return this._a.distance(this._b);
+    }
+
+    /**
+     * Calculate the intersection point of the two line segments. If there is
+     * no intersection, this method returns null.
+     *
+     * Algorithm is based on http://stackoverflow.com/a/35457290/1423623.
+     *
+     * @param {LineSegment} other The other line segment.
+     * @return {Point?} Point of intersection, if any.
+     */
+    intersection(other) {
+        const dx1 = this._b._x - this._a._x;
+        const dy1 = this._b._y - this._a._y;
+
+        const dx2 = other._b._x - other._a._x;
+        const dy2 = other._b._y - other._a._y;
+
+        const dx3 = this._a._x - other._a._x;
+        const dy3 = this._a._y - other._a._y;
+
+        const d = dx1 * dy2 - dx2 * dy1;
+
+        if (d !== 0) {
+            const s = dx1 * dy3 - dx3 * dy1;
+
+            if ((s &lt;= 0 &amp;&amp; d &lt; 0 &amp;&amp; s &gt;= d) || (s &gt;= 0 &amp;&amp; d &gt; 0 &amp;&amp; s &lt;= d)) {
+                const t = dx2 * dy3 - dx3 * dy2;
+
+                if ((t &lt;= 0 &amp;&amp; d &lt; 0 &amp;&amp; t &gt; d) || (t &gt;= 0 &amp;&amp; d &gt; 0 &amp;&amp; t &lt; d)) {
+                    const u = t / d;
+
+                    return new Point(
+                        this._a._x + u * dx1,
+                        this._a._y + u * dy1
+                    );
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Create a shallow copy of this instance.
+     *
+     * @return {LineSegment} Cloned instance.
+     */
+    clone() {
+        return new LineSegment(this._a, this._b);
+    }
+
+    /**
+     * Return true if the line segment is defined and finite.
+     *
+     * @return {Boolean} True if line segment is valid.
+     */
+    isValid() {
+        return this._a.isValid() &amp;&amp; this._b.isValid();
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

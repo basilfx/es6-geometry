@@ -33,6 +33,8 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Circle.js~Circle.html">Circle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Line.js~Line.html">Line</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Point.js~Point.html">Point</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span></li>
@@ -44,12 +46,12 @@
 <p>Collection of immutable ES6 classes for simple 2D geometric objects and calculations.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li>Immutable classes</li>
-<li>Optional checking (zero overhead in production)</li>
-<li>Inspired by <a href="http://victorjs.org/">Victor.js</a></li>
+<li>Immutable classes.</li>
+<li>Arguments checking (zero overhead in production).</li>
+<li>Inspired by <a href="http://victorjs.org/">Victor.js</a>.</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p><code>npm install --save git+https://github.com/basilfx/es6-geometry</code></p>
+<p><code>npm install --save es6-geometry</code></p>
 <h2 id="usage">Usage</h2>
 <p>As an example:</p>
 <pre><code class="lang-es6"><code class="source-code prettyprint">import { Point, Rectangle, Vector } from &apos;es6-geometry&apos;;
@@ -63,10 +65,13 @@ const rectangle = new Rectangle(
     new Point(20, 20)
 );
 
-// Operations are immutable.
+// Operations are immutable: rectangle remains untouched.
 const newRectangle = rectangle.move(vector);</code>
 </code></pre>
 <p>See the documentation for more information.</p>
+<h2 id="development">Development</h2>
+<p>To (re)compile, run <code>npm run compile</code>. If you prefer to have a Webpack bundle, run <code>npm run bundle</code>.</p>
+<p>Tests can be invoked using <code>npm run test</code>. Karma is used as a test runner.</p>
 <h2 id="license">License</h2>
 <p>See the <code>LICENSE.md</code> file (MIT).</p>
 </div>

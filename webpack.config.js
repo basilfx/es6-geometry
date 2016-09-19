@@ -29,13 +29,14 @@ module.exports = {
         ],
     },
     plugins: [
+        new webpack.NamedModulesPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.WatchIgnorePlugin([
             path.resolve('./node_modules'),
         ]),
     ],
     output: {
-        path: './dist/',
+        path: path.resolve('./dist/'),
         filename: 'es6-geometry.js',
     },
     resolve: {

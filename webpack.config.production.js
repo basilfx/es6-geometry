@@ -18,7 +18,7 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
     ],
     output: {
-        path: './dist/',
+        path: config.output.path,
         filename: 'es6-geometry.min.js',
     },
     resolve: config.resolve,

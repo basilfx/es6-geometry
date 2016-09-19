@@ -33,6 +33,8 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Circle.js~Circle.html">Circle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Line.js~Line.html">Line</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Point.js~Point.html">Point</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Rectangle.js~Rectangle.html">Rectangle</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span></li>
@@ -42,6 +44,7 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/Rectangle.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+import LineSegment from &apos;./LineSegment&apos;;
 import Vector from &apos;./Vector&apos;;
 import Circle from &apos;./Circle&apos;;
 
@@ -107,7 +110,7 @@ export default class Rectangle {
      * property.
      *
      * @param {object} boundingRect Input bounding rectangle.
-     * @return {Rectangle}
+     * @return {Rectangle} Rectangle based on given bounding rectangle.
      */
     static fromBoundingRect(boundingRect) {
         return new Rectangle(
@@ -143,7 +146,7 @@ export default class Rectangle {
      * @return {number} Left x coordinate.
      */
     get left() {
-        //return Math.min(this._a._x, this._b._x);
+        // return Math.min(this._a._x, this._b._x);
         return this._a._x;
     }
 
@@ -153,7 +156,7 @@ export default class Rectangle {
      * @return {number} Right x coordinate.
      */
     get right() {
-        //return Math.max(this._a._x, this._b._x);
+        // return Math.max(this._a._x, this._b._x);
         return this._b._x;
     }
 
@@ -163,7 +166,7 @@ export default class Rectangle {
      * @return {number} Top y coordinate.
      */
     get top() {
-        //return Math.min(this._a._y, this._b._y);
+        // return Math.min(this._a._y, this._b._y);
         return this._a._y;
     }
 
@@ -173,7 +176,7 @@ export default class Rectangle {
      * @return {number} Bottom y coordinate.
      */
     get bottom() {
-        //return Math.max(this._a._y, this._b._y);
+        // return Math.max(this._a._y, this._b._y);
         return this._b._y;
     }
 
@@ -423,6 +426,23 @@ export default class Rectangle {
      */
     toString() {
         return `(${this._a.toString()}, ${this._b.toString()})`;
+    }
+
+    /**
+     * Return an array of line segments of the four edges of this rectangle.
+     *
+     * @return {Array&lt;LineSegment&gt;} Array of line segments.
+     */
+    toLineSegments() {
+        const c = new Point(this._a._x, this._b._y);
+        const d = new Point(this._b._x, this._a._y);
+
+        return [
+            new LineSegment(this._a, d),
+            new LineSegment(d, this._b),
+            new LineSegment(this._b, c),
+            new LineSegment(c, this._a),
+        ];
     }
 
     /**

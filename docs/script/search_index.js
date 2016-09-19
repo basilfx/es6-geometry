@@ -6,6 +6,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "es6-geometry/src/line.js~line",
+    "class/src/Line.js~Line.html",
+    "<span>Line</span> <span class=\"search-result-import-path\">es6-geometry/src/Line.js</span>",
+    "class"
+  ],
+  [
+    "es6-geometry/src/linesegment.js~linesegment",
+    "class/src/LineSegment.js~LineSegment.html",
+    "<span>LineSegment</span> <span class=\"search-result-import-path\">es6-geometry/src/LineSegment.js</span>",
+    "class"
+  ],
+  [
     "es6-geometry/src/point.js~point",
     "class/src/Point.js~Point.html",
     "<span>Point</span> <span class=\"search-result-import-path\">es6-geometry/src/Point.js</span>",
@@ -438,6 +450,96 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/line.js",
+    "file/src/Line.js.html",
+    "src/Line.js",
+    "file"
+  ],
+  [
+    "src/line.js~line#a",
+    "class/src/Line.js~Line.html#instance-get-a",
+    "src/Line.js~Line#a",
+    "member"
+  ],
+  [
+    "src/line.js~line#b",
+    "class/src/Line.js~Line.html#instance-get-b",
+    "src/Line.js~Line#b",
+    "member"
+  ],
+  [
+    "src/line.js~line#clone",
+    "class/src/Line.js~Line.html#instance-method-clone",
+    "src/Line.js~Line#clone",
+    "method"
+  ],
+  [
+    "src/line.js~line#constructor",
+    "class/src/Line.js~Line.html#instance-constructor-constructor",
+    "src/Line.js~Line#constructor",
+    "method"
+  ],
+  [
+    "src/line.js~line#isvalid",
+    "class/src/Line.js~Line.html#instance-method-isValid",
+    "src/Line.js~Line#isValid",
+    "method"
+  ],
+  [
+    "src/line.js~line#length",
+    "class/src/Line.js~Line.html#instance-get-length",
+    "src/Line.js~Line#length",
+    "member"
+  ],
+  [
+    "src/linesegment.js",
+    "file/src/LineSegment.js.html",
+    "src/LineSegment.js",
+    "file"
+  ],
+  [
+    "src/linesegment.js~linesegment#a",
+    "class/src/LineSegment.js~LineSegment.html#instance-get-a",
+    "src/LineSegment.js~LineSegment#a",
+    "member"
+  ],
+  [
+    "src/linesegment.js~linesegment#b",
+    "class/src/LineSegment.js~LineSegment.html#instance-get-b",
+    "src/LineSegment.js~LineSegment#b",
+    "member"
+  ],
+  [
+    "src/linesegment.js~linesegment#clone",
+    "class/src/LineSegment.js~LineSegment.html#instance-method-clone",
+    "src/LineSegment.js~LineSegment#clone",
+    "method"
+  ],
+  [
+    "src/linesegment.js~linesegment#constructor",
+    "class/src/LineSegment.js~LineSegment.html#instance-constructor-constructor",
+    "src/LineSegment.js~LineSegment#constructor",
+    "method"
+  ],
+  [
+    "src/linesegment.js~linesegment#intersection",
+    "class/src/LineSegment.js~LineSegment.html#instance-method-intersection",
+    "src/LineSegment.js~LineSegment#intersection",
+    "method"
+  ],
+  [
+    "src/linesegment.js~linesegment#isvalid",
+    "class/src/LineSegment.js~LineSegment.html#instance-method-isValid",
+    "src/LineSegment.js~LineSegment#isValid",
+    "method"
+  ],
+  [
+    "src/linesegment.js~linesegment#length",
+    "class/src/LineSegment.js~LineSegment.html#instance-get-length",
+    "src/LineSegment.js~LineSegment#length",
+    "member"
+  ],
+  [
     "src/point.js",
     "file/src/Point.js.html",
     "src/Point.js",
@@ -765,6 +867,12 @@ window.esdocSearchIndex = [
     "src/rectangle.js~rectangle#toboundingrect",
     "class/src/Rectangle.js~Rectangle.html#instance-method-toBoundingRect",
     "src/Rectangle.js~Rectangle#toBoundingRect",
+    "method"
+  ],
+  [
+    "src/rectangle.js~rectangle#tolinesegments",
+    "class/src/Rectangle.js~Rectangle.html#instance-method-toLineSegments",
+    "src/Rectangle.js~Rectangle#toLineSegments",
     "method"
   ],
   [
