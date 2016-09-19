@@ -1,4 +1,5 @@
 import Point from './Point';
+import LineSegment from './LineSegment';
 import Vector from './Vector';
 import Circle from './Circle';
 
@@ -64,7 +65,7 @@ export default class Rectangle {
      * property.
      *
      * @param {object} boundingRect Input bounding rectangle.
-     * @return {Rectangle}
+     * @return {Rectangle} Rectangle based on given bounding rectangle.
      */
     static fromBoundingRect(boundingRect) {
         return new Rectangle(
@@ -100,7 +101,7 @@ export default class Rectangle {
      * @return {number} Left x coordinate.
      */
     get left() {
-        //return Math.min(this._a._x, this._b._x);
+        // return Math.min(this._a._x, this._b._x);
         return this._a._x;
     }
 
@@ -110,7 +111,7 @@ export default class Rectangle {
      * @return {number} Right x coordinate.
      */
     get right() {
-        //return Math.max(this._a._x, this._b._x);
+        // return Math.max(this._a._x, this._b._x);
         return this._b._x;
     }
 
@@ -120,7 +121,7 @@ export default class Rectangle {
      * @return {number} Top y coordinate.
      */
     get top() {
-        //return Math.min(this._a._y, this._b._y);
+        // return Math.min(this._a._y, this._b._y);
         return this._a._y;
     }
 
@@ -130,7 +131,7 @@ export default class Rectangle {
      * @return {number} Bottom y coordinate.
      */
     get bottom() {
-        //return Math.max(this._a._y, this._b._y);
+        // return Math.max(this._a._y, this._b._y);
         return this._b._y;
     }
 
@@ -380,6 +381,23 @@ export default class Rectangle {
      */
     toString() {
         return `(${this._a.toString()}, ${this._b.toString()})`;
+    }
+
+    /**
+     * Return an array of line segments of the four edges of this rectangle.
+     *
+     * @return {Array<LineSegment>} Array of line segments.
+     */
+    toLineSegments() {
+        const c = new Point(this._a._x, this._b._y);
+        const d = new Point(this._b._x, this._a._y);
+
+        return [
+            new LineSegment(this._a, d),
+            new LineSegment(d, this._b),
+            new LineSegment(this._b, c),
+            new LineSegment(c, this._a),
+        ];
     }
 
     /**
