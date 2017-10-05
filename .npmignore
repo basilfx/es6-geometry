@@ -1,6 +1,7 @@
 .babelrc
 .eslintignore
 .eslintrc
+docs/
 esdoc.json
 src/
 test/

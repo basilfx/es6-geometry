@@ -1,18 +1,23 @@
 {
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "extends": [
         "semistandard",
         "plugin:flowtype/recommended"
     ],
+    "globals": {
+        "expect": true,
+    },
     "parser": "babel-eslint",
     "plugins": [
         "babel",
-        "flowtype",
         "flowtype-errors",
-        "import"
+        "flowtype",
+        "import",
+        "mocha"
     ],
     "rules": {
         /* Flowtype */
