@@ -1,6 +1,8 @@
 # ES6-Geometry
 Collection of immutable ES6 classes for simple 2D geometric objects and calculations.
 
+[![Build Status](https://travis-ci.org/basilfx/babel-plugin-transform-react-pure-components.svg?branch=master)](https://travis-ci.org/basilfx/babel-plugin-transform-react-pure-components)
+
 ## Features
 * Immutable classes.
 * Arguments checking (zero overhead in production).
