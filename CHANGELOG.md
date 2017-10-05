@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.0.0
+Released xx October 2017
+
+Highlights:
+* Updated: project structure
+* Added: Flow type annotations
+
+The full list of commits can be found [here](https://github.com/basilfx/es6-geometry/compare/v1.3.0...v2.0.0).
+
 ## v1.3.0
 Released 19 September 2016
 
