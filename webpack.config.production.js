@@ -1,21 +1,22 @@
-const webpack = require('webpack');
 const config = require('./webpack.config');
+const webpack = require('webpack');
+
+const BabiliPlugin = require('babili-webpack-plugin');
 
 module.exports = {
     entry: config.entry,
     module: config.module,
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false,
-            },
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false,
         }),
-        new webpack.EnvironmentPlugin([
-            'NODE_ENV',
-        ]),
-        new webpack.NoErrorsPlugin(),
+        new webpack.EnvironmentPlugin({
+            'NODE_ENV': 'production',
+        }),
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new BabiliPlugin(),
     ],
     output: {
         path: config.output.path,

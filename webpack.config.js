@@ -2,48 +2,48 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    debug: true,
-    devtool: ' cheap-eval-source-map',
-    entry: {
-        'bundle': './src/index.js',
-    },
+    devtool: 'eval',
+    entry: [
+        './src/index.js',
+    ],
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel',
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader',
-            },
-            {
-                test: /\.(less|css)$/,
-                loader: 'style!css!less',
-            },
-            {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?limit=102400',
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        cacheDirectory: true,
+                    },
+                },
             },
         ],
     },
+    performance: {
+        hints: false,
+    },
     plugins: [
+        new webpack.LoaderOptionsPlugin({
+            debug: true,
+        }),
+        new webpack.EnvironmentPlugin({
+            'DEMO': false,
+        }),
         new webpack.NamedModulesPlugin(),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.WatchIgnorePlugin([
-            path.resolve('./node_modules'),
+            path.resolve(__dirname, 'node_modules'),
         ]),
     ],
     output: {
-        path: path.resolve('./dist/'),
+        path: path.resolve(__dirname, 'dist/'),
         filename: 'es6-geometry.js',
     },
     resolve: {
-        extensions: ['', '.js'],
-        root: [
-            path.resolve('./app'),
-            path.resolve('./node_modules'),
+        modules: [
+            path.resolve(__dirname, 'src'),
+            path.resolve(__dirname, 'node_modules'),
         ],
     },
 };
