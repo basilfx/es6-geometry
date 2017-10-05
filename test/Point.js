@@ -9,15 +9,15 @@ describe('A point', () => {
 
         const point = Point.fromObject(source);
 
-        expect(point.x).toBe(100);
-        expect(point.y).toBe(200);
+        expect(point.x).to.equal(100);
+        expect(point.y).to.equal(200);
     });
     it('can be created from an array', () => {
         const source = [100, 200];
 
         const point = Point.fromArray(source);
 
-        expect(point.x).toBe(100);
-        expect(point.y).toBe(200);
+        expect(point.x).to.equal(100);
+        expect(point.y).to.equal(200);
     });
 });

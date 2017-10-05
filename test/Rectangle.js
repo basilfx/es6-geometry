@@ -15,10 +15,20 @@ describe('A rectangle', () => {
 
         const rectangle = Rectangle.fromObject({ a: sourceA, b: sourceB });
 
-        expect(rectangle.a.x).toBe(100);
-        expect(rectangle.a.y).toBe(100);
-        expect(rectangle.b.x).toBe(200);
-        expect(rectangle.b.x).toBe(200);
+        expect(rectangle.a.x).to.equal(100);
+        expect(rectangle.a.y).to.equal(100);
+        expect(rectangle.b.x).to.equal(200);
+        expect(rectangle.b.x).to.equal(200);
+    });
+    it('can be created from an array', () => {
+        const source = [[100, 100], [200, 200]];
+
+        const rectangle = Rectangle.fromArray(source);
+
+        expect(rectangle.a.x).to.equal(100);
+        expect(rectangle.a.y).to.equal(100);
+        expect(rectangle.b.x).to.equal(200);
+        expect(rectangle.b.x).to.equal(200);
     });
 });
 
@@ -33,19 +43,19 @@ describe('Via operations, a rectangle', () => {
             const vector = Vector.fromNumber(25);
             const newRectangle = rectangle.expand(vector);
 
-            expect(newRectangle.a.x).toBe(75);
-            expect(newRectangle.a.y).toBe(75);
-            expect(newRectangle.b.x).toBe(225);
-            expect(newRectangle.b.y).toBe(225);
+            expect(newRectangle.a.x).to.equal(75);
+            expect(newRectangle.a.y).to.equal(75);
+            expect(newRectangle.b.x).to.equal(225);
+            expect(newRectangle.b.y).to.equal(225);
         });
         it('with a negative vector', () => {
             const vector = Vector.fromNumber(-25);
             const newRectangle = rectangle.expand(vector);
 
-            expect(newRectangle.a.x).toBe(125);
-            expect(newRectangle.a.y).toBe(125);
-            expect(newRectangle.b.x).toBe(175);
-            expect(newRectangle.b.y).toBe(175);
+            expect(newRectangle.a.x).to.equal(125);
+            expect(newRectangle.a.y).to.equal(125);
+            expect(newRectangle.b.x).to.equal(175);
+            expect(newRectangle.b.y).to.equal(175);
         });
     });
 });
