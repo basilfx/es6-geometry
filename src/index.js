@@ -1,3 +1,5 @@
+// @flow
+
 import Circle from './Circle';
 import Line from './Line';
 import LineSegment from './LineSegment';

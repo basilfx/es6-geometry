@@ -1,3 +1,5 @@
+// @flow
+
 import Point from './Point';
 import LineSegment from './LineSegment';
 import Vector from './Vector';

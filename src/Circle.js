@@ -1,3 +1,5 @@
+// @flow
+
 import Point from './Point';
 import Rectangle from './Rectangle';
 
@@ -12,7 +14,7 @@ export default class Circle {
      * @param {number} r The radius `r`.
      * @return {void}
      */
-    constructor(a, r) {
+    constructor(a: Point, r: number) {
         this._a = a;
         this._r = r;
     }
