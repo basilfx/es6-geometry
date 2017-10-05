@@ -4,8 +4,14 @@ import Point from './Point';
 
 import type { PointArray, PointObject } from './Point';
 
-export type LineSegmentArray = Array<PointArray>;
-export type LineSegmentObject = { A: PointObject, y: PointObject }
+/**
+ * Definition of an array representing a line segment.
+ */
+export type LineSegmentArray = [PointArray, PointArray];
+/**
+ * Definition of an object representing a line segment.
+ */
+export type LineSegmentObject = { a: PointObject, b: PointObject };
 
 /**
  * Immutable line segment class.
@@ -38,6 +44,47 @@ export default class LineSegment {
     constructor(a: Point, b: Point) {
         this._a = a;
         this._b = b;
+    }
+
+    /**
+     * Create a new line segment from an array. The first index should be point
+     * `A` and the second index should be point `B`.
+     *
+     * @param {LineSegmentArray} array Input array with at least two values.
+     * @return {LineSegment} Resulting line segment.
+     */
+    static fromArray(array: LineSegmentArray): LineSegment {
+        if (process.env.NODE_ENV !== 'production') {
+            if (!Array.isArray(array) || array.length < 2) {
+                throw new Error('Expected an array with at least two values.');
+            }
+        }
+
+        return new LineSegment(
+            Point.fromArray(array[0]),
+            Point.fromArray(array[1])
+        );
+    }
+
+    /**
+     * Create a new line segment from an object. The object should have an `a` and
+     * `b` property.
+     *
+     * @param {LineSegmentObject} object Input object with `a` and `b`
+     *                            property.
+     * @return {LineSegment} Resulting line segment.
+     */
+    static fromObject(object: LineSegmentObject): LineSegment {
+        if (process.env.NODE_ENV !== 'production') {
+            if (typeof object !== 'object') {
+                throw new Error('Expected an object.');
+            }
+        }
+
+        return new LineSegment(
+            Point.fromObject(object.a),
+            Point.fromObject(object.b)
+        );
     }
 
     /**
@@ -104,6 +151,29 @@ export default class LineSegment {
                 }
             }
         }
+
+        return null;
+    }
+
+    /**
+     * Return an array representation of this instance.
+     *
+     * @return {LineSegmentArray} Array representation [a, b].
+     */
+    toArray(): LineSegmentArray {
+        return [this._a.toArray(), this._b.toArray()];
+    }
+
+    /**
+     * Return an object representation of this instance.
+     *
+     * @return {LineSegmentObject} Object representation {a, b}.
+     */
+    toObject(): LineSegmentObject {
+        return {
+            a: this._a.toObject(),
+            b: this._b.toObject(),
+        };
     }
 
     /**

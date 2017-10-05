@@ -2,8 +2,15 @@
 
 import Point from './Point';
 
-export type VectorArray = Array<number>;
-export type VectorObject = { x: number, y: number }
+/**
+ * Definition of an array representing a vector.
+ */
+export type VectorArray = [number, number];
+
+/**
+ * Definition of an object representing a vector.
+ */
+export type VectorObject = { x: number, y: number };
 
 /**
  * Immutable vector class.
@@ -12,7 +19,8 @@ export type VectorObject = { x: number, y: number }
  * the length (magnitude) and direction.
  *
  * The difference between a Vector and a Point is explained in this source:
- * http://math.stackexchange.com/a/645827
+ * http://math.stackexchange.com/a/645827 and
+ * http://geomalgorithms.com/points_and_vectors.html.
  */
 export default class Vector {
     /**
@@ -114,20 +122,20 @@ export default class Vector {
     }
 
     /**
-     * Add another vector or point to this vector.
+     * Add another vector to this vector.
      *
-     * If the input is a point, the result will be a point with this vector
-     * as offset.
-     *
-     * @param {Point | Vector} that Point or vector to add.
-     * @return {Point | Vector} New Vector if adding vector, point otherwise.
+     * @param {Vector} vector Vector to add.
+     * @return {Vector} A new Vector if adding vector.
      */
-    add(that: Point | Vector): Point | Vector {
-        if (that instanceof Point) {
-            return that.add(this);
+    add(vector: Vector): Vector {
+        if (process.env.NODE_ENV !== 'production') {
+            // $FlowFixMe
+            if (vector instanceof Point) {
+                throw new Error('Addition of point to a vector is undefined.');
+            }
         }
 
-        return new Vector(this._x + that._x, this._y + that._y);
+        return new Vector(this._x + vector._x, this._y + vector._y);
     }
 
     /**
@@ -143,56 +151,86 @@ export default class Vector {
     /**
      * Invert a vector, returning a copy with inverted magnitude and direction.
      *
-     * @return {Vector}
+     * @return {Vector} Inverted vector
      */
     invert(): Vector {
         return new Vector(-this._x, -this._y);
     }
 
     /**
-     * @return {Vector}
+     * Scale a vector by a scalar value.
+     *
+     * @param {number} scalar The scalar value.
+     * @return {Vector} New vector multiplied by the scalar.
      */
     multiply(scalar: number): Vector {
         return new Vector(this._x * scalar, this._y * scalar);
     }
 
     /**
-     * @return {Vector}
+     * Scale a vector by a `x` and `y` scalar value.
+     *
+     * @param {number} scalarX The scalar value for the `x` component.
+     * @param {number} scalarY The scalar value for the `y` component.
+     * @return {Vector} New vector multiplied by both scalars.
      */
     multiplyXY(scalarX: number, scalarY: number): Vector {
         return new Vector(this._x * scalarX, this._y * scalarY);
     }
 
     /**
-     * @return {Vector}
+     * Divide a vector by a scalar value.
+     *
+     * @param {number} scalar The scalar value.
+     * @return {Vector} New vector divided by the scalar.
      */
     divide(scalar: number): Vector {
         return new Vector(this._x / scalar, this._y / scalar);
     }
 
     /**
-     * @return {Vector}
+     * Divide a vector by a `x` and `y` scalar value.
+     *
+     * @param {number} scalarX The scalar value for the `x` component.
+     * @param {number} scalarY The scalar value for the `y` component.
+     * @return {Vector} New vector divided by both scalars.
      */
     divideXY(scalarX: number, scalarY: number): Vector {
         return new Vector(this._x / scalarX, this._y / scalarY);
     }
 
     /**
-     * @return {Vector}
+     * Mix this vector with another vector, with a given weight.
+     *
+     * @param {Vector} that The other vector to mix with.
+     * @param {number} amount The weight (between 0 and 1).
+     * @return {Vector} A new vector with a mix of both this vector and the
+     *                  given vector.
      */
     mix(that: Vector, amount: number = 0.5): Vector {
+        if (process.env.NODE_ENV !== 'production') {
+            if (amount < 0 || amount > 1) {
+                throw new Error('Amount must be between 0 and 1.');
+            }
+        }
+
         return this.multiply(1 - amount).add(that.multiply(amount));
     }
 
     /**
-     * @return {Vector}
+     * Calculate the vector that is perpendicular to this vector.
+     *
+     * @return {Vector} The perpendicular vector.
      */
     perpendicular(): Vector {
         return new Vector(-this._y, this._x);
     }
 
     /**
-     * @return {Vector}
+     * Snap a vector to a fixed number.
+     *
+     * @param {number} to The number to fix to.
+     * @return {Point} New vector snapped to the given number.
      */
     snap(to: number): Vector {
         const round = (val) => Math.round(val / to) * to;
@@ -201,28 +239,37 @@ export default class Vector {
     }
 
     /**
-     * @return {number}
+     * Calculate the dot value.
+     *
+     * @param {Vector} that The other vector.
+     * @return {number} The dot value of both vectors.
      */
     dot(that: Vector): number {
         return this._x * that._x + this._y * that._y;
     }
 
     /**
-     * @return {number}
+     * Return the angle of this vector.
+     *
+     * @return {number} Angle of the vector.
      */
     angle(): number {
         return Math.atan2(this._y, this._x);
     }
 
     /**
-     * @return {number}
+     * Return the angle (in degrees) of this vector.
+     *
+     * @return {number} Angle of the vector (in degrees).
      */
     angleDeg(): number {
         return Math.atan2(this._y, this._x) * 180 / Math.PI;
     }
 
     /**
-     * @return {number}
+     * Calculate the slope of this vector.
+     *
+     * @return {number} The slope of the vector.
      */
     slope(): number {
         return this._y / this._x;
@@ -250,20 +297,43 @@ export default class Vector {
     }
 
     /**
-     * @return {Vector}
+     * Return a vector with a minimum length of the given number. If the length
+     * is less, normalize it. Otherwise this instance is returned.
+     *
+     * @param {number} length The minimum length.
+     * @return {Vector} The normalized vector.
      */
     minLength(length: number): Vector {
         return this.length() < length ? this.normalize(length) : this;
     }
 
+    /**
+     * Return a vector with a maximum length of the given number. If the length
+     * is less, normalize it. Otherwise this instance is returned.
+     *
+     * @param {number} length The maximum length.
+     * @return {Vector} The normalized vector.
+     */
     maxLength(length: number): Vector {
         return this.length() > length ? this.normalize(length) : this;
     }
 
+    /**
+     * Normalize the vector to a given scalar.
+     *
+     * @param {number} scalar The number to scale this vector to.
+     * @return {Vector} The normalized vector
+     */
     normalize(scalar: number = 1): Vector {
         return this.divide(this.length()).multiply(scalar);
     }
 
+    /**
+     * Project this vector onto another vector.
+     *
+     * @param {Vector} that The other vector to project onto.
+     * @return {Vector} The projected vector.
+     */
     projectOnto(that: Vector): Vector {
         return that.multiply(this.dot(that) / that.lengthSq());
     }

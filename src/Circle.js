@@ -5,8 +5,15 @@ import Rectangle from './Rectangle';
 
 import type { PointArray, PointObject } from './Point';
 
-export type CircleArray = Array<number>;
-export type CircleObject = { a: PointArray, r: number };
+/**
+ * Definition of an array representing a circle.
+ */
+export type CircleArray = [PointArray, number];
+
+/**
+ * Definition of an object representing a circle.
+ */
+export type CircleObject = { a: PointObject, r: number };
 
 /**
  * Immutable circle class.
@@ -36,6 +43,48 @@ export default class Circle {
     constructor(a: Point, r: number) {
         this._a = a;
         this._r = r;
+    }
+
+    /**
+     * Create a new circle from an array. The first index should be point
+     * `A` and the second index should be the radius `r`.
+     *
+     * @param {CircleArray} array Input array with at least two values.
+     * @return {Circle} Resulting circle.
+     */
+    static fromArray(array: CircleArray): Circle {
+        if (process.env.NODE_ENV !== 'production') {
+            if (!Array.isArray(array) || array.length < 2) {
+                throw new Error(
+                    'Expected an array with at least two values.'
+                );
+            }
+        }
+
+        return new Circle(
+            Point.fromArray(array[0]),
+            array[1]
+        );
+    }
+
+    /**
+     * Create a new circle from an object. The object should have an `a` and
+     * `r` property.
+     *
+     * @param {CircleObject} object Input object with `a` and `b` property.
+     * @return {Circle} Resulting circle.
+     */
+    static fromObject(object: CircleObject): Circle {
+        if (process.env.NODE_ENV !== 'production') {
+            if (typeof object !== 'object') {
+                throw new Error('Expected an object.');
+            }
+        }
+
+        return new Circle(
+            Point.fromObject(object.a),
+            object.r
+        );
     }
 
     /**
@@ -98,12 +147,11 @@ export default class Circle {
     /**
      * Convert this circle into an object.
      *
-     * @return {Object} Object representation (x, y, r).
+     * @return {CircleObject} Object representation (a, r).
      */
-    toObject(): Object {
+    toObject(): CircleObject {
         return {
-            x: this._a._x,
-            y: this._a._y,
+            a: this._a.toObject(),
             r: this._r,
         };
     }
@@ -111,19 +159,19 @@ export default class Circle {
     /**
      * Convert this circle into an array.
      *
-     * @return {Array<number>} Array representation (x, y, r).
+     * @return {CircleArray} Array representation (a, r).
      */
-    toArray(): Array<number> {
-        return [this._a._x, this._a._y, this._r];
+    toArray(): CircleArray {
+        return [this._a.toArray(), this._r];
     }
 
     /**
      * Convert this circle into a string representation.
      *
-     * @return {string} String representation (x, y, r).
+     * @return {string} String representation (a, r).
      */
     toString(): string {
-        return `(${this._a._x}, ${this._a._y}, ${this._r})`;
+        return `(${this._a.toString()}, ${this._r})`;
     }
 
     /**

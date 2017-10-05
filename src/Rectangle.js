@@ -7,10 +7,21 @@ import Circle from './Circle';
 
 import type { PointArray, PointObject } from './Point';
 
-export type RectangleArray = Array<PointArray>;
+/**
+ * Definition of an array representing a rectangle.
+ */
+export type RectangleArray = [PointArray, PointArray];
+/**
+ * Definition of an object representing a rectangle.
+ */
 export type RectangleObject = { a: PointObject, b: PointObject };
 
-export type BoundingObject = { top: number, left: number, width: number, height: number }
+/**
+ * Definition of an object representing a bounding box.
+ */
+export type BoundingObject = {
+    top: number, left: number, width: number, height: number
+};
 
 /**
  * Immutable rectangle class.
@@ -196,7 +207,9 @@ export default class Rectangle {
      * @return {Vector} Relative center point offset of this rectangle.
      */
     centerOffset(): Vector {
-        return this.center().subtract(this._a);
+        const center = this.center();
+
+        return center.subtract(this._a);
     }
 
     /**

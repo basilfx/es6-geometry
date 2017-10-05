@@ -2,7 +2,14 @@
 
 import Vector from './Vector';
 
-export type PointArray = Array<number>;
+/**
+ * Definition of an array representing a point.
+ */
+export type PointArray = [number, number];
+
+/**
+ * Definition of an object representing a point.
+ */
 export type PointObject = { x: number, y: number };
 
 /**
@@ -11,7 +18,8 @@ export type PointObject = { x: number, y: number };
  * A point is an absolute place in space, at a given x and y coordinate.
  *
  * The difference between a Point and a vector is explained in this source:
- * http://math.stackexchange.com/a/645827
+ * http://math.stackexchange.com/a/645827 and
+ * http://geomalgorithms.com/points_and_vectors.html.
  */
 export default class Point {
     /**
@@ -105,6 +113,7 @@ export default class Point {
      */
     add(vector: Vector): Point {
         if (process.env.NODE_ENV !== 'production') {
+            // $FlowFixMe
             if (vector instanceof Point) {
                 throw new Error('Addition of two points is undefined.');
             }
@@ -114,106 +123,44 @@ export default class Point {
     }
 
     /**
-     * Subtract a Point or a Vector.
+     * Subtract a Point from this point, to calculate the displacement.
      *
-     * @param {Point | Vector} that Point or vector to subtract.
-     * @return {Point} If `that` is a Vector, it will return the new point.
-     * @return {Vector} If `that` is a Point, it will return the displacement.
+     * @param {Point} that Point to subtract.
+     * @return {Vector} The displacement as a Vector.
      */
-    subtract(that: Point | Vector) {
-        if (that instanceof Point) {
-            return this.toVector().subtract(that);
+    subtract(that: Point): Vector {
+        if (process.env.NODE_ENV !== 'production') {
+            // $FlowFixMe
+            if (that instanceof Vector) {
+                throw new Error(
+                    'Cannot subract Vector. Use `subtractVector` instead.'
+                );
+            }
         }
 
-        return new Point(this._x - that._x, this._y - that._y);
+        return new Vector(this._x - that._x, this._y - that._y);
     }
 
     /**
-     * Invert the x and y coordinate, relative to (0, 0).
+     * Subtract a Vector from this Point.
      *
-     * @return {Point} Inverted point.
+     * @param {Vector} vector Vector to subtract.
+     * @return {Point} If `that` is a Vector, it will return the new point.
      */
-    invert(): Point {
-        return new Point(-this._x, -this._y);
+    subtractVector(vector: Vector): Point {
+        return new Point(this._x - vector._x, this._y - vector._y);
     }
 
     /**
-     * @return {Point}
-     */
-    multiply(scalar: number): Point {
-        return new Point(this._x * scalar, this._y * scalar);
-    }
-
-    /**
-     * @return {Point}
-     */
-    multiplyXY(scalarX: number, scalarY: number): Point {
-        return new Point(this._x * scalarX, this._y * scalarY);
-    }
-
-    /**
-     * @return {Point}
-     */
-    divide(scalar: number): Point {
-        return new Point(this._x / scalar, this._y / scalar);
-    }
-
-    /**
-     * @return {Point}
-     */
-    divideXY(scalarX: number, scalarY: number): Point {
-        return new Point(this._x / scalarX, this._y / scalarY);
-    }
-
-    /**
-     * @return {Point}
-     */
-    mix(that: Point, amount: number = 0.5): Point {
-        return this.multiply(1 - amount).add(that.multiply(amount));
-    }
-
-    /**
-     * @return {Point}
-     */
-    perpendicular(): Point {
-        return new Point(-this._y, this._x);
-    }
-
-    /**
-     * @return {Point}
+     * Snap a point to a fixed number.
+     *
+     * @param {number} to The number to fix to.
+     * @return {Point} New point snapped to the given number.
      */
     snap(to: number): Point {
         const round = (val) => Math.round(val / to) * to;
 
         return new Point(round(this._x), round(this._y));
-    }
-
-    /**
-     * @return {number}
-     */
-    dot(that: Point): number {
-        return this._x * that._x + this._y * that._y;
-    }
-
-    /**
-     * @return {number}
-     */
-    angle(): number {
-        return Math.atan2(this._y, this._x);
-    }
-
-    /**
-     * @return {number}
-     */
-    angleDeg(): number {
-        return Math.atan2(this._y, this._x) * 180 / Math.PI;
-    }
-
-    /**
-     * @return {number}
-     */
-    slope(): number {
-        return this._y / this._x;
     }
 
     /**
@@ -263,18 +210,18 @@ export default class Point {
     /**
      * Convert this point into an array.
      *
-     * @return {Array} Array representation (x, y).
+     * @return {PointArray} Array representation (x, y).
      */
-    toArray(): Array<number> {
+    toArray(): PointArray {
         return [this._x, this._y];
     }
 
     /**
      * Convert this point into an object.
      *
-     * @return {Object} Object representation (x, y).
+     * @return {PointObject} Object representation (x, y).
      */
-    toObject(): Object {
+    toObject(): PointObject {
         return { x: this._x, y: this._y };
     }
 
