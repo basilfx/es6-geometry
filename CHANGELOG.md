@@ -4,8 +4,9 @@
 Released xx October 2017
 
 Highlights:
-* Updated: project structure
-* Added: Flow type annotations
+* Updated: project structure.
+* Added: Flow type annotations.
+* Removed: dynamic checks on types in production mode (use static typing instead).
 
 The full list of commits can be found [here](https://github.com/basilfx/es6-geometry/compare/v1.3.0...v2.0.0).
 
@@ -29,8 +30,8 @@ The full list of commits can be found [here](https://github.com/basilfx/es6-geom
 Released 20 July 2016
 
 Highlights:
-* Added: support for expanding rectangles
-* Added: creation of single-value vectors
+* Added: support for expanding rectangles.
+* Added: creation of single-value vectors.
 * Improved: test coverage (still WIP).
 
 The full list of commits can be found [here](https://github.com/basilfx/es6-geometry/compare/v1.0.1...v1.1.0).
