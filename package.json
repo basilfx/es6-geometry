@@ -14,7 +14,7 @@
     "bundle": "npm run bundle-prod && npm run bundle-dev",
     "bundle-prod": "NODE_ENV=production webpack --config webpack.config.production.js",
     "bundle-dev": "webpack --config webpack.config.js",
-    "lint": "eslint ./",
+    "lint": "eslint src/ test/",
     "test": "mocha --require babel-register",
     "prepublish": "npm run build && npm run bundle"
   },
