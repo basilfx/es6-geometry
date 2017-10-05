@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/LineSegment.js | API Document</title>
+  <title data-ice="title">src/LineSegment.js | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,25 +40,93 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/LineSegment.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+
+import Point from &apos;./Point&apos;;
+
+import type { PointArray, PointObject } from &apos;./Point&apos;;
 
 /**
- * Immutable line class.
+ * Definition of an array representing a line segment.
+ */
+export type LineSegmentArray = [PointArray, PointArray];
+/**
+ * Definition of an object representing a line segment.
+ */
+export type LineSegmentObject = { a: PointObject, b: PointObject };
+
+/**
+ * Immutable line segment class.
  *
  * A line is defined by two points, `a` and `b`. It has no thickness and its
- * length is inifite (e.g. it extends beyond point `a` and `b`).
+ * length is defined by the absolute difference between `a` and `b`.
  */
 export default class LineSegment {
     /**
-     * Construct a new immutable line out of two points.
+     * The `A` point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * The `B` point.
+     *
+     * @type {Point}
+     */
+    _b: Point;
+
+    /**
+     * Construct a new immutable line segment out of two points.
      *
      * @param {Point} a The `A` point..
      * @param {Point} b The `B` point.
      * @return {void}
      */
-    constructor(a, b) {
+    constructor(a: Point, b: Point) {
         this._a = a;
         this._b = b;
+    }
+
+    /**
+     * Create a new line segment from an array. The first index should be point
+     * `A` and the second index should be point `B`.
+     *
+     * @param {LineSegmentArray} array Input array with at least two values.
+     * @return {LineSegment} Resulting line segment.
+     */
+    static fromArray(array: LineSegmentArray): LineSegment {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            if (!Array.isArray(array) || array.length &lt; 2) {
+                throw new Error(&apos;Expected an array with at least two values.&apos;);
+            }
+        }
+
+        return new LineSegment(
+            Point.fromArray(array[0]),
+            Point.fromArray(array[1])
+        );
+    }
+
+    /**
+     * Create a new line segment from an object. The object should have an `a` and
+     * `b` property.
+     *
+     * @param {LineSegmentObject} object Input object with `a` and `b`
+     *                            property.
+     * @return {LineSegment} Resulting line segment.
+     */
+    static fromObject(object: LineSegmentObject): LineSegment {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            if (typeof object !== &apos;object&apos;) {
+                throw new Error(&apos;Expected an object.&apos;);
+            }
+        }
+
+        return new LineSegment(
+            Point.fromObject(object.a),
+            Point.fromObject(object.b)
+        );
     }
 
     /**
@@ -69,7 +134,7 @@ export default class LineSegment {
      *
      * @return {Point} Point `A`.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -78,16 +143,16 @@ export default class LineSegment {
      *
      * @return {Point} Point `B`.
      */
-    get b() {
+    get b(): Point {
         return this._b;
     }
 
     /**
      * Return the length.
      *
-     * @return {float} length of line, which is infinity, per definition.
+     * @return {number} length of line, which is infinity, per definition.
      */
-    get length() {
+    get length(): number {
         return this._a.distance(this._b);
     }
 
@@ -98,9 +163,9 @@ export default class LineSegment {
      * Algorithm is based on http://stackoverflow.com/a/35457290/1423623.
      *
      * @param {LineSegment} other The other line segment.
-     * @return {Point?} Point of intersection, if any.
+     * @return {?Point} Point of intersection, if any.
      */
-    intersection(other) {
+    intersection(other: LineSegment): ?Point {
         const dx1 = this._b._x - this._a._x;
         const dy1 = this._b._y - this._a._y;
 
@@ -133,20 +198,41 @@ export default class LineSegment {
     }
 
     /**
+     * Return an array representation of this instance.
+     *
+     * @return {LineSegmentArray} Array representation [a, b].
+     */
+    toArray(): LineSegmentArray {
+        return [this._a.toArray(), this._b.toArray()];
+    }
+
+    /**
+     * Return an object representation of this instance.
+     *
+     * @return {LineSegmentObject} Object representation {a, b}.
+     */
+    toObject(): LineSegmentObject {
+        return {
+            a: this._a.toObject(),
+            b: this._b.toObject(),
+        };
+    }
+
+    /**
      * Create a shallow copy of this instance.
      *
      * @return {LineSegment} Cloned instance.
      */
-    clone() {
+    clone(): LineSegment {
         return new LineSegment(this._a, this._b);
     }
 
     /**
      * Return true if the line segment is defined and finite.
      *
-     * @return {Boolean} True if line segment is valid.
+     * @return {boolean} True if line segment is valid.
      */
-    isValid() {
+    isValid(): boolean {
         return this._a.isValid() &amp;&amp; this._b.isValid();
     }
 }
@@ -155,7 +241,7 @@ export default class LineSegment {
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

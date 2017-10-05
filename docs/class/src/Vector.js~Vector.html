@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">Vector | API Document</title>
+  <title data-ice="title">Vector | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,13 +40,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Vector from &apos;<span><a href="file/src/Vector.js.html#lineNumber12">es6-geometry/src/Vector.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Vector from &apos;<span><a href="file/src/Vector.js.html#lineNumber25">es6-geometry/src/Vector.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/Vector.js.html#lineNumber12">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/Vector.js.html#lineNumber25">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -70,22 +67,59 @@
   
   
   <div class="description" data-ice="description"><p>Immutable vector class.</p>
-<p>A vector represents a displacement, using a x an y component to represent
+<p>A vector represents a displacement, using a x an <code>y</code> component to represent
 the length (magnitude) and direction.</p>
 <p>The difference between a Vector and a Point is explained in this source:
-<a href="http://math.stackexchange.com/a/645827">http://math.stackexchange.com/a/645827</a></p>
+<a href="http://math.stackexchange.com/a/645827">http://math.stackexchange.com/a/645827</a> and
+<a href="http://geomalgorithms.com/points_and_vectors.html">http://geomalgorithms.com/points_and_vectors.html</a>.</p>
+</div>
+  
+
+  
+
+  
+
+  
+
+  
 </div>
 
+<div data-ice="staticMemberSummary"><h2>Static Member Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Members</td></tr></thead>
+  <tbody>
   
-
-  
-
-  
-
-  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-member-Unit">Unit</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Definition of the unit vector.</p>
 </div>
-
-
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 <div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
   <tbody>
@@ -101,7 +135,10 @@ the length (magnitude) and direction.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromArray">fromArray</a></span></span><span data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromArray">fromArray</a></span></span><span class="code" data-ice="signature">(array: <span>VectorArray</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
@@ -127,7 +164,10 @@ the length (magnitude) and direction.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromNumber">fromNumber</a></span></span><span data-ice="signature">(number: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromNumber">fromNumber</a></span></span><span class="code" data-ice="signature">(number: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
@@ -153,7 +193,10 @@ the length (magnitude) and direction.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromObject">fromObject</a></span></span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#static-method-fromObject">fromObject</a></span></span><span class="code" data-ice="signature">(object: <span>VectorObject</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
@@ -186,13 +229,16 @@ the length (magnitude) and direction.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(x: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, y: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>void</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(x: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, y: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>void</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Construct a new vector, using a x and y component to represent the
+        <div data-ice="description"><p>Construct a new vector, using a x and <code>y</code> component to represent the
 length (magnitude) and direction relative to (0, 0).</p>
 </div>
       </div>
@@ -220,13 +266,16 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-get-x">x</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span>*</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-get-x">x</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Get the x component.</p>
+        <div data-ice="description"><p>Get the <code>x</code> component.</p>
 </div>
       </div>
     </td>
@@ -246,13 +295,80 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-get-y">y</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span>*</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-get-y">y</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Get the y component.</p>
+        <div data-ice="description"><p>Get the <code>y</code> component.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Private Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-member-_x">_x</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The x coordinate.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-member-_y">_y</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The y coordinate.</p>
 </div>
       </div>
     </td>
@@ -279,13 +395,16 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-add">add</a></span></span><span data-ice="signature">(that: <span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-add">add</a></span></span><span class="code" data-ice="signature">(vector: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Add another vector or point to this vector.</p>
+        <div data-ice="description"><p>Add another vector to this vector.</p>
 </div>
       </div>
     </td>
@@ -305,13 +424,17 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-angle">angle</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-angle">angle</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Return the angle of this vector.</p>
+</div>
       </div>
     </td>
     <td>
@@ -330,13 +453,17 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-angleDeg">angleDeg</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-angleDeg">angleDeg</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Return the angle (in degrees) of this vector.</p>
+</div>
       </div>
     </td>
     <td>
@@ -355,7 +482,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-clone">clone</a></span></span><span data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-clone">clone</a></span></span><span class="code" data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
@@ -381,13 +511,17 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-divide">divide</a></span></span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-divide">divide</a></span></span><span class="code" data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Divide a vector by a scalar value.</p>
+</div>
       </div>
     </td>
     <td>
@@ -406,13 +540,17 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-divideXY">divideXY</a></span></span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-divideXY">divideXY</a></span></span><span class="code" data-ice="signature">(scalarX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, scalarY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Divide a vector by a <code>x</code> and <code>y</code> scalar value.</p>
+</div>
       </div>
     </td>
     <td>
@@ -431,13 +569,17 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-dot">dot</a></span></span><span data-ice="signature">(that: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-dot">dot</a></span></span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Calculate the dot value.</p>
+</div>
       </div>
     </td>
     <td>
@@ -456,7 +598,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-equals">equals</a></span></span><span data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-equals">equals</a></span></span><span class="code" data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
         </p>
       </div>
       <div>
@@ -482,7 +627,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-invert">invert</a></span></span><span data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-invert">invert</a></span></span><span class="code" data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
@@ -508,7 +656,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-isValid">isValid</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-isValid">isValid</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
         </p>
       </div>
       <div>
@@ -534,7 +685,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-length">length</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-length">length</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -560,7 +714,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-lengthSq">lengthSq</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-lengthSq">lengthSq</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
@@ -586,38 +743,16 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-maxLength">maxLength</a></span></span><span data-ice="signature">(length: <span>*</span>): <span>*</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-maxLength">maxLength</a></span></span><span class="code" data-ice="signature">(length: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-minLength">minLength</a></span></span><span data-ice="signature">(length: <span>[type]</span>): <span>[type]</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>[minLength description]</p>
+        <div data-ice="description"><p>Return a vector with a maximum length of the given number.</p>
 </div>
       </div>
     </td>
@@ -637,213 +772,16 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-mix">mix</a></span></span><span data-ice="signature">(that: <span>*</span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-minLength">minLength</a></span></span><span class="code" data-ice="signature">(length: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-multiply">multiply</a></span></span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-multiplyXY">multiplyXY</a></span></span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-normalize">normalize</a></span></span><span data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-perpendicular">perpendicular</a></span></span><span data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-projectOnto">projectOnto</a></span></span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-slope">slope</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-snap">snap</a></span></span><span data-ice="signature">(to: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-subtract">subtract</a></span></span><span data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Subtract a given scalar from the <code>x</code> and <code>y</code> component of this vector.</p>
+        <div data-ice="description"><p>Return a vector with a minimum length of the given number.</p>
 </div>
       </div>
     </td>
@@ -863,7 +801,271 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toArray">toArray</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-mix">mix</a></span></span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Mix this vector with another vector, with a given weight.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-multiply">multiply</a></span></span><span class="code" data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Scale a vector by a scalar value.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-multiplyXY">multiplyXY</a></span></span><span class="code" data-ice="signature">(scalarX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, scalarY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Scale a vector by a <code>x</code> and <code>y</code> scalar value.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-normalize">normalize</a></span></span><span class="code" data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Normalize the vector to a given scalar.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-perpendicular">perpendicular</a></span></span><span class="code" data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Calculate the vector that is perpendicular to this vector.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-projectOnto">projectOnto</a></span></span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Project this vector onto another vector.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-slope">slope</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Calculate the slope of this vector.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-snap">snap</a></span></span><span class="code" data-ice="signature">(to: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Snap a vector to a fixed number.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-subtract">subtract</a></span></span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Subtract another vector from this vector.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toArray">toArray</a></span></span><span class="code" data-ice="signature">(): <span>VectorArray</span></span>
         </p>
       </div>
       <div>
@@ -889,7 +1091,10 @@ length (magnitude) and direction relative to (0, 0).</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toFixed">toFixed</a></span></span><span data-ice="signature">(digits: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toFixed">toFixed</a></span></span><span class="code" data-ice="signature">(digits: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
         </p>
       </div>
       <div>
@@ -916,7 +1121,10 @@ of digits for displaying.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toObject">toObject</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toObject">toObject</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
         </p>
       </div>
       <div>
@@ -942,7 +1150,10 @@ of digits for displaying.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toPoint">toPoint</a></span></span><span data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toPoint">toPoint</a></span></span><span class="code" data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -968,7 +1179,10 @@ of digits for displaying.</p>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toString">toString</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Vector.js~Vector.html#instance-method-toString">toString</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
         </p>
       </div>
       <div>
@@ -989,7 +1203,53 @@ of digits for displaying.</p>
 
 
 
+<div data-ice="staticMemberDetails"><h2 data-ice="title">Static Public Members</h2>
 
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-member-Unit">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">Unit</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber43">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Definition of the unit vector.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
 <div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
 
 <div class="detail" data-ice="detail">
@@ -999,11 +1259,12 @@ of digits for displaying.</p>
     
     
     
-    <span data-ice="name">fromArray</span><span data-ice="signature">(array: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">fromArray</span><span class="code" data-ice="signature">(array: <span>VectorArray</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber68">source</a></span></span>
     </span>
   </h3>
 
@@ -1011,7 +1272,7 @@ of digits for displaying.</p>
   
   
   <div data-ice="description"><p>Create a new vector from an array. The first index is considered the x
-component, the second index is considered the y component.</p>
+component, the second index is considered the <code>y</code> component.  </p>
 </div>
 
   
@@ -1025,8 +1286,8 @@ component, the second index is considered the y component.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">array</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">array</td>
+      <td data-ice="type" class="code"><span>VectorArray</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Input array with at least two values.</p>
 </td>
@@ -1039,15 +1300,19 @@ component, the second index is considered the y component.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1069,11 +1334,12 @@ component, the second index is considered the y component.</p>
     
     
     
-    <span data-ice="name">fromNumber</span><span data-ice="signature">(number: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">fromNumber</span><span class="code" data-ice="signature">(number: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber102">source</a></span></span>
     </span>
   </h3>
 
@@ -1081,7 +1347,7 @@ component, the second index is considered the y component.</p>
   
   
   <div data-ice="description"><p>Create a new vector form a single value. In that case, both the x and y
-property will have the same value.</p>
+property will have the same value.  </p>
 </div>
 
   
@@ -1095,8 +1361,8 @@ property will have the same value.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">number</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">number</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Input number for x and y property.</p>
 </td>
@@ -1109,15 +1375,19 @@ property will have the same value.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1139,11 +1409,12 @@ property will have the same value.</p>
     
     
     
-    <span data-ice="name">fromObject</span><span data-ice="signature">(object: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">fromObject</span><span class="code" data-ice="signature">(object: <span>VectorObject</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber58">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber85">source</a></span></span>
     </span>
   </h3>
 
@@ -1151,7 +1422,7 @@ property will have the same value.</p>
   
   
   <div data-ice="description"><p>Create a new vector from an object. The object should have an x and y
-property.</p>
+property.  </p>
 </div>
 
   
@@ -1165,8 +1436,8 @@ property.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">object</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">object</td>
+      <td data-ice="type" class="code"><span>VectorObject</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Input object with x and y property.</p>
 </td>
@@ -1179,15 +1450,19 @@ property.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Resulting vector.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1212,18 +1487,19 @@ property.</p>
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(x: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, y: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>void</span></span>
+    
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(x: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, y: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>void</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber56">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Construct a new vector, using a x and y component to represent the
+  <div data-ice="description"><p>Construct a new vector, using a x and <code>y</code> component to represent the
 length (magnitude) and direction relative to (0, 0).</p>
 <p>An vector is immutable. All subsequent operations will return a new
 vector instance.</p>
@@ -1240,17 +1516,17 @@ vector instance.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">x</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">x</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>The x component.</p>
+      <td data-ice="description"><p>The <code>x</code> component.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">y</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">y</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>The y component.</p>
+      <td data-ice="description"><p>The <code>y</code> component.</p>
 </td>
     </tr>
 </tbody>
@@ -1261,14 +1537,18 @@ vector instance.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>void</span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>void</span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1293,18 +1573,19 @@ vector instance.</p>
     <span class="kind" data-ice="kind">get</span>
     
     
-    <span data-ice="name">x</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span>*</span></span>
+    
+    <span class="code" data-ice="name">x</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber84">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber111">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Get the x component.</p>
+  <div data-ice="description"><p>Get the <code>x</code> component. </p>
 </div>
 
   
@@ -1315,15 +1596,19 @@ vector instance.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>The x component.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The <code>x</code> component.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1345,18 +1630,19 @@ vector instance.</p>
     <span class="kind" data-ice="kind">get</span>
     
     
-    <span data-ice="name">y</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span>*</span></span>
+    
+    <span class="code" data-ice="name">y</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber93">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber120">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Get the y component.</p>
+  <div data-ice="description"><p>Get the <code>y</code> component. </p>
 </div>
 
   
@@ -1367,15 +1653,109 @@ vector instance.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>The y component.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The <code>y</code> component.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<h2 data-ice="title">Private Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_x">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_x</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber31">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The x coordinate. </p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_y">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_y</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber38">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The y coordinate. </p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
 
   
 
@@ -1400,20 +1780,19 @@ vector instance.</p>
     
     
     
-    <span data-ice="name">add</span><span data-ice="signature">(that: <span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">add</span><span class="code" data-ice="signature">(vector: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber106">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber130">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Add another vector or point to this vector.</p>
-<p>If the input is a point, the result will be a point with this vector
-as offset.</p>
+  <div data-ice="description"><p>Add another vector to this vector.  </p>
 </div>
 
   
@@ -1427,10 +1806,10 @@ as offset.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">vector</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Point or vector to add.</p>
+      <td data-ice="description"><p>Vector to add.</p>
 </td>
     </tr>
 </tbody>
@@ -1441,15 +1820,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span> | <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>New Vector if adding vector, point otherwise.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>A new Vector if adding vector.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1471,18 +1854,20 @@ as offset.</p>
     
     
     
-    <span data-ice="name">angle</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    
+    <span class="code" data-ice="name">angle</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber194">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber256">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Return the angle of this vector.  </p>
+</div>
 
   
 
@@ -1492,14 +1877,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Angle of the vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1521,18 +1911,20 @@ as offset.</p>
     
     
     
-    <span data-ice="name">angleDeg</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    
+    <span class="code" data-ice="name">angleDeg</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber201">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber265">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Return the angle (in degrees) of this vector.  </p>
+</div>
 
   
 
@@ -1542,14 +1934,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Angle of the vector (in degrees).</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1571,18 +1968,19 @@ as offset.</p>
     
     
     
-    <span data-ice="name">clone</span><span data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">clone</span><span class="code" data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber314">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber402">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Create a shallow copy of this instance.</p>
+  <div data-ice="description"><p>Create a shallow copy of this instance.  </p>
 </div>
 
   
@@ -1593,15 +1991,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Cloned instance.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Cloned instance.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1623,18 +2025,20 @@ as offset.</p>
     
     
     
-    <span data-ice="name">divide</span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">divide</span><span class="code" data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber150">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber187">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Divide a vector by a scalar value.  </p>
+</div>
 
   
 
@@ -1647,10 +2051,11 @@ as offset.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalar</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">scalar</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The scalar value.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1660,14 +2065,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>New vector divided by the scalar.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1689,18 +2099,20 @@ as offset.</p>
     
     
     
-    <span data-ice="name">divideXY</span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">divideXY</span><span class="code" data-ice="signature">(scalarX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, scalarY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber157">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber198">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Divide a vector by a <code>x</code> and <code>y</code> scalar value.  </p>
+</div>
 
   
 
@@ -1713,16 +2125,18 @@ as offset.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalarX</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">scalarX</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The scalar value for the <code>x</code> component.</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalarY</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">scalarY</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The scalar value for the <code>y</code> component.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1732,14 +2146,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>New vector divided by both scalars.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1761,18 +2180,20 @@ as offset.</p>
     
     
     
-    <span data-ice="name">dot</span><span data-ice="signature">(that: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    
+    <span class="code" data-ice="name">dot</span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber187">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber247">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Calculate the dot value.  </p>
+</div>
 
   
 
@@ -1785,10 +2206,11 @@ as offset.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">that</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The other vector.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1798,14 +2220,19 @@ as offset.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The dot value of both vectors.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1827,11 +2254,12 @@ as offset.</p>
     
     
     
-    <span data-ice="name">equals</span><span data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+    
+    <span class="code" data-ice="name">equals</span><span class="code" data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber325">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber413">source</a></span></span>
     </span>
   </h3>
 
@@ -1839,7 +2267,7 @@ as offset.</p>
   
   
   <div data-ice="description"><p>Return true if this vector is equal to another vector. Two vectors are
-equal when both x and y components are equal.</p>
+equal when both x and <code>y</code> components are equal.  </p>
 </div>
 
   
@@ -1853,8 +2281,8 @@ equal when both x and y components are equal.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">that</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Other instance to compare to.</p>
 </td>
@@ -1867,15 +2295,19 @@ equal when both x and y components are equal.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>True if both points are equal, false otherwise.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>True if both points are equal, false otherwise.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1897,18 +2329,19 @@ equal when both x and y components are equal.</p>
     
     
     
-    <span data-ice="name">invert</span><span data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">invert</span><span class="code" data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber129">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber156">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Invert a vector, returning a copy with inverted magnitude and direction.</p>
+  <div data-ice="description"><p>Invert a vector, returning a copy with inverted magnitude and direction.  </p>
 </div>
 
   
@@ -1919,14 +2352,19 @@ equal when both x and y components are equal.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Inverted vector</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1948,18 +2386,19 @@ equal when both x and y components are equal.</p>
     
     
     
-    <span data-ice="name">isValid</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    
+    <span class="code" data-ice="name">isValid</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber335">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber423">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Return true if the vector is defined and finite.</p>
+  <div data-ice="description"><p>Return true if the vector is defined and finite.  </p>
 </div>
 
   
@@ -1970,15 +2409,19 @@ equal when both x and y components are equal.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>True if vector is fully defined and valid.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>True if vector is fully defined and valid.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2000,18 +2443,19 @@ equal when both x and y components are equal.</p>
     
     
     
-    <span data-ice="name">length</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    
+    <span class="code" data-ice="name">length</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber229">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber295">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Calculate the length (magnitude) of the vector.</p>
+  <div data-ice="description"><p>Calculate the length (magnitude) of the vector.  </p>
 </div>
 
   
@@ -2022,15 +2466,19 @@ equal when both x and y components are equal.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>The length of the vector.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The length of the vector.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2052,11 +2500,12 @@ equal when both x and y components are equal.</p>
     
     
     
-    <span data-ice="name">lengthSq</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    
+    <span class="code" data-ice="name">lengthSq</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber220">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber286">source</a></span></span>
     </span>
   </h3>
 
@@ -2065,7 +2514,7 @@ equal when both x and y components are equal.</p>
   
   <div data-ice="description"><p>Calculate the squared length of this vector.</p>
 <p>If the exact length doesn&apos;t matter, this method is slightly faster
-than <code>this.length</code>.</p>
+than <code>this.length</code>.  </p>
 </div>
 
   
@@ -2076,15 +2525,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>The squared length of this vector.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The squared length of this vector.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2106,18 +2559,21 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">maxLength</span><span data-ice="signature">(length: <span>*</span>): <span>*</span></span>
+    
+    <span class="code" data-ice="name">maxLength</span><span class="code" data-ice="signature">(length: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber242">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber317">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Return a vector with a maximum length of the given number. If the length
+is less, normalize it. Otherwise this instance is returned.  </p>
+</div>
 
   
 
@@ -2130,10 +2586,11 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">length</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">length</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The maximum length.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2143,14 +2600,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The normalized vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2172,18 +2634,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">minLength</span><span data-ice="signature">(length: <span>[type]</span>): <span>[type]</span></span>
+    
+    <span class="code" data-ice="name">minLength</span><span class="code" data-ice="signature">(length: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber238">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber306">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>[minLength description]</p>
+  <div data-ice="description"><p>Return a vector with a minimum length of the given number. If the length
+is less, normalize it. Otherwise this instance is returned.  </p>
 </div>
 
   
@@ -2197,10 +2661,10 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">length</td>
-      <td data-ice="type"><span>[type]</span></td>
+      <td data-ice="name" class="code" data-depth="0">length</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>[description]</p>
+      <td data-ice="description"><p>The minimum length.</p>
 </td>
     </tr>
 </tbody>
@@ -2211,14 +2675,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>[type]</span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The normalized vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2240,18 +2709,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">mix</span><span data-ice="signature">(that: <span>*</span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">mix</span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber164">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber210">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Mix this vector with another vector, with a given weight.  </p>
+</div>
 
   
 
@@ -2264,17 +2735,18 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">that</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The other vector to mix with.</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">amount</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: 0.5</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="name" class="code" data-depth="0">amount</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The weight (between 0 and 1).</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2284,14 +2756,20 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>A new vector with a mix of both this vector and the
+                 given vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2313,18 +2791,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">multiply</span><span data-ice="signature">(scalar: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">multiply</span><span class="code" data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber136">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber166">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Scale a vector by a scalar value.  </p>
+</div>
 
   
 
@@ -2337,10 +2817,11 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalar</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">scalar</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The scalar value.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2350,14 +2831,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>New vector multiplied by the scalar.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2379,18 +2865,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">multiplyXY</span><span data-ice="signature">(scalarX: <span>*</span>, scalarY: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">multiplyXY</span><span class="code" data-ice="signature">(scalarX: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, scalarY: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber143">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber177">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Scale a vector by a <code>x</code> and <code>y</code> scalar value.  </p>
+</div>
 
   
 
@@ -2403,16 +2891,18 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalarX</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">scalarX</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The scalar value for the <code>x</code> component.</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalarY</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">scalarY</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The scalar value for the <code>y</code> component.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2422,14 +2912,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>New vector multiplied by both scalars.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2451,18 +2946,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">normalize</span><span data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
+    
+    <span class="code" data-ice="name">normalize</span><span class="code" data-ice="signature">(scalar: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber246">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber327">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Normalize the vector to a given scalar.  </p>
+</div>
 
   
 
@@ -2475,11 +2972,11 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">scalar</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: 1</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="name" class="code" data-depth="0">scalar</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The number to scale this vector to.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2489,14 +2986,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The normalized vector</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2518,18 +3020,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">perpendicular</span><span data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">perpendicular</span><span class="code" data-ice="signature">(): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber171">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber225">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Calculate the vector that is perpendicular to this vector.  </p>
+</div>
 
   
 
@@ -2539,14 +3043,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The perpendicular vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2568,18 +3077,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">projectOnto</span><span data-ice="signature">(that: <span>*</span>): <span>*</span></span>
+    
+    <span class="code" data-ice="name">projectOnto</span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber250">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber337">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Project this vector onto another vector.  </p>
+</div>
 
   
 
@@ -2592,10 +3103,11 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">that</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The other vector to project onto.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2605,14 +3117,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The projected vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2634,18 +3151,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">slope</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    
+    <span class="code" data-ice="name">slope</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber208">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber274">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Calculate the slope of this vector.  </p>
+</div>
 
   
 
@@ -2655,14 +3174,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The slope of the vector.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2684,18 +3208,20 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">snap</span><span data-ice="signature">(to: <span>*</span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">snap</span><span class="code" data-ice="signature">(to: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber178">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber235">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Snap a vector to a fixed number.  </p>
+</div>
 
   
 
@@ -2708,10 +3234,11 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">to</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" class="code" data-depth="0">to</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The number to fix to.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2721,14 +3248,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>New vector snapped to the given number.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2750,18 +3282,19 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">subtract</span><span data-ice="signature">(that: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
+    
+    <span class="code" data-ice="name">subtract</span><span class="code" data-ice="signature">(that: <span><a href="class/src/Vector.js~Vector.html">Vector</a></span>): <span><a href="class/src/Vector.js~Vector.html">Vector</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber120">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber147">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Subtract a given scalar from the <code>x</code> and <code>y</code> component of this vector.</p>
+  <div data-ice="description"><p>Subtract another vector from this vector.  </p>
 </div>
 
   
@@ -2775,10 +3308,10 @@ than <code>this.length</code>.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">that</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">that</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Scalar value to subtract.</p>
+      <td data-ice="description"><p>Vector to subtract.</p>
 </td>
     </tr>
 </tbody>
@@ -2789,14 +3322,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Vector.js~Vector.html">Vector</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>New vector with other vector subtracted from this.</p>
+</td>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2818,18 +3356,19 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">toArray</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    
+    <span class="code" data-ice="name">toArray</span><span class="code" data-ice="signature">(): <span>VectorArray</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber270">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber358">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Convert this vector into an array.</p>
+  <div data-ice="description"><p>Convert this vector into an array.  </p>
 </div>
 
   
@@ -2840,15 +3379,19 @@ than <code>this.length</code>.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Array representation (x, y).</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>VectorArray</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Array representation (x, y).</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2870,11 +3413,12 @@ than <code>this.length</code>.</p>
     
     
     
-    <span data-ice="name">toFixed</span><span data-ice="signature">(digits: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+    
+    <span class="code" data-ice="name">toFixed</span><span class="code" data-ice="signature">(digits: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber299">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber387">source</a></span></span>
     </span>
   </h3>
 
@@ -2882,7 +3426,7 @@ than <code>this.length</code>.</p>
   
   
   <div data-ice="description"><p>Convert this vector into a string representation, using a fixed number
-of digits for displaying.</p>
+of digits for displaying.  </p>
 </div>
 
   
@@ -2896,8 +3440,8 @@ of digits for displaying.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">digits</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">digits</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Number of digits to use for representation.</p>
 </td>
@@ -2910,15 +3454,19 @@ of digits for displaying.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>String representation (x, y).</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>String representation (x, y).</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2940,18 +3488,19 @@ of digits for displaying.</p>
     
     
     
-    <span data-ice="name">toObject</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></span>
+    
+    <span class="code" data-ice="name">toObject</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber279">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber367">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Convert this vector into an object.</p>
+  <div data-ice="description"><p>Convert this vector into an object.  </p>
 </div>
 
   
@@ -2962,15 +3511,19 @@ of digits for displaying.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Object representation (x, y).</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Object representation (x, y).</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2992,11 +3545,12 @@ of digits for displaying.</p>
     
     
     
-    <span data-ice="name">toPoint</span><span data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+    
+    <span class="code" data-ice="name">toPoint</span><span class="code" data-ice="signature">(): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber261">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber349">source</a></span></span>
     </span>
   </h3>
 
@@ -3004,7 +3558,8 @@ of digits for displaying.</p>
   
   
   <div data-ice="description"><p>Convert vector into a point.</p>
-<p>Note: this is an utility method. A proper conversion does not exist.</p>
+<p>Note: this is an utility method. A mathematical definition of a
+conversion does not exist.  </p>
 </div>
 
   
@@ -3015,15 +3570,19 @@ of digits for displaying.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>The vector converted as point.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The vector converted as point.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -3045,18 +3604,19 @@ of digits for displaying.</p>
     
     
     
-    <span data-ice="name">toString</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+    
+    <span class="code" data-ice="name">toString</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber288">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Vector.js.html#lineNumber376">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Convert this vector into a string representation.</p>
+  <div data-ice="description"><p>Convert this vector into a string representation.  </p>
 </div>
 
   
@@ -3067,15 +3627,19 @@ of digits for displaying.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>String representation (x, y).</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>String representation (x, y).</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -3094,7 +3658,7 @@ of digits for displaying.</p>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

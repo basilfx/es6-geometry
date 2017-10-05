@@ -1,41 +1,37 @@
 {
-  "coverage": "97.63%",
-  "expectCount": 127,
-  "actualCount": 124,
+  "coverage": "100%",
+  "expectCount": 140,
+  "actualCount": 140,
   "files": {
     "src/Circle.js": {
+      "expectCount": 18,
+      "actualCount": 18,
+      "undocumentLines": []
+    },
+    "src/Line.js": {
+      "expectCount": 13,
+      "actualCount": 13,
+      "undocumentLines": []
+    },
+    "src/LineSegment.js": {
       "expectCount": 14,
       "actualCount": 14,
       "undocumentLines": []
     },
-    "src/Line.js": {
-      "expectCount": 7,
-      "actualCount": 7,
-      "undocumentLines": []
-    },
-    "src/LineSegment.js": {
-      "expectCount": 8,
-      "actualCount": 8,
-      "undocumentLines": []
-    },
     "src/Point.js": {
-      "expectCount": 30,
-      "actualCount": 30,
+      "expectCount": 22,
+      "actualCount": 22,
       "undocumentLines": []
     },
     "src/Rectangle.js": {
-      "expectCount": 33,
-      "actualCount": 33,
+      "expectCount": 35,
+      "actualCount": 35,
       "undocumentLines": []
     },
     "src/Vector.js": {
-      "expectCount": 35,
-      "actualCount": 32,
-      "undocumentLines": [
-        242,
-        246,
-        250
-      ]
+      "expectCount": 38,
+      "actualCount": 38,
+      "undocumentLines": []
     }
   }
 }

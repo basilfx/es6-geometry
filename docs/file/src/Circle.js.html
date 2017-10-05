@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/Circle.js | API Document</title>
+  <title data-ice="title">src/Circle.js | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,13 +40,41 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/Circle.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+
+import Point from &apos;./Point&apos;;
 import Rectangle from &apos;./Rectangle&apos;;
+
+import type { PointArray, PointObject } from &apos;./Point&apos;;
+
+/**
+ * Definition of an array representing a circle.
+ */
+export type CircleArray = [PointArray, number];
+
+/**
+ * Definition of an object representing a circle.
+ */
+export type CircleObject = { a: PointObject, r: number };
 
 /**
  * Immutable circle class.
  */
 export default class Circle {
+    /**
+     * Circle center point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * Circle radius.
+     *
+     * @type {number}
+     */
+    _r: number;
+
     /**
      * Construct a new circle using center point `A` and radius `r`.
      *
@@ -57,9 +82,51 @@ export default class Circle {
      * @param {number} r The radius `r`.
      * @return {void}
      */
-    constructor(a, r) {
+    constructor(a: Point, r: number) {
         this._a = a;
         this._r = r;
+    }
+
+    /**
+     * Create a new circle from an array. The first index should be point
+     * `A` and the second index should be the radius `r`.
+     *
+     * @param {CircleArray} array Input array with at least two values.
+     * @return {Circle} Resulting circle.
+     */
+    static fromArray(array: CircleArray): Circle {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            if (!Array.isArray(array) || array.length &lt; 2) {
+                throw new Error(
+                    &apos;Expected an array with at least two values.&apos;
+                );
+            }
+        }
+
+        return new Circle(
+            Point.fromArray(array[0]),
+            array[1]
+        );
+    }
+
+    /**
+     * Create a new circle from an object. The object should have an `a` and
+     * `r` property.
+     *
+     * @param {CircleObject} object Input object with `a` and `b` property.
+     * @return {Circle} Resulting circle.
+     */
+    static fromObject(object: CircleObject): Circle {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            if (typeof object !== &apos;object&apos;) {
+                throw new Error(&apos;Expected an object.&apos;);
+            }
+        }
+
+        return new Circle(
+            Point.fromObject(object.a),
+            object.r
+        );
     }
 
     /**
@@ -67,7 +134,7 @@ export default class Circle {
      *
      * @return {Point} Center point.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -76,7 +143,7 @@ export default class Circle {
      *
      * @return {number} Circle center x coordinate.
      */
-    get x() {
+    get x(): number {
         return this._a._x;
     }
 
@@ -85,7 +152,7 @@ export default class Circle {
      *
      * @return {number} Circle center y coordinate.
      */
-    get y() {
+    get y(): number {
         return this._a._y;
     }
 
@@ -94,7 +161,7 @@ export default class Circle {
      *
      * @return {number} Circle radius.
      */
-    get r() {
+    get r(): number {
         return this._r;
     }
 
@@ -103,7 +170,7 @@ export default class Circle {
      *
      * @return {number} The circle diameter.
      */
-    get d() {
+    get d(): number {
         return this._r * 2;
     }
 
@@ -112,11 +179,9 @@ export default class Circle {
      *
      * @return {Rectangle} Converted rectangle.
      */
-    toRectangle() {
-        const a = new Point(
-            this._a._x - this.radius, this._a._y - this.radius);
-        const b = new Point(
-            this._a._x + this.radius, this._a._y + this.radius);
+    toRectangle(): Rectangle {
+        const a = new Point(this._a._x - this._r, this._a._y - this._r);
+        const b = new Point(this._a._x + this._r, this._a._y + this._r);
 
         return new Rectangle(a, b);
     }
@@ -124,12 +189,11 @@ export default class Circle {
     /**
      * Convert this circle into an object.
      *
-     * @return {object} Object representation (x, y, r).
+     * @return {CircleObject} Object representation (a, r).
      */
-    toObject() {
+    toObject(): CircleObject {
         return {
-            x: this._a._x,
-            y: this._a._y,
+            a: this._a.toObject(),
             r: this._r,
         };
     }
@@ -137,19 +201,19 @@ export default class Circle {
     /**
      * Convert this circle into an array.
      *
-     * @return {Array} Array representation (x, y, r).
+     * @return {CircleArray} Array representation (a, r).
      */
-    toArray() {
-        return [this._a._x, this._a._y, this._r];
+    toArray(): CircleArray {
+        return [this._a.toArray(), this._r];
     }
 
     /**
      * Convert this circle into a string representation.
      *
-     * @return {string} String representation (x, y, r).
+     * @return {string} String representation (a, r).
      */
-    toString() {
-        return `(${this._a._x}, ${this._a._y}, ${this._r})`;
+    toString(): string {
+        return `(${this._a.toString()}, ${this._r})`;
     }
 
     /**
@@ -157,7 +221,7 @@ export default class Circle {
      *
      * @return {Circle} Cloned instance.
      */
-    clone() {
+    clone(): Circle {
         return new Circle(this._a, this._r);
     }
 
@@ -165,10 +229,10 @@ export default class Circle {
      * Return true if this circle is equal to another circle. Two circles are
      * equal if and only if the center point and radius are equal.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both circles are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &amp;&amp;
             this._a.equals(that._a) &amp;&amp; this._r === that._r;
     }
@@ -176,10 +240,10 @@ export default class Circle {
     /**
      * Return true if the circle is defined, finite and valid.
      *
-     * @return {Boolean} True if the circle is fully defined, finite and valid.
+     * @return {boolean} True if the circle is fully defined, finite and valid.
      */
-    isValid() {
-        return this._a.isValid() &amp;&amp; typeof(this._r) === &apos;number&apos; &amp;&amp;
+    isValid(): boolean {
+        return this._a.isValid() &amp;&amp; typeof this._r === &apos;number&apos; &amp;&amp;
             isFinite(this._r) &amp;&amp; this._r &gt;= 0;
     }
 }
@@ -188,7 +252,7 @@ export default class Circle {
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

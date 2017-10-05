@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">LineSegment | API Document</title>
+  <title data-ice="title">LineSegment | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,13 +40,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import LineSegment from &apos;<span><a href="file/src/LineSegment.js.html#lineNumber9">es6-geometry/src/LineSegment.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import LineSegment from &apos;<span><a href="file/src/LineSegment.js.html#lineNumber22">es6-geometry/src/LineSegment.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/LineSegment.js.html#lineNumber9">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/LineSegment.js.html#lineNumber22">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -69,22 +66,87 @@
 
   
   
-  <div class="description" data-ice="description"><p>Immutable line class.</p>
+  <div class="description" data-ice="description"><p>Immutable line segment class.</p>
 <p>A line is defined by two points, <code>a</code> and <code>b</code>. It has no thickness and its
-length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code>).</p>
+length is defined by the absolute difference between <code>a</code> and <code>b</code>.</p>
+</div>
+  
+
+  
+
+  
+
+  
+
+  
 </div>
 
-  
 
+<div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
+  <tbody>
   
-
-  
-
-  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#static-method-fromArray">fromArray</a></span></span><span class="code" data-ice="signature">(array: <span>LineSegmentArray</span>): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a new line segment from an array.</p>
 </div>
-
-
-
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#static-method-fromObject">fromObject</a></span></span><span class="code" data-ice="signature">(object: <span>LineSegmentObject</span>): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a new line segment from an object.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 <div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
   <tbody>
@@ -100,13 +162,16 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(a: <span><a href="class/src/Point.js~Point.html">Point</a></span>, b: <span><a href="class/src/Point.js~Point.html">Point</a></span>): <span>void</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(a: <span><a href="class/src/Point.js~Point.html">Point</a></span>, b: <span><a href="class/src/Point.js~Point.html">Point</a></span>): <span>void</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Construct a new immutable line out of two points.</p>
+        <div data-ice="description"><p>Construct a new immutable line segment out of two points.</p>
 </div>
       </div>
     </td>
@@ -133,7 +198,10 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-get-a">a</a></span></span><span data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span>*</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-get-a">a</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -159,7 +227,10 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-get-b">b</a></span></span><span data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span>*</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-get-b">b</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -185,13 +256,80 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-get-length">length</a></span></span><span data-ice="signature">: <span>float</span>: <span>*</span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-get-length">length</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
         <div data-ice="description"><p>Return the length.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Private Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-member-_a">_a</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The <code>A</code> point.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-member-_b">_b</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The <code>B</code> point.</p>
 </div>
       </div>
     </td>
@@ -218,7 +356,10 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-clone">clone</a></span></span><span data-ice="signature">(): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-clone">clone</a></span></span><span class="code" data-ice="signature">(): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
         </p>
       </div>
       <div>
@@ -244,7 +385,10 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-intersection">intersection</a></span></span><span data-ice="signature">(other: <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-intersection">intersection</a></span></span><span class="code" data-ice="signature">(other: <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
         </p>
       </div>
       <div>
@@ -270,13 +414,74 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-isValid">isValid</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-isValid">isValid</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
         </p>
       </div>
       <div>
         
         
         <div data-ice="description"><p>Return true if the line segment is defined and finite.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-toArray">toArray</a></span></span><span class="code" data-ice="signature">(): <span>LineSegmentArray</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Return an array representation of this instance.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/LineSegment.js~LineSegment.html#instance-method-toObject">toObject</a></span></span><span class="code" data-ice="signature">(): <span>LineSegmentObject</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Return an object representation of this instance.</p>
 </div>
       </div>
     </td>
@@ -292,28 +497,29 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
 
 
 
-
-<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+<div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-constructor-constructor">
+  <h3 data-ice="anchor" id="static-method-fromArray">
     <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
     
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(a: <span><a href="class/src/Point.js~Point.html">Point</a></span>, b: <span><a href="class/src/Point.js~Point.html">Point</a></span>): <span>void</span></span>
+    <span class="code" data-ice="name">fromArray</span><span class="code" data-ice="signature">(array: <span>LineSegmentArray</span>): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber56">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Construct a new immutable line out of two points.</p>
+  <div data-ice="description"><p>Create a new line segment from an array. The first index should be point
+<code>A</code> and the second index should be point <code>B</code>.  </p>
 </div>
 
   
@@ -327,15 +533,168 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">a</td>
-      <td data-ice="type"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">array</td>
+      <td data-ice="type" class="code"><span>LineSegmentArray</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Input array with at least two values.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Resulting line segment.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-fromObject">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">fromObject</span><span class="code" data-ice="signature">(object: <span>LineSegmentObject</span>): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber77">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create a new line segment from an object. The object should have an <code>a</code> and
+<code>b</code> property.  </p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">object</td>
+      <td data-ice="type" class="code"><span>LineSegmentObject</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Input object with <code>a</code> and <code>b</code>
+                           property.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Resulting line segment.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(a: <span><a href="class/src/Point.js~Point.html">Point</a></span>, b: <span><a href="class/src/Point.js~Point.html">Point</a></span>): <span>void</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber44">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Construct a new immutable line segment out of two points.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">a</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The <code>A</code> point..</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">b</td>
-      <td data-ice="type"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">b</td>
+      <td data-ice="type" class="code"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The <code>B</code> point.</p>
 </td>
@@ -348,14 +707,18 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>void</span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>void</span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -380,18 +743,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <span class="kind" data-ice="kind">get</span>
     
     
-    <span data-ice="name">a</span><span data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span>*</span></span>
+    
+    <span class="code" data-ice="name">a</span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber27">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber95">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Return point <code>A</code>.</p>
+  <div data-ice="description"><p>Return point <code>A</code>. </p>
 </div>
 
   
@@ -402,15 +766,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Point <code>A</code>.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Point <code>A</code>.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -432,18 +800,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <span class="kind" data-ice="kind">get</span>
     
     
-    <span data-ice="name">b</span><span data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span>*</span></span>
+    
+    <span class="code" data-ice="name">b</span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span>: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber104">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Return point <code>B</code>.</p>
+  <div data-ice="description"><p>Return point <code>B</code>. </p>
 </div>
 
   
@@ -454,15 +823,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Point <code>B</code>.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Point <code>B</code>.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -484,18 +857,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     <span class="kind" data-ice="kind">get</span>
     
     
-    <span data-ice="name">length</span><span data-ice="signature">: <span>float</span>: <span>*</span></span>
+    
+    <span class="code" data-ice="name">length</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber45">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber113">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Return the length.</p>
+  <div data-ice="description"><p>Return the length. </p>
 </div>
 
   
@@ -506,15 +880,109 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>float</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>length of line, which is infinity, per definition.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>length of line, which is infinity, per definition.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<h2 data-ice="title">Private Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_a">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_a</span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber28">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The <code>A</code> point. </p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_b">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_b</span><span class="code" data-ice="signature">: <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber35">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The <code>B</code> point. </p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
 
   
 
@@ -539,18 +1007,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     
     
     
-    <span data-ice="name">clone</span><span data-ice="signature">(): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
+    
+    <span class="code" data-ice="name">clone</span><span class="code" data-ice="signature">(): <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber95">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber184">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Create a shallow copy of this instance.</p>
+  <div data-ice="description"><p>Create a shallow copy of this instance.  </p>
 </div>
 
   
@@ -561,15 +1030,19 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Cloned instance.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Cloned instance.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -591,11 +1064,12 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
     
     
     
-    <span data-ice="name">intersection</span><span data-ice="signature">(other: <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
+    
+    <span class="code" data-ice="name">intersection</span><span class="code" data-ice="signature">(other: <span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span>): <span><a href="class/src/Point.js~Point.html">Point</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber58">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber126">source</a></span></span>
     </span>
   </h3>
 
@@ -604,7 +1078,7 @@ length is inifite (e.g. it extends beyond point <code>a</code> and <code>b</code
   
   <div data-ice="description"><p>Calculate the intersection point of the two line segments. If there is
 no intersection, this method returns null.</p>
-<p>Algorithm is based on <a href="http://stackoverflow.com/a/35457290/1423623">http://stackoverflow.com/a/35457290/1423623</a>.</p>
+<p>Algorithm is based on <a href="http://stackoverflow.com/a/35457290/1423623">http://stackoverflow.com/a/35457290/1423623</a>.  </p>
 </div>
 
   
@@ -618,8 +1092,8 @@ no intersection, this method returns null.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">other</td>
-      <td data-ice="type"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">other</td>
+      <td data-ice="type" class="code"><span><a href="class/src/LineSegment.js~LineSegment.html">LineSegment</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The other line segment.</p>
 </td>
@@ -632,15 +1106,19 @@ no intersection, this method returns null.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Point of intersection, if any.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/Point.js~Point.html">Point</a></span> (nullable: true)</td>
+          <td class="return-desc" data-ice="returnDescription"><p>Point of intersection, if any.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -662,18 +1140,19 @@ no intersection, this method returns null.</p>
     
     
     
-    <span data-ice="name">isValid</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    
+    <span class="code" data-ice="name">isValid</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber104">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber193">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Return true if the line segment is defined and finite.</p>
+  <div data-ice="description"><p>Return true if the line segment is defined and finite.  </p>
 </div>
 
   
@@ -684,15 +1163,133 @@ no intersection, this method returns null.</p>
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>True if line segment is valid.</p>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>True if line segment is valid.</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-toArray">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">toArray</span><span class="code" data-ice="signature">(): <span>LineSegmentArray</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber163">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Return an array representation of this instance.  </p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>LineSegmentArray</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Array representation [a, b].</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-toObject">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">toObject</span><span class="code" data-ice="signature">(): <span>LineSegmentObject</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/LineSegment.js.html#lineNumber172">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Return an object representation of this instance.  </p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>LineSegmentObject</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Object representation {a, b}.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
 
   
 
@@ -711,7 +1308,7 @@ no intersection, this method returns null.</p>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

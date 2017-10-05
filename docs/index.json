@@ -1,0 +1,4510 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/Circle.js",
+    "content": "// @flow\n\nimport Point from './Point';\nimport Rectangle from './Rectangle';\n\nimport type { PointArray, PointObject } from './Point';\n\n/**\n * Definition of an array representing a circle.\n */\nexport type CircleArray = [PointArray, number];\n\n/**\n * Definition of an object representing a circle.\n */\nexport type CircleObject = { a: PointObject, r: number };\n\n/**\n * Immutable circle class.\n */\nexport default class Circle {\n    /**\n     * Circle center point.\n     *\n     * @type {Point}\n     */\n    _a: Point;\n\n    /**\n     * Circle radius.\n     *\n     * @type {number}\n     */\n    _r: number;\n\n    /**\n     * Construct a new circle using center point `A` and radius `r`.\n     *\n     * @param {Point} a Center point `A`.\n     * @param {number} r The radius `r`.\n     * @return {void}\n     */\n    constructor(a: Point, r: number) {\n        this._a = a;\n        this._r = r;\n    }\n\n    /**\n     * Create a new circle from an array. The first index should be point\n     * `A` and the second index should be the radius `r`.\n     *\n     * @param {CircleArray} array Input array with at least two values.\n     * @return {Circle} Resulting circle.\n     */\n    static fromArray(array: CircleArray): Circle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error(\n                    'Expected an array with at least two values.'\n                );\n            }\n        }\n\n        return new Circle(\n            Point.fromArray(array[0]),\n            array[1]\n        );\n    }\n\n    /**\n     * Create a new circle from an object. The object should have an `a` and\n     * `r` property.\n     *\n     * @param {CircleObject} object Input object with `a` and `b` property.\n     * @return {Circle} Resulting circle.\n     */\n    static fromObject(object: CircleObject): Circle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof object !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Circle(\n            Point.fromObject(object.a),\n            object.r\n        );\n    }\n\n    /**\n     * Get the circle center point.\n     *\n     * @return {Point} Center point.\n     */\n    get a(): Point {\n        return this._a;\n    }\n\n    /**\n     * Get the circle center x coordinate. Shortcut for `this.a.x`.\n     *\n     * @return {number} Circle center x coordinate.\n     */\n    get x(): number {\n        return this._a._x;\n    }\n\n    /**\n     * Get the circle center y coordinate. Shortcut for `this.a.y`.\n     *\n     * @return {number} Circle center y coordinate.\n     */\n    get y(): number {\n        return this._a._y;\n    }\n\n    /**\n     * Get the circle radius.\n     *\n     * @return {number} Circle radius.\n     */\n    get r(): number {\n        return this._r;\n    }\n\n    /**\n     * Get the diameter. This is a shortcut for `this.r * 2`.\n     *\n     * @return {number} The circle diameter.\n     */\n    get d(): number {\n        return this._r * 2;\n    }\n\n    /**\n     * Convert this circle to a rectangle that contains this circle exactly.\n     *\n     * @return {Rectangle} Converted rectangle.\n     */\n    toRectangle(): Rectangle {\n        const a = new Point(this._a._x - this._r, this._a._y - this._r);\n        const b = new Point(this._a._x + this._r, this._a._y + this._r);\n\n        return new Rectangle(a, b);\n    }\n\n    /**\n     * Convert this circle into an object.\n     *\n     * @return {CircleObject} Object representation (a, r).\n     */\n    toObject(): CircleObject {\n        return {\n            a: this._a.toObject(),\n            r: this._r,\n        };\n    }\n\n    /**\n     * Convert this circle into an array.\n     *\n     * @return {CircleArray} Array representation (a, r).\n     */\n    toArray(): CircleArray {\n        return [this._a.toArray(), this._r];\n    }\n\n    /**\n     * Convert this circle into a string representation.\n     *\n     * @return {string} String representation (a, r).\n     */\n    toString(): string {\n        return `(${this._a.toString()}, ${this._r})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Circle} Cloned instance.\n     */\n    clone(): Circle {\n        return new Circle(this._a, this._r);\n    }\n\n    /**\n     * Return true if this circle is equal to another circle. Two circles are\n     * equal if and only if the center point and radius are equal.\n     *\n     * @param {Object} that Other instance to compare to.\n     * @return {boolean} True if both circles are equal, false otherwise.\n     */\n    equals(that: Object): boolean {\n        return this.constructor.name === that.constructor.name &&\n            this._a.equals(that._a) && this._r === that._r;\n    }\n\n    /**\n     * Return true if the circle is defined, finite and valid.\n     *\n     * @return {boolean} True if the circle is fully defined, finite and valid.\n     */\n    isValid(): boolean {\n        return this._a.isValid() && typeof this._r === 'number' &&\n            isFinite(this._r) && this._r >= 0;\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/Circle.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "Circle",
+    "memberof": "src/Circle.js",
+    "static": true,
+    "longname": "src/Circle.js~Circle",
+    "access": "public",
+    "export": true,
+    "importPath": "es6-geometry/src/Circle.js",
+    "importStyle": "Circle",
+    "description": "Immutable circle class.",
+    "lineNumber": 21,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "member",
+    "name": "_a",
+    "memberof": "src/Circle.js~Circle",
+    "static": false,
+    "longname": "src/Circle.js~Circle#_a",
+    "access": "private",
+    "description": "Circle center point. ",
+    "lineNumber": 27,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "_r",
+    "memberof": "src/Circle.js~Circle",
+    "static": false,
+    "longname": "src/Circle.js~Circle#_r",
+    "access": "private",
+    "description": "Circle radius. ",
+    "lineNumber": 34,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#constructor",
+    "access": "public",
+    "description": "Construct a new circle using center point `A` and radius `r`.",
+    "lineNumber": 43,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "a",
+        "description": "Center point `A`."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "r",
+        "description": "The radius `r`."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "fromArray",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Circle.js~Circle.fromArray",
+    "access": "public",
+    "description": "Create a new circle from an array. The first index should be point\n`A` and the second index should be the radius `r`.  ",
+    "lineNumber": 55,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "CircleArray"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "Input array with at least two values."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Circle"
+      ],
+      "spread": false,
+      "description": "Resulting circle."
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "fromObject",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Circle.js~Circle.fromObject",
+    "access": "public",
+    "description": "Create a new circle from an object. The object should have an `a` and\n`r` property.  ",
+    "lineNumber": 77,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "CircleObject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "Input object with `a` and `b` property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Circle"
+      ],
+      "spread": false,
+      "description": "Resulting circle."
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "get",
+    "name": "a",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#a",
+    "access": "public",
+    "description": "Get the circle center point. ",
+    "lineNumber": 95,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Center point."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "get",
+    "name": "x",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#x",
+    "access": "public",
+    "description": "Get the circle center x coordinate. Shortcut for `this.a.x`. ",
+    "lineNumber": 104,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Circle center x coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "get",
+    "name": "y",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#y",
+    "access": "public",
+    "description": "Get the circle center y coordinate. Shortcut for `this.a.y`. ",
+    "lineNumber": 113,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Circle center y coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "get",
+    "name": "r",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#r",
+    "access": "public",
+    "description": "Get the circle radius. ",
+    "lineNumber": 122,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Circle radius."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "get",
+    "name": "d",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#d",
+    "access": "public",
+    "description": "Get the diameter. This is a shortcut for `this.r * 2`. ",
+    "lineNumber": 131,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The circle diameter."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "toRectangle",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#toRectangle",
+    "access": "public",
+    "description": "Convert this circle to a rectangle that contains this circle exactly.  ",
+    "lineNumber": 140,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Converted rectangle."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "toObject",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#toObject",
+    "access": "public",
+    "description": "Convert this circle into an object.  ",
+    "lineNumber": 152,
+    "return": {
+      "nullable": null,
+      "types": [
+        "CircleObject"
+      ],
+      "spread": false,
+      "description": "Object representation (a, r)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "toArray",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#toArray",
+    "access": "public",
+    "description": "Convert this circle into an array.  ",
+    "lineNumber": 164,
+    "return": {
+      "nullable": null,
+      "types": [
+        "CircleArray"
+      ],
+      "spread": false,
+      "description": "Array representation (a, r)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#toString",
+    "access": "public",
+    "description": "Convert this circle into a string representation.  ",
+    "lineNumber": 173,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "String representation (a, r)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "clone",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#clone",
+    "access": "public",
+    "description": "Create a shallow copy of this instance.  ",
+    "lineNumber": 182,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Circle"
+      ],
+      "spread": false,
+      "description": "Cloned instance."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "equals",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#equals",
+    "access": "public",
+    "description": "Return true if this circle is equal to another circle. Two circles are\nequal if and only if the center point and radius are equal.  ",
+    "lineNumber": 193,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Other instance to compare to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if both circles are equal, false otherwise."
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "isValid",
+    "memberof": "src/Circle.js~Circle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Circle.js~Circle#isValid",
+    "access": "public",
+    "description": "Return true if the circle is defined, finite and valid.  ",
+    "lineNumber": 203,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if the circle is fully defined, finite and valid."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/Line.js",
+    "content": "// @flow\n\nimport Point from './Point';\n\nimport type { PointArray, PointObject } from './Point';\n\n/**\n * Definition of an array representing a line.\n */\nexport type LineArray = [PointArray, PointArray];\n\n/**\n * Definition of an object representing a line.\n */\nexport type LineObject = { a: PointObject, b: PointObject };\n\n/**\n * Immutable line class.\n *\n * A line is defined by two points, `a` and `b`. It has no thickness and its\n * length is inifite (e.g. it extends beyond point `a` and `b`).\n */\nexport default class Line {\n    /**\n     * The `A` point.\n     *\n     * @type {Point}\n     */\n    _a: Point;\n\n    /**\n     * The `B` point.\n     *\n     * @type {Point}\n     */\n    _b: Point;\n\n    /**\n     * Construct a new immutable line out of two points.\n     *\n     * @param {Point} a The `A` point..\n     * @param {Point} b The `B` point.\n     * @return {void}\n     */\n    constructor(a: Point, b: Point) {\n        this._a = a;\n        this._b = b;\n    }\n\n    /**\n     * Create a new line from an array. The first index should be point\n     * `A` and the second index should be point `B`.\n     *\n     * @param {LineArray} array Input array with at least two values.\n     * @return {Line} Resulting line.\n     */\n    static fromArray(array: LineArray): Line {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Line(\n            Point.fromArray(array[0]),\n            Point.fromArray(array[1])\n        );\n    }\n\n    /**\n     * Create a new line from an object. The object should have an `a` and\n     * `b` property.\n     *\n     * @param {LineObject} object Input object with `a` and `b` property.\n     * @return {Line} Resulting line.\n     */\n    static fromObject(object: LineObject): Line {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof object !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Line(\n            Point.fromObject(object.a),\n            Point.fromObject(object.b)\n        );\n    }\n\n    /**\n     * Return point `A`.\n     *\n     * @return {Point} Point `A`.\n     */\n    get a(): Point {\n        return this._a;\n    }\n\n    /**\n     * Return point `B`.\n     *\n     * @return {Point} Point `B`.\n     */\n    get b(): Point {\n        return this._b;\n    }\n\n    /**\n     * Return the length.\n     *\n     * @return {number} length of line, which is infinity, per definition.\n     */\n    get length(): number {\n        return Infinity;\n    }\n\n    /**\n     * Return an array representation of this instance.\n     *\n     * @return {LineArray} Array representation [a, b].\n     */\n    toArray(): LineArray {\n        return [this._a.toArray(), this._b.toArray()];\n    }\n\n    /**\n     * Return an object representation of this instance.\n     *\n     * @return {LineObject} Object representation {a, b}.\n     */\n    toObject(): LineObject {\n        return {\n            a: this._a.toObject(),\n            b: this._b.toObject(),\n        };\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Line} Cloned instance.\n     */\n    clone(): Line {\n        return new Line(this._a, this._b);\n    }\n\n    /**\n     * Return true if the line is defined and finite.\n     *\n     * @return {boolean} True if line is valid.\n     */\n    isValid(): boolean {\n        return this._a.isValid() && this._b.isValid();\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/Line.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 70,
+    "kind": "class",
+    "name": "Line",
+    "memberof": "src/Line.js",
+    "static": true,
+    "longname": "src/Line.js~Line",
+    "access": "public",
+    "export": true,
+    "importPath": "es6-geometry/src/Line.js",
+    "importStyle": "Line",
+    "description": "Immutable line class.\n\nA line is defined by two points, `a` and `b`. It has no thickness and its\nlength is inifite (e.g. it extends beyond point `a` and `b`).",
+    "lineNumber": 23,
+    "interface": false
+  },
+  {
+    "__docId__": 71,
+    "kind": "member",
+    "name": "_a",
+    "memberof": "src/Line.js~Line",
+    "static": false,
+    "longname": "src/Line.js~Line#_a",
+    "access": "private",
+    "description": "The `A` point. ",
+    "lineNumber": 29,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "member",
+    "name": "_b",
+    "memberof": "src/Line.js~Line",
+    "static": false,
+    "longname": "src/Line.js~Line#_b",
+    "access": "private",
+    "description": "The `B` point. ",
+    "lineNumber": 36,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#constructor",
+    "access": "public",
+    "description": "Construct a new immutable line out of two points.",
+    "lineNumber": 45,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "a",
+        "description": "The `A` point.."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "b",
+        "description": "The `B` point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "fromArray",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Line.js~Line.fromArray",
+    "access": "public",
+    "description": "Create a new line from an array. The first index should be point\n`A` and the second index should be point `B`.  ",
+    "lineNumber": 57,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LineArray"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "Input array with at least two values."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Line"
+      ],
+      "spread": false,
+      "description": "Resulting line."
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "fromObject",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Line.js~Line.fromObject",
+    "access": "public",
+    "description": "Create a new line from an object. The object should have an `a` and\n`b` property.  ",
+    "lineNumber": 77,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LineObject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "Input object with `a` and `b` property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Line"
+      ],
+      "spread": false,
+      "description": "Resulting line."
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "get",
+    "name": "a",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#a",
+    "access": "public",
+    "description": "Return point `A`. ",
+    "lineNumber": 95,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point `A`."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "get",
+    "name": "b",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#b",
+    "access": "public",
+    "description": "Return point `B`. ",
+    "lineNumber": 104,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point `B`."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "get",
+    "name": "length",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#length",
+    "access": "public",
+    "description": "Return the length. ",
+    "lineNumber": 113,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "length of line, which is infinity, per definition."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "method",
+    "name": "toArray",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#toArray",
+    "access": "public",
+    "description": "Return an array representation of this instance.  ",
+    "lineNumber": 122,
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineArray"
+      ],
+      "spread": false,
+      "description": "Array representation [a, b]."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 82,
+    "kind": "method",
+    "name": "toObject",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#toObject",
+    "access": "public",
+    "description": "Return an object representation of this instance.  ",
+    "lineNumber": 131,
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineObject"
+      ],
+      "spread": false,
+      "description": "Object representation {a, b}."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 83,
+    "kind": "method",
+    "name": "clone",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#clone",
+    "access": "public",
+    "description": "Create a shallow copy of this instance.  ",
+    "lineNumber": 143,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Line"
+      ],
+      "spread": false,
+      "description": "Cloned instance."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 84,
+    "kind": "method",
+    "name": "isValid",
+    "memberof": "src/Line.js~Line",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Line.js~Line#isValid",
+    "access": "public",
+    "description": "Return true if the line is defined and finite.  ",
+    "lineNumber": 152,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if line is valid."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 85,
+    "kind": "file",
+    "name": "src/LineSegment.js",
+    "content": "// @flow\n\nimport Point from './Point';\n\nimport type { PointArray, PointObject } from './Point';\n\n/**\n * Definition of an array representing a line segment.\n */\nexport type LineSegmentArray = [PointArray, PointArray];\n/**\n * Definition of an object representing a line segment.\n */\nexport type LineSegmentObject = { a: PointObject, b: PointObject };\n\n/**\n * Immutable line segment class.\n *\n * A line is defined by two points, `a` and `b`. It has no thickness and its\n * length is defined by the absolute difference between `a` and `b`.\n */\nexport default class LineSegment {\n    /**\n     * The `A` point.\n     *\n     * @type {Point}\n     */\n    _a: Point;\n\n    /**\n     * The `B` point.\n     *\n     * @type {Point}\n     */\n    _b: Point;\n\n    /**\n     * Construct a new immutable line segment out of two points.\n     *\n     * @param {Point} a The `A` point..\n     * @param {Point} b The `B` point.\n     * @return {void}\n     */\n    constructor(a: Point, b: Point) {\n        this._a = a;\n        this._b = b;\n    }\n\n    /**\n     * Create a new line segment from an array. The first index should be point\n     * `A` and the second index should be point `B`.\n     *\n     * @param {LineSegmentArray} array Input array with at least two values.\n     * @return {LineSegment} Resulting line segment.\n     */\n    static fromArray(array: LineSegmentArray): LineSegment {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new LineSegment(\n            Point.fromArray(array[0]),\n            Point.fromArray(array[1])\n        );\n    }\n\n    /**\n     * Create a new line segment from an object. The object should have an `a` and\n     * `b` property.\n     *\n     * @param {LineSegmentObject} object Input object with `a` and `b`\n     *                            property.\n     * @return {LineSegment} Resulting line segment.\n     */\n    static fromObject(object: LineSegmentObject): LineSegment {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof object !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new LineSegment(\n            Point.fromObject(object.a),\n            Point.fromObject(object.b)\n        );\n    }\n\n    /**\n     * Return point `A`.\n     *\n     * @return {Point} Point `A`.\n     */\n    get a(): Point {\n        return this._a;\n    }\n\n    /**\n     * Return point `B`.\n     *\n     * @return {Point} Point `B`.\n     */\n    get b(): Point {\n        return this._b;\n    }\n\n    /**\n     * Return the length.\n     *\n     * @return {number} length of line, which is infinity, per definition.\n     */\n    get length(): number {\n        return this._a.distance(this._b);\n    }\n\n    /**\n     * Calculate the intersection point of the two line segments. If there is\n     * no intersection, this method returns null.\n     *\n     * Algorithm is based on http://stackoverflow.com/a/35457290/1423623.\n     *\n     * @param {LineSegment} other The other line segment.\n     * @return {?Point} Point of intersection, if any.\n     */\n    intersection(other: LineSegment): ?Point {\n        const dx1 = this._b._x - this._a._x;\n        const dy1 = this._b._y - this._a._y;\n\n        const dx2 = other._b._x - other._a._x;\n        const dy2 = other._b._y - other._a._y;\n\n        const dx3 = this._a._x - other._a._x;\n        const dy3 = this._a._y - other._a._y;\n\n        const d = dx1 * dy2 - dx2 * dy1;\n\n        if (d !== 0) {\n            const s = dx1 * dy3 - dx3 * dy1;\n\n            if ((s <= 0 && d < 0 && s >= d) || (s >= 0 && d > 0 && s <= d)) {\n                const t = dx2 * dy3 - dx3 * dy2;\n\n                if ((t <= 0 && d < 0 && t > d) || (t >= 0 && d > 0 && t < d)) {\n                    const u = t / d;\n\n                    return new Point(\n                        this._a._x + u * dx1,\n                        this._a._y + u * dy1\n                    );\n                }\n            }\n        }\n\n        return null;\n    }\n\n    /**\n     * Return an array representation of this instance.\n     *\n     * @return {LineSegmentArray} Array representation [a, b].\n     */\n    toArray(): LineSegmentArray {\n        return [this._a.toArray(), this._b.toArray()];\n    }\n\n    /**\n     * Return an object representation of this instance.\n     *\n     * @return {LineSegmentObject} Object representation {a, b}.\n     */\n    toObject(): LineSegmentObject {\n        return {\n            a: this._a.toObject(),\n            b: this._b.toObject(),\n        };\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {LineSegment} Cloned instance.\n     */\n    clone(): LineSegment {\n        return new LineSegment(this._a, this._b);\n    }\n\n    /**\n     * Return true if the line segment is defined and finite.\n     *\n     * @return {boolean} True if line segment is valid.\n     */\n    isValid(): boolean {\n        return this._a.isValid() && this._b.isValid();\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/LineSegment.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 86,
+    "kind": "class",
+    "name": "LineSegment",
+    "memberof": "src/LineSegment.js",
+    "static": true,
+    "longname": "src/LineSegment.js~LineSegment",
+    "access": "public",
+    "export": true,
+    "importPath": "es6-geometry/src/LineSegment.js",
+    "importStyle": "LineSegment",
+    "description": "Immutable line segment class.\n\nA line is defined by two points, `a` and `b`. It has no thickness and its\nlength is defined by the absolute difference between `a` and `b`.",
+    "lineNumber": 22,
+    "interface": false
+  },
+  {
+    "__docId__": 87,
+    "kind": "member",
+    "name": "_a",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#_a",
+    "access": "private",
+    "description": "The `A` point. ",
+    "lineNumber": 28,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "_b",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#_b",
+    "access": "private",
+    "description": "The `B` point. ",
+    "lineNumber": 35,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#constructor",
+    "access": "public",
+    "description": "Construct a new immutable line segment out of two points.",
+    "lineNumber": 44,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "a",
+        "description": "The `A` point.."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "b",
+        "description": "The `B` point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "method",
+    "name": "fromArray",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/LineSegment.js~LineSegment.fromArray",
+    "access": "public",
+    "description": "Create a new line segment from an array. The first index should be point\n`A` and the second index should be point `B`.  ",
+    "lineNumber": 56,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LineSegmentArray"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "Input array with at least two values."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineSegment"
+      ],
+      "spread": false,
+      "description": "Resulting line segment."
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "name": "fromObject",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/LineSegment.js~LineSegment.fromObject",
+    "access": "public",
+    "description": "Create a new line segment from an object. The object should have an `a` and\n`b` property.  ",
+    "lineNumber": 77,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LineSegmentObject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "Input object with `a` and `b`\n                           property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineSegment"
+      ],
+      "spread": false,
+      "description": "Resulting line segment."
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "get",
+    "name": "a",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#a",
+    "access": "public",
+    "description": "Return point `A`. ",
+    "lineNumber": 95,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point `A`."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "get",
+    "name": "b",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#b",
+    "access": "public",
+    "description": "Return point `B`. ",
+    "lineNumber": 104,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point `B`."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "get",
+    "name": "length",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#length",
+    "access": "public",
+    "description": "Return the length. ",
+    "lineNumber": 113,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "length of line, which is infinity, per definition."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "method",
+    "name": "intersection",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#intersection",
+    "access": "public",
+    "description": "Calculate the intersection point of the two line segments. If there is\nno intersection, this method returns null.\n\nAlgorithm is based on http://stackoverflow.com/a/35457290/1423623.  ",
+    "lineNumber": 126,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LineSegment"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "other",
+        "description": "The other line segment."
+      }
+    ],
+    "return": {
+      "nullable": true,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point of intersection, if any."
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "method",
+    "name": "toArray",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#toArray",
+    "access": "public",
+    "description": "Return an array representation of this instance.  ",
+    "lineNumber": 163,
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineSegmentArray"
+      ],
+      "spread": false,
+      "description": "Array representation [a, b]."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "toObject",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#toObject",
+    "access": "public",
+    "description": "Return an object representation of this instance.  ",
+    "lineNumber": 172,
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineSegmentObject"
+      ],
+      "spread": false,
+      "description": "Object representation {a, b}."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 100,
+    "kind": "method",
+    "name": "clone",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#clone",
+    "access": "public",
+    "description": "Create a shallow copy of this instance.  ",
+    "lineNumber": 184,
+    "return": {
+      "nullable": null,
+      "types": [
+        "LineSegment"
+      ],
+      "spread": false,
+      "description": "Cloned instance."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 101,
+    "kind": "method",
+    "name": "isValid",
+    "memberof": "src/LineSegment.js~LineSegment",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/LineSegment.js~LineSegment#isValid",
+    "access": "public",
+    "description": "Return true if the line segment is defined and finite.  ",
+    "lineNumber": 193,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if line segment is valid."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 102,
+    "kind": "file",
+    "name": "src/Point.js",
+    "content": "// @flow\n\nimport Vector from './Vector';\n\n/**\n * Definition of an array representing a point.\n */\nexport type PointArray = [number, number];\n\n/**\n * Definition of an object representing a point.\n */\nexport type PointObject = { x: number, y: number };\n\n/**\n * Immutable point class.\n *\n * A point is an absolute place in space, at a given x and y coordinate.\n *\n * The difference between a Point and a vector is explained in this source:\n * http://math.stackexchange.com/a/645827 and\n * http://geomalgorithms.com/points_and_vectors.html.\n */\nexport default class Point {\n    /**\n     * The x coordinate.\n     *\n     * @type {number}\n     */\n    _x: number;\n\n    /**\n     * The y coordinate.\n     *\n     * @type {number}\n     */\n    _y: number;\n\n    /**\n     * Construct a new point, using a x and y coordinate.\n     *\n     * An point is immutable. All subsequent operations will return a new point\n     * instance.\n     *\n     * @param {number} x The x coordinate.\n     * @param {number} y The y coordinate.\n     * @return {void}\n     */\n    constructor(x: number, y: number) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new point from an array. The first index is considered the x\n     * coordinate, the second index is considered the y coordinate.\n     *\n     * @param {PointArray} array Input array with at least two values.\n     * @return {Point} Resulting point.\n     */\n    static fromArray(array: PointArray): Point {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Point(array[0], array[1]);\n    }\n\n    /**\n     * Create a new point from an object. The object should have an x and y\n     * property.\n     *\n     * @param {PointObject} object Input object with x and y property.\n     * @return {Point} Resulting point.\n     */\n    static fromObject(object: PointObject): Point {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof object !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Point(object.x, object.y);\n    }\n\n    /**\n     * Get the x coordinate.\n     *\n     * @return {number} The x coordinate.\n     */\n    get x(): number {\n        return this._x;\n    }\n\n    /**\n     * Get the y coordinate.\n     *\n     * @return {number} The y coordinate.\n     */\n    get y(): number {\n        return this._y;\n    }\n\n    /**\n     * Add a vector to a point.\n     *\n     * Note that addition of two points is undefined.\n     *\n     * @param {Vector} vector Vector to add to this point.\n     * @return {Point} Point with the vector added to it.\n     */\n    add(vector: Vector): Point {\n        if (process.env.NODE_ENV !== 'production') {\n            // $FlowFixMe\n            if (vector instanceof Point) {\n                throw new Error('Addition of two points is undefined.');\n            }\n        }\n\n        return new Point(this._x + vector._x, this._y + vector._y);\n    }\n\n    /**\n     * Subtract a Point from this point, to calculate the displacement.\n     *\n     * @param {Point} that Point to subtract.\n     * @return {Vector} The displacement as a Vector.\n     */\n    subtract(that: Point): Vector {\n        if (process.env.NODE_ENV !== 'production') {\n            // $FlowFixMe\n            if (that instanceof Vector) {\n                throw new Error(\n                    'Cannot subract Vector. Use `subtractVector` instead.'\n                );\n            }\n        }\n\n        return new Vector(this._x - that._x, this._y - that._y);\n    }\n\n    /**\n     * Subtract a Vector from this Point.\n     *\n     * @param {Vector} vector Vector to subtract.\n     * @return {Point} If `that` is a Vector, it will return the new point.\n     */\n    subtractVector(vector: Vector): Point {\n        return new Point(this._x - vector._x, this._y - vector._y);\n    }\n\n    /**\n     * Snap a point to a fixed number.\n     *\n     * @param {number} to The number to fix to.\n     * @return {Point} New point snapped to the given number.\n     */\n    snap(to: number): Point {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Point(round(this._x), round(this._y));\n    }\n\n    /**\n     * Calculate the squared distance between two points.\n     *\n     * If the exact distance doesn't matter, this method is slightly faster\n     * than `this.distance`.\n     *\n     * @param {Point} point The other point.\n     * @return {number} The distance between both points.\n     */\n    distanceSq(point: Point): number {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(point instanceof Point)) {\n                throw new Error('Must be a point.');\n            }\n        }\n\n        const dX = (this._x - point._x);\n        const dY = (this._y - point._y);\n\n        return dX * dX + dY * dY;\n    }\n\n    /**\n     * Calculate the distance between two points.\n     *\n     * @param {Point} point The other point.\n     * @return {number} The distance between both points.\n     */\n    distance(point: Point): number {\n        return Math.sqrt(this.distanceSq(point));\n    }\n\n    /**\n     * Convert point into a vector.\n     *\n     * Note: this is an utility method. A mathematical definition of a\n     * conversion does not exist.\n     *\n     * @return {Vector} The point converted as vector.\n     */\n    toVector(): Vector {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Convert this point into an array.\n     *\n     * @return {PointArray} Array representation (x, y).\n     */\n    toArray(): PointArray {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this point into an object.\n     *\n     * @return {PointObject} Object representation (x, y).\n     */\n    toObject(): PointObject {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this point into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString(): string {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this point into a string representation, using a fixed number of\n     * digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits: number): string {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof digits !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Point} Cloned instance.\n     */\n    clone(): Point {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Return true if this point is equal to another point. Two points are\n     * equal when both x and y coordinates are equal.\n     *\n     * @param {Object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that: Object): boolean {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the point is defined and finite.\n     *\n     * @return {boolean} True if point is fully defined and valid.\n     */\n    isValid(): boolean {\n        return typeof this._x === 'number' && isFinite(this._x) &&\n            typeof this._y === 'number' && isFinite(this._y);\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/Point.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 103,
+    "kind": "class",
+    "name": "Point",
+    "memberof": "src/Point.js",
+    "static": true,
+    "longname": "src/Point.js~Point",
+    "access": "public",
+    "export": true,
+    "importPath": "es6-geometry/src/Point.js",
+    "importStyle": "Point",
+    "description": "Immutable point class.\n\nA point is an absolute place in space, at a given x and y coordinate.\n\nThe difference between a Point and a vector is explained in this source:\nhttp://math.stackexchange.com/a/645827 and\nhttp://geomalgorithms.com/points_and_vectors.html.",
+    "lineNumber": 24,
+    "interface": false
+  },
+  {
+    "__docId__": 104,
+    "kind": "member",
+    "name": "_x",
+    "memberof": "src/Point.js~Point",
+    "static": false,
+    "longname": "src/Point.js~Point#_x",
+    "access": "private",
+    "description": "The x coordinate. ",
+    "lineNumber": 30,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "member",
+    "name": "_y",
+    "memberof": "src/Point.js~Point",
+    "static": false,
+    "longname": "src/Point.js~Point#_y",
+    "access": "private",
+    "description": "The y coordinate. ",
+    "lineNumber": 37,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#constructor",
+    "access": "public",
+    "description": "Construct a new point, using a x and y coordinate.\n\nAn point is immutable. All subsequent operations will return a new point\ninstance.",
+    "lineNumber": 49,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The x coordinate."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The y coordinate."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "method",
+    "name": "fromArray",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Point.js~Point.fromArray",
+    "access": "public",
+    "description": "Create a new point from an array. The first index is considered the x\ncoordinate, the second index is considered the y coordinate.  ",
+    "lineNumber": 61,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "PointArray"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "Input array with at least two values."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Resulting point."
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "method",
+    "name": "fromObject",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Point.js~Point.fromObject",
+    "access": "public",
+    "description": "Create a new point from an object. The object should have an x and y\nproperty.  ",
+    "lineNumber": 78,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "PointObject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "Input object with x and y property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Resulting point."
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "get",
+    "name": "x",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#x",
+    "access": "public",
+    "description": "Get the x coordinate. ",
+    "lineNumber": 93,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The x coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "get",
+    "name": "y",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#y",
+    "access": "public",
+    "description": "Get the y coordinate. ",
+    "lineNumber": 102,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The y coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "method",
+    "name": "add",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#add",
+    "access": "public",
+    "description": "Add a vector to a point.\n\nNote that addition of two points is undefined.  ",
+    "lineNumber": 114,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vector",
+        "description": "Vector to add to this point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point with the vector added to it."
+    }
+  },
+  {
+    "__docId__": 114,
+    "kind": "method",
+    "name": "subtract",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#subtract",
+    "access": "public",
+    "description": "Subtract a Point from this point, to calculate the displacement.  ",
+    "lineNumber": 131,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Point to subtract."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The displacement as a Vector."
+    }
+  },
+  {
+    "__docId__": 115,
+    "kind": "method",
+    "name": "subtractVector",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#subtractVector",
+    "access": "public",
+    "description": "Subtract a Vector from this Point.  ",
+    "lineNumber": 150,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vector",
+        "description": "Vector to subtract."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "If `that` is a Vector, it will return the new point."
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "method",
+    "name": "snap",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#snap",
+    "access": "public",
+    "description": "Snap a point to a fixed number.  ",
+    "lineNumber": 160,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "to",
+        "description": "The number to fix to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "New point snapped to the given number."
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "method",
+    "name": "distanceSq",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#distanceSq",
+    "access": "public",
+    "description": "Calculate the squared distance between two points.\n\nIf the exact distance doesn't matter, this method is slightly faster\nthan `this.distance`.  ",
+    "lineNumber": 175,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "point",
+        "description": "The other point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The distance between both points."
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "method",
+    "name": "distance",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#distance",
+    "access": "public",
+    "description": "Calculate the distance between two points.  ",
+    "lineNumber": 194,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "point",
+        "description": "The other point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The distance between both points."
+    }
+  },
+  {
+    "__docId__": 119,
+    "kind": "method",
+    "name": "toVector",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#toVector",
+    "access": "public",
+    "description": "Convert point into a vector.\n\nNote: this is an utility method. A mathematical definition of a\nconversion does not exist.  ",
+    "lineNumber": 206,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The point converted as vector."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 120,
+    "kind": "method",
+    "name": "toArray",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#toArray",
+    "access": "public",
+    "description": "Convert this point into an array.  ",
+    "lineNumber": 215,
+    "return": {
+      "nullable": null,
+      "types": [
+        "PointArray"
+      ],
+      "spread": false,
+      "description": "Array representation (x, y)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 121,
+    "kind": "method",
+    "name": "toObject",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#toObject",
+    "access": "public",
+    "description": "Convert this point into an object.  ",
+    "lineNumber": 224,
+    "return": {
+      "nullable": null,
+      "types": [
+        "PointObject"
+      ],
+      "spread": false,
+      "description": "Object representation (x, y)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 122,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#toString",
+    "access": "public",
+    "description": "Convert this point into a string representation.  ",
+    "lineNumber": 233,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "String representation (x, y)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "name": "toFixed",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#toFixed",
+    "access": "public",
+    "description": "Convert this point into a string representation, using a fixed number of\ndigits for displaying.  ",
+    "lineNumber": 244,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "digits",
+        "description": "Number of digits to use for representation."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "String representation (x, y)."
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "name": "clone",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#clone",
+    "access": "public",
+    "description": "Create a shallow copy of this instance.  ",
+    "lineNumber": 259,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Cloned instance."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 125,
+    "kind": "method",
+    "name": "equals",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#equals",
+    "access": "public",
+    "description": "Return true if this point is equal to another point. Two points are\nequal when both x and y coordinates are equal.  ",
+    "lineNumber": 270,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Other instance to compare to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if both points are equal, false otherwise."
+    }
+  },
+  {
+    "__docId__": 126,
+    "kind": "method",
+    "name": "isValid",
+    "memberof": "src/Point.js~Point",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Point.js~Point#isValid",
+    "access": "public",
+    "description": "Return true if the point is defined and finite.  ",
+    "lineNumber": 280,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if point is fully defined and valid."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 127,
+    "kind": "file",
+    "name": "src/Rectangle.js",
+    "content": "// @flow\n\nimport Point from './Point';\nimport LineSegment from './LineSegment';\nimport Vector from './Vector';\nimport Circle from './Circle';\n\nimport type { PointArray, PointObject } from './Point';\n\n/**\n * Definition of an array representing a rectangle.\n */\nexport type RectangleArray = [PointArray, PointArray];\n/**\n * Definition of an object representing a rectangle.\n */\nexport type RectangleObject = { a: PointObject, b: PointObject };\n\n/**\n * Definition of an object representing a bounding box.\n */\nexport type BoundingObject = {\n    top: number, left: number, width: number, height: number\n};\n\n/**\n * Immutable rectangle class.\n */\nexport default class Rectangle {\n    /**\n     * The `A` point.\n     *\n     * @type {Point}\n     */\n    _a: Point;\n\n    /**\n     * The `B` point.\n     *\n     * @type {Point}\n     */\n    _b: Point;\n\n    /**\n     * Construct a new immutable rectangle of two points.\n     *\n     * @param {Point} a The `A` point..\n     * @param {Point} b The `B` point.\n     * @return {void}\n     */\n    constructor(a: Point, b: Point) {\n        this._a = a;\n        this._b = b;\n    }\n\n    /**\n     * Create a new rectangle from an array. The first index should be point\n     * `A` and the second index should be point `B`.\n     *\n     * @param {RectangleArray} array Input array with at least two values.\n     * @return {Rectangle} Resulting rectangle.\n     */\n    static fromArray(array: RectangleArray): Rectangle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Rectangle(\n            Point.fromArray(array[0]),\n            Point.fromArray(array[1])\n        );\n    }\n\n    /**\n     * Create a new rectangle from an object. The object should have an `a` and\n     * `b` property.\n     *\n     * @param {RectangleObject} object Input object with `a` and `b` property.\n     * @return {Rectangle} Resulting rectangle.\n     */\n    static fromObject(object: RectangleObject): Rectangle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof object !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Rectangle(\n            Point.fromObject(object.a),\n            Point.fromObject(object.b)\n        );\n    }\n\n    /**\n     * Create a new rectangle from a (client) bounding rect from an element.\n     * However, it accepts any object with a `left`, `top, `width` and `height`\n     * property.\n     *\n     * @param {Object} boundingRect Input bounding rectangle.\n     * @return {Rectangle} Rectangle based on given bounding rectangle.\n     */\n    static fromBoundingRect(boundingRect: BoundingObject): Rectangle {\n        return new Rectangle(\n            new Point(boundingRect.left, boundingRect.top),\n            new Point(\n                boundingRect.left + boundingRect.width,\n                boundingRect.top + boundingRect.height\n            )\n        );\n    }\n\n    /**\n     * Return point `A`.\n     *\n     * @return {Point} Point `A`.\n     */\n    get a(): Point {\n        return this._a;\n    }\n\n    /**\n     * Return point `B`.\n     *\n     * @return {Point} Point `B`.\n     */\n    get b(): Point {\n        return this._b;\n    }\n\n    /**\n     * Return the left x coordinate.\n     *\n     * @return {number} Left x coordinate.\n     */\n    get left(): number {\n        // return Math.min(this._a._x, this._b._x);\n        return this._a._x;\n    }\n\n    /**\n     * Return the right x coordinate.\n     *\n     * @return {number} Right x coordinate.\n     */\n    get right(): number {\n        // return Math.max(this._a._x, this._b._x);\n        return this._b._x;\n    }\n\n    /**\n     * Return the top y coordinate.\n     *\n     * @return {number} Top y coordinate.\n     */\n    get top(): number {\n        // return Math.min(this._a._y, this._b._y);\n        return this._a._y;\n    }\n\n    /**\n     * Return the bottom y coordinate.\n     *\n     * @return {number} Bottom y coordinate.\n     */\n    get bottom(): number {\n        // return Math.max(this._a._y, this._b._y);\n        return this._b._y;\n    }\n\n    /**\n     * Return the width of this rectangle, which is the difference between\n     * `this.right` and `this.left`.\n     *\n     * @return {number} Width of the rectangle.\n     */\n    get width(): number {\n        return this.right - this.left;\n    }\n\n    /**\n     * Return the height of this rectangle, which is the difference between\n     * `this.bottom` and `this.top`.\n     *\n     * @return {number} Height of the rectangle.\n     */\n    get height(): number {\n        return this.bottom - this.top;\n    }\n\n    /**\n     * Calculate the center point of this rectangle.\n     *\n     * @return {Point} Center of this rectangle.\n     */\n    center(): Point {\n        const x = (this._a._x + this._b._x) / 2;\n        const y = (this._a._y + this._b._y) / 2;\n\n        return new Point(x, y);\n    }\n\n    /**\n     * Calculate the center point offset.\n     *\n     * @return {Vector} Relative center point offset of this rectangle.\n     */\n    centerOffset(): Vector {\n        const center = this.center();\n\n        return center.subtract(this._a);\n    }\n\n    /**\n     * Merge two rectangles, taking the bouding box that contains both\n     * rectangles.\n     *\n     * @param {Rectangle} rectangle Other rectangle to merge with.\n     * @return {Rectangle} New rectangle containing both rectangles.\n     */\n    merge(rectangle: Rectangle): Rectangle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must merge with another rectangle.');\n            }\n        }\n\n        const a = new Point(\n            Math.min(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),\n            Math.min(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)\n        );\n        const b = new Point(\n            Math.max(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),\n            Math.max(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)\n        );\n\n        return new Rectangle(a, b);\n    }\n\n    /**\n     * Move the rectangle by applying an offset to the points `a` and `b`.\n     *\n     * @param {Vector} vector Offset vector.\n     * @return {Rectangle} Moved rectangle.\n     */\n    move(vector: Vector): Rectangle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(vector instanceof Vector)) {\n                throw new Error('Offset must be a vector.');\n            }\n        }\n\n        return new Rectangle(this._a.add(vector), this._b.add(vector));\n    }\n\n    /**\n     * Move the `a` point and `b` point of this rectangle individually.\n     *\n     * @param {Vector} vectorA Offset vector for `a` point.\n     * @param {Vector} vectorB Offset vector for `b` point.\n     * @return {Rectangle} Moved rectangle.\n     */\n    moveAB(vectorA: Vector, vectorB: Vector): Rectangle {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(vectorA instanceof Vector) || !(vectorB instanceof Vector)) {\n                throw new Error('Offset must be a vector.');\n            }\n        }\n\n        return new Rectangle(this._a.add(vectorA), this._b.add(vectorB));\n    }\n\n    /**\n     * Similar to move, but moves `a` and `b` in opposite directions by\n     * inverting the vector for `a`.\n     *\n     * This method may shrink the rectangle if the vector is negative, or if\n     * points `a` and `b` have been swapped. Normalize the\n     *\n     * @param {Vector} vector The offset vector to expand with.\n     * @return {Rectangle} Expanded rectangle.\n     */\n    expand(vector: Vector): Rectangle {\n        return this.moveAB(vector.invert(), vector);\n    }\n\n    /**\n     * Returns true if a given point is on this rectangle.\n     *\n     * @param {Point} point Point to test with.\n     * @return {boolean} True if point is within rectangle.\n     */\n    containsPoint(point: Point): boolean {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(point instanceof Point)) {\n                throw new Error('Must be a point.');\n            }\n        }\n\n        return (\n            (point._x >= this._a._x && point._x <= this._b._x) ||\n            (point._x >= this._b._x && point._x <= this._a._x)\n        ) && (\n            (point._y >= this._a._y && point._y <= this._b._y) ||\n            (point._y >= this._b._y && point._y <= this._a._y)\n        );\n    }\n\n    /**\n     * Returns true if a given rectangle is within this rectangle. That is,\n     * both point `A` and `B` are within this rectangle.\n     *\n     * @param {Rectangle} rectangle The rectangle to check for.\n     * @return {boolean} True if the rectangle is within this rectangle.\n     */\n    containsRectangle(rectangle: Rectangle): boolean {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must be a rectangle.');\n            }\n        }\n\n        return this.containsPoint(rectangle.a) &&\n            this.containsPoint(rectangle.b);\n    }\n\n    /**\n     * Returns true if a given rectangle collides with this rectangle.\n     *\n     * @param {Rectangle} rectangle Other rectangle to compare with.\n     * @return {boolean} True if the given rectangle collides with this one.\n     */\n    collidesRectangle(rectangle: Rectangle): boolean {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(rectangle instanceof Rectangle)) {\n                throw new Error('Must be a rectangle.');\n            }\n        }\n\n        return (this._a._x < rectangle._b._x && this._b._x > rectangle._a._x &&\n            this._a._y < rectangle._b._y && this._b._y > rectangle._a._y);\n    }\n\n    /**\n     * Returns true if a given circle collides with this rectangle.\n     *\n     * @param {Circle} circle Other circle to compare with.\n     * @return {boolean} True if the given circles collides with this one.\n     */\n    collidesCircle(circle: Circle): boolean {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!(circle instanceof Circle)) {\n                throw new Error('Must be a circle.');\n            }\n        }\n\n        const clamp = (value, min, max) => Math.max(min, Math.min(max, value));\n\n        const closest = new Point(\n            clamp(circle._a._x, this._a._x, this._b._x),\n            clamp(circle._a._y, this._a._y, this._b._y)\n        );\n\n        return closest.distanceSq(circle._a) < (circle._r * circle._r);\n    }\n\n    /**\n     * Calculate the area of the given rectangle.\n     *\n     * @return {number} The rectangle area.\n     */\n    area(): number {\n        return (this._b._x - this._a._x) * (this._b._y - this._a._y);\n    }\n\n    /**\n     * Return an array representation of this instance.\n     *\n     * @return {RectangleArray} Array representation [a, b].\n     */\n    toArray(): RectangleArray {\n        return [this._a.toArray(), this._b.toArray()];\n    }\n\n    /**\n     * Return an object representation of this instance.\n     *\n     * @return {RectangleObject} Object representation {a, b}.\n     */\n    toObject(): RectangleObject {\n        return {\n            a: this._a.toObject(),\n            b: this._b.toObject(),\n        };\n    }\n\n    /**\n     * Return an object representation of the bounding rectangle of this\n     * instance.\n     *\n     * @return {BoundingObject} Object representation { left, top, width, height }.\n     */\n    toBoundingRect(): BoundingObject {\n        return {\n            left: this.left,\n            top: this.top,\n            width: this.width,\n            height: this.height,\n        };\n    }\n\n    /**\n     * Return a string representation of this rectangle.\n     *\n     * @return {string} String representation.\n     */\n    toString(): string {\n        return `(${this._a.toString()}, ${this._b.toString()})`;\n    }\n\n    /**\n     * Return an array of line segments of the four edges of this rectangle.\n     *\n     * @return {Array<LineSegment>} Array of line segments.\n     */\n    toLineSegments(): Array<LineSegment> {\n        const c = new Point(this._a._x, this._b._y);\n        const d = new Point(this._b._x, this._a._y);\n\n        return [\n            new LineSegment(this._a, d),\n            new LineSegment(d, this._b),\n            new LineSegment(this._b, c),\n            new LineSegment(c, this._a),\n        ];\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Rectangle} Cloned instance.\n     */\n    clone(): Rectangle {\n        return new Rectangle(this._a, this._b);\n    }\n\n    /**\n     * Return a normalize rectangle, with the `A` point in the top-left\n     * position and the `B` point in the bottom-right position.\n     *\n     * @return {Rectangle} The normalized rectangle.\n     */\n    normalize(): Rectangle {\n        return new Rectangle(\n            new Point(this.left, this.top),\n            new Point(this.right, this.bottom)\n        );\n    }\n\n    /**\n     * Return true if this rectangle is equal to another rectangle. Two\n     * rectangles are equal if and only if both points are equal. This means\n     * if two rectangles have the same left, right, top and bottom, they\n     * may not be equal, because they may have been defined from different\n     * points.\n     *\n     * @param {Object} that Other instance to compare to.\n     * @return {boolean} True if both rectangles are equal, false otherwise.\n     */\n    equals(that: Object): boolean {\n        return this.constructor.name === that.constructor.name &&\n            this._a.equals(that._b) && this._b.equals(that._b);\n    }\n\n    /**\n     * Return true if the rectangle is defined and finite.\n     *\n     * @return {boolean} True if rectangle is valid.\n     */\n    isValid(): boolean {\n        return this._a.isValid() && this._b.isValid();\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/Rectangle.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 128,
+    "kind": "class",
+    "name": "Rectangle",
+    "memberof": "src/Rectangle.js",
+    "static": true,
+    "longname": "src/Rectangle.js~Rectangle",
+    "access": "public",
+    "export": true,
+    "importPath": "es6-geometry/src/Rectangle.js",
+    "importStyle": "Rectangle",
+    "description": "Immutable rectangle class.",
+    "lineNumber": 29,
+    "interface": false
+  },
+  {
+    "__docId__": 129,
+    "kind": "member",
+    "name": "_a",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#_a",
+    "access": "private",
+    "description": "The `A` point. ",
+    "lineNumber": 35,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 130,
+    "kind": "member",
+    "name": "_b",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#_b",
+    "access": "private",
+    "description": "The `B` point. ",
+    "lineNumber": 42,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 131,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#constructor",
+    "access": "public",
+    "description": "Construct a new immutable rectangle of two points.",
+    "lineNumber": 51,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "a",
+        "description": "The `A` point.."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "b",
+        "description": "The `B` point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 134,
+    "kind": "method",
+    "name": "fromArray",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Rectangle.js~Rectangle.fromArray",
+    "access": "public",
+    "description": "Create a new rectangle from an array. The first index should be point\n`A` and the second index should be point `B`.  ",
+    "lineNumber": 63,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "RectangleArray"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "Input array with at least two values."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Resulting rectangle."
+    }
+  },
+  {
+    "__docId__": 135,
+    "kind": "method",
+    "name": "fromObject",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Rectangle.js~Rectangle.fromObject",
+    "access": "public",
+    "description": "Create a new rectangle from an object. The object should have an `a` and\n`b` property.  ",
+    "lineNumber": 83,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "RectangleObject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "Input object with `a` and `b` property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Resulting rectangle."
+    }
+  },
+  {
+    "__docId__": 136,
+    "kind": "method",
+    "name": "fromBoundingRect",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Rectangle.js~Rectangle.fromBoundingRect",
+    "access": "public",
+    "description": "Create a new rectangle from a (client) bounding rect from an element.\nHowever, it accepts any object with a `left`, `top, `width` and `height`\nproperty.  ",
+    "lineNumber": 104,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "boundingRect",
+        "description": "Input bounding rectangle."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Rectangle based on given bounding rectangle."
+    }
+  },
+  {
+    "__docId__": 137,
+    "kind": "get",
+    "name": "a",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#a",
+    "access": "public",
+    "description": "Return point `A`. ",
+    "lineNumber": 119,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point `A`."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 138,
+    "kind": "get",
+    "name": "b",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#b",
+    "access": "public",
+    "description": "Return point `B`. ",
+    "lineNumber": 128,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Point `B`."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "get",
+    "name": "left",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#left",
+    "access": "public",
+    "description": "Return the left x coordinate. ",
+    "lineNumber": 137,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Left x coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "get",
+    "name": "right",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#right",
+    "access": "public",
+    "description": "Return the right x coordinate. ",
+    "lineNumber": 147,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Right x coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 141,
+    "kind": "get",
+    "name": "top",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#top",
+    "access": "public",
+    "description": "Return the top y coordinate. ",
+    "lineNumber": 157,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Top y coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 142,
+    "kind": "get",
+    "name": "bottom",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#bottom",
+    "access": "public",
+    "description": "Return the bottom y coordinate. ",
+    "lineNumber": 167,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Bottom y coordinate."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 143,
+    "kind": "get",
+    "name": "width",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#width",
+    "access": "public",
+    "description": "Return the width of this rectangle, which is the difference between\n`this.right` and `this.left`. ",
+    "lineNumber": 178,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Width of the rectangle."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 144,
+    "kind": "get",
+    "name": "height",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#height",
+    "access": "public",
+    "description": "Return the height of this rectangle, which is the difference between\n`this.bottom` and `this.top`. ",
+    "lineNumber": 188,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Height of the rectangle."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 145,
+    "kind": "method",
+    "name": "center",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#center",
+    "access": "public",
+    "description": "Calculate the center point of this rectangle.  ",
+    "lineNumber": 197,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "Center of this rectangle."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 146,
+    "kind": "method",
+    "name": "centerOffset",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#centerOffset",
+    "access": "public",
+    "description": "Calculate the center point offset.  ",
+    "lineNumber": 209,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "Relative center point offset of this rectangle."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 147,
+    "kind": "method",
+    "name": "merge",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#merge",
+    "access": "public",
+    "description": "Merge two rectangles, taking the bouding box that contains both\nrectangles.  ",
+    "lineNumber": 222,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Rectangle"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "rectangle",
+        "description": "Other rectangle to merge with."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "New rectangle containing both rectangles."
+    }
+  },
+  {
+    "__docId__": 148,
+    "kind": "method",
+    "name": "move",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#move",
+    "access": "public",
+    "description": "Move the rectangle by applying an offset to the points `a` and `b`.  ",
+    "lineNumber": 247,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vector",
+        "description": "Offset vector."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Moved rectangle."
+    }
+  },
+  {
+    "__docId__": 149,
+    "kind": "method",
+    "name": "moveAB",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#moveAB",
+    "access": "public",
+    "description": "Move the `a` point and `b` point of this rectangle individually.  ",
+    "lineNumber": 264,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vectorA",
+        "description": "Offset vector for `a` point."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vectorB",
+        "description": "Offset vector for `b` point."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Moved rectangle."
+    }
+  },
+  {
+    "__docId__": 150,
+    "kind": "method",
+    "name": "expand",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#expand",
+    "access": "public",
+    "description": "Similar to move, but moves `a` and `b` in opposite directions by\ninverting the vector for `a`.\n\nThis method may shrink the rectangle if the vector is negative, or if\npoints `a` and `b` have been swapped. Normalize the  ",
+    "lineNumber": 284,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vector",
+        "description": "The offset vector to expand with."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Expanded rectangle."
+    }
+  },
+  {
+    "__docId__": 151,
+    "kind": "method",
+    "name": "containsPoint",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#containsPoint",
+    "access": "public",
+    "description": "Returns true if a given point is on this rectangle.  ",
+    "lineNumber": 294,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Point"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "point",
+        "description": "Point to test with."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if point is within rectangle."
+    }
+  },
+  {
+    "__docId__": 152,
+    "kind": "method",
+    "name": "containsRectangle",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#containsRectangle",
+    "access": "public",
+    "description": "Returns true if a given rectangle is within this rectangle. That is,\nboth point `A` and `B` are within this rectangle.  ",
+    "lineNumber": 317,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Rectangle"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "rectangle",
+        "description": "The rectangle to check for."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if the rectangle is within this rectangle."
+    }
+  },
+  {
+    "__docId__": 153,
+    "kind": "method",
+    "name": "collidesRectangle",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#collidesRectangle",
+    "access": "public",
+    "description": "Returns true if a given rectangle collides with this rectangle.  ",
+    "lineNumber": 334,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Rectangle"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "rectangle",
+        "description": "Other rectangle to compare with."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if the given rectangle collides with this one."
+    }
+  },
+  {
+    "__docId__": 154,
+    "kind": "method",
+    "name": "collidesCircle",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#collidesCircle",
+    "access": "public",
+    "description": "Returns true if a given circle collides with this rectangle.  ",
+    "lineNumber": 351,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Circle"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "circle",
+        "description": "Other circle to compare with."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if the given circles collides with this one."
+    }
+  },
+  {
+    "__docId__": 155,
+    "kind": "method",
+    "name": "area",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#area",
+    "access": "public",
+    "description": "Calculate the area of the given rectangle.  ",
+    "lineNumber": 373,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The rectangle area."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 156,
+    "kind": "method",
+    "name": "toArray",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#toArray",
+    "access": "public",
+    "description": "Return an array representation of this instance.  ",
+    "lineNumber": 382,
+    "return": {
+      "nullable": null,
+      "types": [
+        "RectangleArray"
+      ],
+      "spread": false,
+      "description": "Array representation [a, b]."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 157,
+    "kind": "method",
+    "name": "toObject",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#toObject",
+    "access": "public",
+    "description": "Return an object representation of this instance.  ",
+    "lineNumber": 391,
+    "return": {
+      "nullable": null,
+      "types": [
+        "RectangleObject"
+      ],
+      "spread": false,
+      "description": "Object representation {a, b}."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 158,
+    "kind": "method",
+    "name": "toBoundingRect",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#toBoundingRect",
+    "access": "public",
+    "description": "Return an object representation of the bounding rectangle of this\ninstance.  ",
+    "lineNumber": 404,
+    "return": {
+      "nullable": null,
+      "types": [
+        "BoundingObject"
+      ],
+      "spread": false,
+      "description": "Object representation { left, top, width, height }."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 159,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#toString",
+    "access": "public",
+    "description": "Return a string representation of this rectangle.  ",
+    "lineNumber": 418,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "String representation."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 160,
+    "kind": "method",
+    "name": "toLineSegments",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#toLineSegments",
+    "access": "public",
+    "description": "Return an array of line segments of the four edges of this rectangle.  ",
+    "lineNumber": 427,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array<LineSegment>"
+      ],
+      "spread": false,
+      "description": "Array of line segments."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 161,
+    "kind": "method",
+    "name": "clone",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#clone",
+    "access": "public",
+    "description": "Create a shallow copy of this instance.  ",
+    "lineNumber": 444,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "Cloned instance."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 162,
+    "kind": "method",
+    "name": "normalize",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#normalize",
+    "access": "public",
+    "description": "Return a normalize rectangle, with the `A` point in the top-left\nposition and the `B` point in the bottom-right position.  ",
+    "lineNumber": 454,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Rectangle"
+      ],
+      "spread": false,
+      "description": "The normalized rectangle."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 163,
+    "kind": "method",
+    "name": "equals",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#equals",
+    "access": "public",
+    "description": "Return true if this rectangle is equal to another rectangle. Two\nrectangles are equal if and only if both points are equal. This means\nif two rectangles have the same left, right, top and bottom, they\nmay not be equal, because they may have been defined from different\npoints.  ",
+    "lineNumber": 471,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Other instance to compare to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if both rectangles are equal, false otherwise."
+    }
+  },
+  {
+    "__docId__": 164,
+    "kind": "method",
+    "name": "isValid",
+    "memberof": "src/Rectangle.js~Rectangle",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Rectangle.js~Rectangle#isValid",
+    "access": "public",
+    "description": "Return true if the rectangle is defined and finite.  ",
+    "lineNumber": 481,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if rectangle is valid."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 165,
+    "kind": "file",
+    "name": "src/Vector.js",
+    "content": "// @flow\n\nimport Point from './Point';\n\n/**\n * Definition of an array representing a vector.\n */\nexport type VectorArray = [number, number];\n\n/**\n * Definition of an object representing a vector.\n */\nexport type VectorObject = { x: number, y: number };\n\n/**\n * Immutable vector class.\n *\n * A vector represents a displacement, using a x an `y` component to represent\n * the length (magnitude) and direction.\n *\n * The difference between a Vector and a Point is explained in this source:\n * http://math.stackexchange.com/a/645827 and\n * http://geomalgorithms.com/points_and_vectors.html.\n */\nexport default class Vector {\n    /**\n     * The x coordinate.\n     *\n     * @type {number}\n     */\n    _x: number;\n\n    /**\n     * The y coordinate.\n     *\n     * @type {number}\n     */\n    _y: number;\n\n    /**\n     * Definition of the unit vector.\n     */\n    static Unit = new Vector(1, 1);\n\n    /**\n     * Construct a new vector, using a x and `y` component to represent the\n     * length (magnitude) and direction relative to (0, 0).\n     *\n     * An vector is immutable. All subsequent operations will return a new\n     * vector instance.\n     *\n     * @param {number} x The `x` component.\n     * @param {number} y The `y` component.\n     * @return {void}\n     */\n    constructor(x: number, y: number) {\n        this._x = x;\n        this._y = y;\n    }\n\n    /**\n     * Create a new vector from an array. The first index is considered the x\n     * component, the second index is considered the `y` component.\n     *\n     * @param {VectorArray} array Input array with at least two values.\n     * @return {Vector} Resulting vector.\n     */\n    static fromArray(array: VectorArray): Vector {\n        if (process.env.NODE_ENV !== 'production') {\n            if (!Array.isArray(array) || array.length < 2) {\n                throw new Error('Expected an array with at least two values.');\n            }\n        }\n\n        return new Vector(array[0], array[1]);\n    }\n\n    /**\n     * Create a new vector from an object. The object should have an x and y\n     * property.\n     *\n     * @param {VectorObject} object Input object with x and y property.\n     * @return {Vector} Resulting vector.\n     */\n    static fromObject(object: VectorObject): Vector {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof object !== 'object') {\n                throw new Error('Expected an object.');\n            }\n        }\n\n        return new Vector(object.x, object.y);\n    }\n\n    /**\n     * Create a new vector form a single value. In that case, both the x and y\n     * property will have the same value.\n     *\n     * @param {number} number Input number for x and y property.\n     * @return {Vector} Resulting vector.\n     */\n    static fromNumber(number: number): Vector {\n        return new Vector(number, number);\n    }\n\n    /**\n     * Get the `x` component.\n     *\n     * @return {number} The `x` component.\n     */\n    get x(): number {\n        return this._x;\n    }\n\n    /**\n     * Get the `y` component.\n     *\n     * @return {number} The `y` component.\n     */\n    get y(): number {\n        return this._y;\n    }\n\n    /**\n     * Add another vector to this vector.\n     *\n     * @param {Vector} vector Vector to add.\n     * @return {Vector} A new Vector if adding vector.\n     */\n    add(vector: Vector): Vector {\n        if (process.env.NODE_ENV !== 'production') {\n            // $FlowFixMe\n            if (vector instanceof Point) {\n                throw new Error('Addition of point to a vector is undefined.');\n            }\n        }\n\n        return new Vector(this._x + vector._x, this._y + vector._y);\n    }\n\n    /**\n     * Subtract another vector from this vector.\n     *\n     * @param {Vector} that Vector to subtract.\n     * @return {Vector} New vector with other vector subtracted from this.\n     */\n    subtract(that: Vector): Vector {\n        return new Vector(this._x - that._x, this._y - that._y);\n    }\n\n    /**\n     * Invert a vector, returning a copy with inverted magnitude and direction.\n     *\n     * @return {Vector} Inverted vector\n     */\n    invert(): Vector {\n        return new Vector(-this._x, -this._y);\n    }\n\n    /**\n     * Scale a vector by a scalar value.\n     *\n     * @param {number} scalar The scalar value.\n     * @return {Vector} New vector multiplied by the scalar.\n     */\n    multiply(scalar: number): Vector {\n        return new Vector(this._x * scalar, this._y * scalar);\n    }\n\n    /**\n     * Scale a vector by a `x` and `y` scalar value.\n     *\n     * @param {number} scalarX The scalar value for the `x` component.\n     * @param {number} scalarY The scalar value for the `y` component.\n     * @return {Vector} New vector multiplied by both scalars.\n     */\n    multiplyXY(scalarX: number, scalarY: number): Vector {\n        return new Vector(this._x * scalarX, this._y * scalarY);\n    }\n\n    /**\n     * Divide a vector by a scalar value.\n     *\n     * @param {number} scalar The scalar value.\n     * @return {Vector} New vector divided by the scalar.\n     */\n    divide(scalar: number): Vector {\n        return new Vector(this._x / scalar, this._y / scalar);\n    }\n\n    /**\n     * Divide a vector by a `x` and `y` scalar value.\n     *\n     * @param {number} scalarX The scalar value for the `x` component.\n     * @param {number} scalarY The scalar value for the `y` component.\n     * @return {Vector} New vector divided by both scalars.\n     */\n    divideXY(scalarX: number, scalarY: number): Vector {\n        return new Vector(this._x / scalarX, this._y / scalarY);\n    }\n\n    /**\n     * Mix this vector with another vector, with a given weight.\n     *\n     * @param {Vector} that The other vector to mix with.\n     * @param {number} amount The weight (between 0 and 1).\n     * @return {Vector} A new vector with a mix of both this vector and the\n     *                  given vector.\n     */\n    mix(that: Vector, amount: number = 0.5): Vector {\n        if (process.env.NODE_ENV !== 'production') {\n            if (amount < 0 || amount > 1) {\n                throw new Error('Amount must be between 0 and 1.');\n            }\n        }\n\n        return this.multiply(1 - amount).add(that.multiply(amount));\n    }\n\n    /**\n     * Calculate the vector that is perpendicular to this vector.\n     *\n     * @return {Vector} The perpendicular vector.\n     */\n    perpendicular(): Vector {\n        return new Vector(-this._y, this._x);\n    }\n\n    /**\n     * Snap a vector to a fixed number.\n     *\n     * @param {number} to The number to fix to.\n     * @return {Point} New vector snapped to the given number.\n     */\n    snap(to: number): Vector {\n        const round = (val) => Math.round(val / to) * to;\n\n        return new Vector(round(this._x), round(this._y));\n    }\n\n    /**\n     * Calculate the dot value.\n     *\n     * @param {Vector} that The other vector.\n     * @return {number} The dot value of both vectors.\n     */\n    dot(that: Vector): number {\n        return this._x * that._x + this._y * that._y;\n    }\n\n    /**\n     * Return the angle of this vector.\n     *\n     * @return {number} Angle of the vector.\n     */\n    angle(): number {\n        return Math.atan2(this._y, this._x);\n    }\n\n    /**\n     * Return the angle (in degrees) of this vector.\n     *\n     * @return {number} Angle of the vector (in degrees).\n     */\n    angleDeg(): number {\n        return Math.atan2(this._y, this._x) * 180 / Math.PI;\n    }\n\n    /**\n     * Calculate the slope of this vector.\n     *\n     * @return {number} The slope of the vector.\n     */\n    slope(): number {\n        return this._y / this._x;\n    }\n\n    /**\n     * Calculate the squared length of this vector.\n     *\n     * If the exact length doesn't matter, this method is slightly faster\n     * than `this.length`.\n     *\n     * @return {number} The squared length of this vector.\n     */\n    lengthSq(): number {\n        return this._x * this._x + this._y * this._y;\n    }\n\n    /**\n     * Calculate the length (magnitude) of the vector.\n     *\n     * @return {number} The length of the vector.\n     */\n    length(): number {\n        return Math.sqrt(this.lengthSq());\n    }\n\n    /**\n     * Return a vector with a minimum length of the given number. If the length\n     * is less, normalize it. Otherwise this instance is returned.\n     *\n     * @param {number} length The minimum length.\n     * @return {Vector} The normalized vector.\n     */\n    minLength(length: number): Vector {\n        return this.length() < length ? this.normalize(length) : this;\n    }\n\n    /**\n     * Return a vector with a maximum length of the given number. If the length\n     * is less, normalize it. Otherwise this instance is returned.\n     *\n     * @param {number} length The maximum length.\n     * @return {Vector} The normalized vector.\n     */\n    maxLength(length: number): Vector {\n        return this.length() > length ? this.normalize(length) : this;\n    }\n\n    /**\n     * Normalize the vector to a given scalar.\n     *\n     * @param {number} scalar The number to scale this vector to.\n     * @return {Vector} The normalized vector\n     */\n    normalize(scalar: number = 1): Vector {\n        return this.divide(this.length()).multiply(scalar);\n    }\n\n    /**\n     * Project this vector onto another vector.\n     *\n     * @param {Vector} that The other vector to project onto.\n     * @return {Vector} The projected vector.\n     */\n    projectOnto(that: Vector): Vector {\n        return that.multiply(this.dot(that) / that.lengthSq());\n    }\n\n    /**\n     * Convert vector into a point.\n     *\n     * Note: this is an utility method. A mathematical definition of a\n     * conversion does not exist.\n     *\n     * @return {Point} The vector converted as point.\n     */\n    toPoint(): Point {\n        return new Point(this._x, this._y);\n    }\n\n    /**\n     * Convert this vector into an array.\n     *\n     * @return {VectorArray} Array representation (x, y).\n     */\n    toArray(): VectorArray {\n        return [this._x, this._y];\n    }\n\n    /**\n     * Convert this vector into an object.\n     *\n     * @return {Object} Object representation (x, y).\n     */\n    toObject(): VectorObject {\n        return { x: this._x, y: this._y };\n    }\n\n    /**\n     * Convert this vector into a string representation.\n     *\n     * @return {string} String representation (x, y).\n     */\n    toString(): string {\n        return `(${this._x}, ${this._y})`;\n    }\n\n    /**\n     * Convert this vector into a string representation, using a fixed number\n     * of digits for displaying.\n     *\n     * @param {number} digits Number of digits to use for representation.\n     * @return {string} String representation (x, y).\n     */\n    toFixed(digits: number): string {\n        if (process.env.NODE_ENV !== 'production') {\n            if (typeof digits !== 'number') {\n                throw new Error('Number of digits must be a number.');\n            }\n        }\n\n        return `(${this._x.toFixed(digits)}, ${this._y.toFixed(digits)})`;\n    }\n\n    /**\n     * Create a shallow copy of this instance.\n     *\n     * @return {Vector} Cloned instance.\n     */\n    clone(): Vector {\n        return new Vector(this._x, this._y);\n    }\n\n    /**\n     * Return true if this vector is equal to another vector. Two vectors are\n     * equal when both x and `y` components are equal.\n     *\n     * @param {Object} that Other instance to compare to.\n     * @return {boolean} True if both points are equal, false otherwise.\n     */\n    equals(that: Object): boolean {\n        return this.constructor.name === that.constructor.name &&\n            this._x === that._x && this._y === that._y;\n    }\n\n    /**\n     * Return true if the vector is defined and finite.\n     *\n     * @return {boolean} True if vector is fully defined and valid.\n     */\n    isValid(): boolean {\n        return typeof this._x === 'number' && isFinite(this._x) &&\n            typeof this._y === 'number' && isFinite(this._y);\n    }\n}\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/Vector.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 166,
+    "kind": "class",
+    "name": "Vector",
+    "memberof": "src/Vector.js",
+    "static": true,
+    "longname": "src/Vector.js~Vector",
+    "access": "public",
+    "export": true,
+    "importPath": "es6-geometry/src/Vector.js",
+    "importStyle": "Vector",
+    "description": "Immutable vector class.\n\nA vector represents a displacement, using a x an `y` component to represent\nthe length (magnitude) and direction.\n\nThe difference between a Vector and a Point is explained in this source:\nhttp://math.stackexchange.com/a/645827 and\nhttp://geomalgorithms.com/points_and_vectors.html.",
+    "lineNumber": 25,
+    "interface": false
+  },
+  {
+    "__docId__": 167,
+    "kind": "member",
+    "name": "_x",
+    "memberof": "src/Vector.js~Vector",
+    "static": false,
+    "longname": "src/Vector.js~Vector#_x",
+    "access": "private",
+    "description": "The x coordinate. ",
+    "lineNumber": 31,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 168,
+    "kind": "member",
+    "name": "_y",
+    "memberof": "src/Vector.js~Vector",
+    "static": false,
+    "longname": "src/Vector.js~Vector#_y",
+    "access": "private",
+    "description": "The y coordinate. ",
+    "lineNumber": 38,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 169,
+    "kind": "member",
+    "name": "Unit",
+    "memberof": "src/Vector.js~Vector",
+    "static": true,
+    "longname": "src/Vector.js~Vector.Unit",
+    "access": "public",
+    "description": "Definition of the unit vector.",
+    "lineNumber": 43,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 170,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#constructor",
+    "access": "public",
+    "description": "Construct a new vector, using a x and `y` component to represent the\nlength (magnitude) and direction relative to (0, 0).\n\nAn vector is immutable. All subsequent operations will return a new\nvector instance.",
+    "lineNumber": 56,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "x",
+        "description": "The `x` component."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "y",
+        "description": "The `y` component."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 173,
+    "kind": "method",
+    "name": "fromArray",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Vector.js~Vector.fromArray",
+    "access": "public",
+    "description": "Create a new vector from an array. The first index is considered the x\ncomponent, the second index is considered the `y` component.  ",
+    "lineNumber": 68,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "VectorArray"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "Input array with at least two values."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "Resulting vector."
+    }
+  },
+  {
+    "__docId__": 174,
+    "kind": "method",
+    "name": "fromObject",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Vector.js~Vector.fromObject",
+    "access": "public",
+    "description": "Create a new vector from an object. The object should have an x and y\nproperty.  ",
+    "lineNumber": 85,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "VectorObject"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "Input object with x and y property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "Resulting vector."
+    }
+  },
+  {
+    "__docId__": 175,
+    "kind": "method",
+    "name": "fromNumber",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Vector.js~Vector.fromNumber",
+    "access": "public",
+    "description": "Create a new vector form a single value. In that case, both the x and y\nproperty will have the same value.  ",
+    "lineNumber": 102,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "number",
+        "description": "Input number for x and y property."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "Resulting vector."
+    }
+  },
+  {
+    "__docId__": 176,
+    "kind": "get",
+    "name": "x",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#x",
+    "access": "public",
+    "description": "Get the `x` component. ",
+    "lineNumber": 111,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The `x` component."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 177,
+    "kind": "get",
+    "name": "y",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#y",
+    "access": "public",
+    "description": "Get the `y` component. ",
+    "lineNumber": 120,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The `y` component."
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 178,
+    "kind": "method",
+    "name": "add",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#add",
+    "access": "public",
+    "description": "Add another vector to this vector.  ",
+    "lineNumber": 130,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vector",
+        "description": "Vector to add."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "A new Vector if adding vector."
+    }
+  },
+  {
+    "__docId__": 179,
+    "kind": "method",
+    "name": "subtract",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#subtract",
+    "access": "public",
+    "description": "Subtract another vector from this vector.  ",
+    "lineNumber": 147,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Vector to subtract."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "New vector with other vector subtracted from this."
+    }
+  },
+  {
+    "__docId__": 180,
+    "kind": "method",
+    "name": "invert",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#invert",
+    "access": "public",
+    "description": "Invert a vector, returning a copy with inverted magnitude and direction.  ",
+    "lineNumber": 156,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "Inverted vector"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 181,
+    "kind": "method",
+    "name": "multiply",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#multiply",
+    "access": "public",
+    "description": "Scale a vector by a scalar value.  ",
+    "lineNumber": 166,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalar",
+        "description": "The scalar value."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "New vector multiplied by the scalar."
+    }
+  },
+  {
+    "__docId__": 182,
+    "kind": "method",
+    "name": "multiplyXY",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#multiplyXY",
+    "access": "public",
+    "description": "Scale a vector by a `x` and `y` scalar value.  ",
+    "lineNumber": 177,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalarX",
+        "description": "The scalar value for the `x` component."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalarY",
+        "description": "The scalar value for the `y` component."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "New vector multiplied by both scalars."
+    }
+  },
+  {
+    "__docId__": 183,
+    "kind": "method",
+    "name": "divide",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#divide",
+    "access": "public",
+    "description": "Divide a vector by a scalar value.  ",
+    "lineNumber": 187,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalar",
+        "description": "The scalar value."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "New vector divided by the scalar."
+    }
+  },
+  {
+    "__docId__": 184,
+    "kind": "method",
+    "name": "divideXY",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#divideXY",
+    "access": "public",
+    "description": "Divide a vector by a `x` and `y` scalar value.  ",
+    "lineNumber": 198,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalarX",
+        "description": "The scalar value for the `x` component."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalarY",
+        "description": "The scalar value for the `y` component."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "New vector divided by both scalars."
+    }
+  },
+  {
+    "__docId__": 185,
+    "kind": "method",
+    "name": "mix",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#mix",
+    "access": "public",
+    "description": "Mix this vector with another vector, with a given weight.  ",
+    "lineNumber": 210,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "The other vector to mix with."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "The weight (between 0 and 1)."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "A new vector with a mix of both this vector and the\n                 given vector."
+    }
+  },
+  {
+    "__docId__": 186,
+    "kind": "method",
+    "name": "perpendicular",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#perpendicular",
+    "access": "public",
+    "description": "Calculate the vector that is perpendicular to this vector.  ",
+    "lineNumber": 225,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The perpendicular vector."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 187,
+    "kind": "method",
+    "name": "snap",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#snap",
+    "access": "public",
+    "description": "Snap a vector to a fixed number.  ",
+    "lineNumber": 235,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "to",
+        "description": "The number to fix to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "New vector snapped to the given number."
+    }
+  },
+  {
+    "__docId__": 188,
+    "kind": "method",
+    "name": "dot",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#dot",
+    "access": "public",
+    "description": "Calculate the dot value.  ",
+    "lineNumber": 247,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "The other vector."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The dot value of both vectors."
+    }
+  },
+  {
+    "__docId__": 189,
+    "kind": "method",
+    "name": "angle",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#angle",
+    "access": "public",
+    "description": "Return the angle of this vector.  ",
+    "lineNumber": 256,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Angle of the vector."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 190,
+    "kind": "method",
+    "name": "angleDeg",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#angleDeg",
+    "access": "public",
+    "description": "Return the angle (in degrees) of this vector.  ",
+    "lineNumber": 265,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Angle of the vector (in degrees)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 191,
+    "kind": "method",
+    "name": "slope",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#slope",
+    "access": "public",
+    "description": "Calculate the slope of this vector.  ",
+    "lineNumber": 274,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The slope of the vector."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 192,
+    "kind": "method",
+    "name": "lengthSq",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#lengthSq",
+    "access": "public",
+    "description": "Calculate the squared length of this vector.\n\nIf the exact length doesn't matter, this method is slightly faster\nthan `this.length`.  ",
+    "lineNumber": 286,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The squared length of this vector."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 193,
+    "kind": "method",
+    "name": "length",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#length",
+    "access": "public",
+    "description": "Calculate the length (magnitude) of the vector.  ",
+    "lineNumber": 295,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "The length of the vector."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 194,
+    "kind": "method",
+    "name": "minLength",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#minLength",
+    "access": "public",
+    "description": "Return a vector with a minimum length of the given number. If the length\nis less, normalize it. Otherwise this instance is returned.  ",
+    "lineNumber": 306,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "length",
+        "description": "The minimum length."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The normalized vector."
+    }
+  },
+  {
+    "__docId__": 195,
+    "kind": "method",
+    "name": "maxLength",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#maxLength",
+    "access": "public",
+    "description": "Return a vector with a maximum length of the given number. If the length\nis less, normalize it. Otherwise this instance is returned.  ",
+    "lineNumber": 317,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "length",
+        "description": "The maximum length."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The normalized vector."
+    }
+  },
+  {
+    "__docId__": 196,
+    "kind": "method",
+    "name": "normalize",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#normalize",
+    "access": "public",
+    "description": "Normalize the vector to a given scalar.  ",
+    "lineNumber": 327,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scalar",
+        "description": "The number to scale this vector to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The normalized vector"
+    }
+  },
+  {
+    "__docId__": 197,
+    "kind": "method",
+    "name": "projectOnto",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#projectOnto",
+    "access": "public",
+    "description": "Project this vector onto another vector.  ",
+    "lineNumber": 337,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Vector"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "The other vector to project onto."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "The projected vector."
+    }
+  },
+  {
+    "__docId__": 198,
+    "kind": "method",
+    "name": "toPoint",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#toPoint",
+    "access": "public",
+    "description": "Convert vector into a point.\n\nNote: this is an utility method. A mathematical definition of a\nconversion does not exist.  ",
+    "lineNumber": 349,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Point"
+      ],
+      "spread": false,
+      "description": "The vector converted as point."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 199,
+    "kind": "method",
+    "name": "toArray",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#toArray",
+    "access": "public",
+    "description": "Convert this vector into an array.  ",
+    "lineNumber": 358,
+    "return": {
+      "nullable": null,
+      "types": [
+        "VectorArray"
+      ],
+      "spread": false,
+      "description": "Array representation (x, y)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 200,
+    "kind": "method",
+    "name": "toObject",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#toObject",
+    "access": "public",
+    "description": "Convert this vector into an object.  ",
+    "lineNumber": 367,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "Object representation (x, y)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 201,
+    "kind": "method",
+    "name": "toString",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#toString",
+    "access": "public",
+    "description": "Convert this vector into a string representation.  ",
+    "lineNumber": 376,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "String representation (x, y)."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 202,
+    "kind": "method",
+    "name": "toFixed",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#toFixed",
+    "access": "public",
+    "description": "Convert this vector into a string representation, using a fixed number\nof digits for displaying.  ",
+    "lineNumber": 387,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "digits",
+        "description": "Number of digits to use for representation."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "String representation (x, y)."
+    }
+  },
+  {
+    "__docId__": 203,
+    "kind": "method",
+    "name": "clone",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#clone",
+    "access": "public",
+    "description": "Create a shallow copy of this instance.  ",
+    "lineNumber": 402,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Vector"
+      ],
+      "spread": false,
+      "description": "Cloned instance."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 204,
+    "kind": "method",
+    "name": "equals",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#equals",
+    "access": "public",
+    "description": "Return true if this vector is equal to another vector. Two vectors are\nequal when both x and `y` components are equal.  ",
+    "lineNumber": 413,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "that",
+        "description": "Other instance to compare to."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if both points are equal, false otherwise."
+    }
+  },
+  {
+    "__docId__": 205,
+    "kind": "method",
+    "name": "isValid",
+    "memberof": "src/Vector.js~Vector",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Vector.js~Vector#isValid",
+    "access": "public",
+    "description": "Return true if the vector is defined and finite.  ",
+    "lineNumber": 423,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "True if vector is fully defined and valid."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 206,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "// @flow\n\nimport Circle from './Circle';\nimport Line from './Line';\nimport LineSegment from './LineSegment';\nimport Point from './Point';\nimport Rectangle from './Rectangle';\nimport Vector from './Vector';\n\nexport {\n    Circle,\n    Line,\n    LineSegment,\n    Point,\n    Rectangle,\n    Vector,\n};\n",
+    "static": true,
+    "longname": "/Users/basilfx/Desktop/es6-geometry/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# ES6-Geometry\nCollection of immutable ES6 classes for simple 2D geometric objects and calculations.\n\n## Features\n* Immutable classes.\n* Statically typed using [Flow](https://flow.org).\n* Arguments checking (zero overhead in production).\n* Inspired by [Victor.js](http://victorjs.org/).\n\n## Installation\n`npm install --save es6-geometry`\n\n## Usage\nAs an example:\n\n```js\nimport { Point, Rectangle, Vector } from 'es6-geometry';\n\n// A vector is an offset with a certain length (magnitude) and direction.\nconst vector = Vector.fromArray([100, 100]);\n\n// A rectangle is defined by two points.\nconst rectangle = new Rectangle(\n    new Point(10, 10),\n    new Point(20, 20)\n);\n\n// Operations are immutable: rectangle remains untouched.\nconst newRectangle = rectangle.move(vector);\n```\n\nSee the documentation for more information.\n\n## Development\nTo (re)compile, run `npm run compile`. If you prefer to have a Webpack bundle, run `npm run bundle`.\n\nTests can be invoked using `npm run test`. Mocha is used as the test framework.\n\n## License\nSee the `LICENSE.md` file (MIT).\n",
+    "longname": "/Users/basilfx/Desktop/es6-geometry/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"es6-geometry\",\n  \"version\": \"2.0.0\",\n  \"description\": \"Collection of immutable ES6 classes for simple 2D geometric objects and calculations.\",\n  \"main\": \"lib/index.js\",\n  \"directories\": {\n    \"test\": \"test\",\n    \"lib\": \"lib\"\n  },\n  \"scripts\": {\n    \"build\": \"npm run build-src && npm run build-docs\",\n    \"build-src\": \"babel -d lib/ src/\",\n    \"build-docs\": \"esdoc -c esdoc.json\",\n    \"bundle\": \"npm run bundle-prod && npm run bundle-dev\",\n    \"bundle-prod\": \"NODE_ENV=production webpack --config webpack.config.production.js\",\n    \"bundle-dev\": \"webpack --config webpack.config.js\",\n    \"lint\": \"eslint src/ test/\",\n    \"test\": \"nyc mocha --require chai/register-expect --require babel-core/register\",\n    \"prepublish\": \"npm run build && npm run bundle\"\n  },\n  \"keywords\": [\n    \"geometry\",\n    \"es6\"\n  ],\n  \"author\": \"Bas Stottelaar\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.25.0\",\n    \"babel-core\": \"^6.25.0\",\n    \"babel-eslint\": \"^8.0.1\",\n    \"babel-loader\": \"^7.1.2\",\n    \"babel-preset-env\": \"^1.6.0\",\n    \"babel-preset-flow\": \"^6.23.0\",\n    \"babel-preset-stage-0\": \"^6.5.0\",\n    \"babili-webpack-plugin\": \"^0.1.2\",\n    \"chai\": \"^4.1.2\",\n    \"esdoc\": \"^1.0.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-flow-type-plugin\": \"^1.0.0\",\n    \"esdoc-jsx-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.8.0\",\n    \"eslint-config-semistandard\": \"^11.0.0\",\n    \"eslint-config-standard\": \"^10.2.0\",\n    \"eslint-import-resolver-webpack\": \"*\",\n    \"eslint-plugin-babel\": \"*\",\n    \"eslint-plugin-flowtype\": \"^2.30.4\",\n    \"eslint-plugin-flowtype-errors\": \"^3.2.0\",\n    \"eslint-plugin-import\": \"*\",\n    \"eslint-plugin-mocha\": \"^4.11.0\",\n    \"eslint-plugin-node\": \"^5.1.0\",\n    \"eslint-plugin-promise\": \"^3.5.0\",\n    \"eslint-plugin-standard\": \"^3.0.1\",\n    \"flow-bin\": \"^0.56.0\",\n    \"istanbul\": \"^0.4.5\",\n    \"mocha\": \"^4.0.0\",\n    \"nyc\": \"^11.2.1\",\n    \"webpack\": \"^3.6.0\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/basilfx/es6-geometry.git\"\n  }\n}\n",
+    "longname": "/Users/basilfx/Desktop/es6-geometry/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

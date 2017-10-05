@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/Rectangle.js | API Document</title>
+  <title data-ice="title">src/Rectangle.js | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,15 +40,49 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/Rectangle.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+
+import Point from &apos;./Point&apos;;
 import LineSegment from &apos;./LineSegment&apos;;
 import Vector from &apos;./Vector&apos;;
 import Circle from &apos;./Circle&apos;;
+
+import type { PointArray, PointObject } from &apos;./Point&apos;;
+
+/**
+ * Definition of an array representing a rectangle.
+ */
+export type RectangleArray = [PointArray, PointArray];
+/**
+ * Definition of an object representing a rectangle.
+ */
+export type RectangleObject = { a: PointObject, b: PointObject };
+
+/**
+ * Definition of an object representing a bounding box.
+ */
+export type BoundingObject = {
+    top: number, left: number, width: number, height: number
+};
 
 /**
  * Immutable rectangle class.
  */
 export default class Rectangle {
+    /**
+     * The `A` point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * The `B` point.
+     *
+     * @type {Point}
+     */
+    _b: Point;
+
     /**
      * Construct a new immutable rectangle of two points.
      *
@@ -59,7 +90,7 @@ export default class Rectangle {
      * @param {Point} b The `B` point.
      * @return {void}
      */
-    constructor(a, b) {
+    constructor(a: Point, b: Point) {
         this._a = a;
         this._b = b;
     }
@@ -68,10 +99,10 @@ export default class Rectangle {
      * Create a new rectangle from an array. The first index should be point
      * `A` and the second index should be point `B`.
      *
-     * @param {Array} array Input array with at least two values.
+     * @param {RectangleArray} array Input array with at least two values.
      * @return {Rectangle} Resulting rectangle.
      */
-    static fromArray(array) {
+    static fromArray(array: RectangleArray): Rectangle {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!Array.isArray(array) || array.length &lt; 2) {
                 throw new Error(&apos;Expected an array with at least two values.&apos;);
@@ -88,12 +119,12 @@ export default class Rectangle {
      * Create a new rectangle from an object. The object should have an `a` and
      * `b` property.
      *
-     * @param {object} object Input object with `a` and `b` property.
+     * @param {RectangleObject} object Input object with `a` and `b` property.
      * @return {Rectangle} Resulting rectangle.
      */
-    static fromObject(object) {
+    static fromObject(object: RectangleObject): Rectangle {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
-            if (typeof(object) !== &apos;object&apos;) {
+            if (typeof object !== &apos;object&apos;) {
                 throw new Error(&apos;Expected an object.&apos;);
             }
         }
@@ -109,10 +140,10 @@ export default class Rectangle {
      * However, it accepts any object with a `left`, `top, `width` and `height`
      * property.
      *
-     * @param {object} boundingRect Input bounding rectangle.
+     * @param {Object} boundingRect Input bounding rectangle.
      * @return {Rectangle} Rectangle based on given bounding rectangle.
      */
-    static fromBoundingRect(boundingRect) {
+    static fromBoundingRect(boundingRect: BoundingObject): Rectangle {
         return new Rectangle(
             new Point(boundingRect.left, boundingRect.top),
             new Point(
@@ -127,7 +158,7 @@ export default class Rectangle {
      *
      * @return {Point} Point `A`.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -136,7 +167,7 @@ export default class Rectangle {
      *
      * @return {Point} Point `B`.
      */
-    get b() {
+    get b(): Point {
         return this._b;
     }
 
@@ -145,7 +176,7 @@ export default class Rectangle {
      *
      * @return {number} Left x coordinate.
      */
-    get left() {
+    get left(): number {
         // return Math.min(this._a._x, this._b._x);
         return this._a._x;
     }
@@ -155,7 +186,7 @@ export default class Rectangle {
      *
      * @return {number} Right x coordinate.
      */
-    get right() {
+    get right(): number {
         // return Math.max(this._a._x, this._b._x);
         return this._b._x;
     }
@@ -165,7 +196,7 @@ export default class Rectangle {
      *
      * @return {number} Top y coordinate.
      */
-    get top() {
+    get top(): number {
         // return Math.min(this._a._y, this._b._y);
         return this._a._y;
     }
@@ -175,7 +206,7 @@ export default class Rectangle {
      *
      * @return {number} Bottom y coordinate.
      */
-    get bottom() {
+    get bottom(): number {
         // return Math.max(this._a._y, this._b._y);
         return this._b._y;
     }
@@ -186,7 +217,7 @@ export default class Rectangle {
      *
      * @return {number} Width of the rectangle.
      */
-    get width() {
+    get width(): number {
         return this.right - this.left;
     }
 
@@ -196,7 +227,7 @@ export default class Rectangle {
      *
      * @return {number} Height of the rectangle.
      */
-    get height() {
+    get height(): number {
         return this.bottom - this.top;
     }
 
@@ -205,7 +236,7 @@ export default class Rectangle {
      *
      * @return {Point} Center of this rectangle.
      */
-    center() {
+    center(): Point {
         const x = (this._a._x + this._b._x) / 2;
         const y = (this._a._y + this._b._y) / 2;
 
@@ -217,8 +248,10 @@ export default class Rectangle {
      *
      * @return {Vector} Relative center point offset of this rectangle.
      */
-    centerOffset() {
-        return this.center().subtract(this._a);
+    centerOffset(): Vector {
+        const center = this.center();
+
+        return center.subtract(this._a);
     }
 
     /**
@@ -228,7 +261,7 @@ export default class Rectangle {
      * @param {Rectangle} rectangle Other rectangle to merge with.
      * @return {Rectangle} New rectangle containing both rectangles.
      */
-    merge(rectangle) {
+    merge(rectangle: Rectangle): Rectangle {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(rectangle instanceof Rectangle)) {
                 throw new Error(&apos;Must merge with another rectangle.&apos;);
@@ -253,7 +286,7 @@ export default class Rectangle {
      * @param {Vector} vector Offset vector.
      * @return {Rectangle} Moved rectangle.
      */
-    move(vector) {
+    move(vector: Vector): Rectangle {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(vector instanceof Vector)) {
                 throw new Error(&apos;Offset must be a vector.&apos;);
@@ -270,7 +303,7 @@ export default class Rectangle {
      * @param {Vector} vectorB Offset vector for `b` point.
      * @return {Rectangle} Moved rectangle.
      */
-    moveAB(vectorA, vectorB) {
+    moveAB(vectorA: Vector, vectorB: Vector): Rectangle {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(vectorA instanceof Vector) || !(vectorB instanceof Vector)) {
                 throw new Error(&apos;Offset must be a vector.&apos;);
@@ -290,7 +323,7 @@ export default class Rectangle {
      * @param {Vector} vector The offset vector to expand with.
      * @return {Rectangle} Expanded rectangle.
      */
-    expand(vector) {
+    expand(vector: Vector): Rectangle {
         return this.moveAB(vector.invert(), vector);
     }
 
@@ -300,7 +333,7 @@ export default class Rectangle {
      * @param {Point} point Point to test with.
      * @return {boolean} True if point is within rectangle.
      */
-    containsPoint(point) {
+    containsPoint(point: Point): boolean {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(point instanceof Point)) {
                 throw new Error(&apos;Must be a point.&apos;);
@@ -321,9 +354,9 @@ export default class Rectangle {
      * both point `A` and `B` are within this rectangle.
      *
      * @param {Rectangle} rectangle The rectangle to check for.
-     * @return {booleam} True if the rectangle is within this rectangle.
+     * @return {boolean} True if the rectangle is within this rectangle.
      */
-    containsRectangle(rectangle) {
+    containsRectangle(rectangle: Rectangle): boolean {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(rectangle instanceof Rectangle)) {
                 throw new Error(&apos;Must be a rectangle.&apos;);
@@ -340,7 +373,7 @@ export default class Rectangle {
      * @param {Rectangle} rectangle Other rectangle to compare with.
      * @return {boolean} True if the given rectangle collides with this one.
      */
-    collidesRectangle(rectangle) {
+    collidesRectangle(rectangle: Rectangle): boolean {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(rectangle instanceof Rectangle)) {
                 throw new Error(&apos;Must be a rectangle.&apos;);
@@ -357,7 +390,7 @@ export default class Rectangle {
      * @param {Circle} circle Other circle to compare with.
      * @return {boolean} True if the given circles collides with this one.
      */
-    collidesCircle(circle) {
+    collidesCircle(circle: Circle): boolean {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(circle instanceof Circle)) {
                 throw new Error(&apos;Must be a circle.&apos;);
@@ -379,25 +412,25 @@ export default class Rectangle {
      *
      * @return {number} The rectangle area.
      */
-    area() {
+    area(): number {
         return (this._b._x - this._a._x) * (this._b._y - this._a._y);
     }
 
     /**
      * Return an array representation of this instance.
      *
-     * @return {Array} Array representation [a, b].
+     * @return {RectangleArray} Array representation [a, b].
      */
-    toArray() {
+    toArray(): RectangleArray {
         return [this._a.toArray(), this._b.toArray()];
     }
 
     /**
      * Return an object representation of this instance.
      *
-     * @return {object} Object representation {a, b}.
+     * @return {RectangleObject} Object representation {a, b}.
      */
-    toObject() {
+    toObject(): RectangleObject {
         return {
             a: this._a.toObject(),
             b: this._b.toObject(),
@@ -408,9 +441,9 @@ export default class Rectangle {
      * Return an object representation of the bounding rectangle of this
      * instance.
      *
-     * @return {object} Object representation { left, top, width, height }.
+     * @return {BoundingObject} Object representation { left, top, width, height }.
      */
-    toBoundingRect() {
+    toBoundingRect(): BoundingObject {
         return {
             left: this.left,
             top: this.top,
@@ -424,7 +457,7 @@ export default class Rectangle {
      *
      * @return {string} String representation.
      */
-    toString() {
+    toString(): string {
         return `(${this._a.toString()}, ${this._b.toString()})`;
     }
 
@@ -433,7 +466,7 @@ export default class Rectangle {
      *
      * @return {Array&lt;LineSegment&gt;} Array of line segments.
      */
-    toLineSegments() {
+    toLineSegments(): Array&lt;LineSegment&gt; {
         const c = new Point(this._a._x, this._b._y);
         const d = new Point(this._b._x, this._a._y);
 
@@ -450,7 +483,7 @@ export default class Rectangle {
      *
      * @return {Rectangle} Cloned instance.
      */
-    clone() {
+    clone(): Rectangle {
         return new Rectangle(this._a, this._b);
     }
 
@@ -460,7 +493,7 @@ export default class Rectangle {
      *
      * @return {Rectangle} The normalized rectangle.
      */
-    normalize() {
+    normalize(): Rectangle {
         return new Rectangle(
             new Point(this.left, this.top),
             new Point(this.right, this.bottom)
@@ -474,10 +507,10 @@ export default class Rectangle {
      * may not be equal, because they may have been defined from different
      * points.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both rectangles are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &amp;&amp;
             this._a.equals(that._b) &amp;&amp; this._b.equals(that._b);
     }
@@ -485,9 +518,9 @@ export default class Rectangle {
     /**
      * Return true if the rectangle is defined and finite.
      *
-     * @return {Boolean} True if rectangle is valid.
+     * @return {boolean} True if rectangle is valid.
      */
-    isValid() {
+    isValid(): boolean {
         return this._a.isValid() &amp;&amp; this._b.isValid();
     }
 }
@@ -496,7 +529,7 @@ export default class Rectangle {
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

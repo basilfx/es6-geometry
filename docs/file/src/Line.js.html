@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/Line.js | API Document</title>
+  <title data-ice="title">src/Line.js | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,7 +40,21 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/Line.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Point from &apos;./Point&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+
+import Point from &apos;./Point&apos;;
+
+import type { PointArray, PointObject } from &apos;./Point&apos;;
+
+/**
+ * Definition of an array representing a line.
+ */
+export type LineArray = [PointArray, PointArray];
+
+/**
+ * Definition of an object representing a line.
+ */
+export type LineObject = { a: PointObject, b: PointObject };
 
 /**
  * Immutable line class.
@@ -53,15 +64,69 @@
  */
 export default class Line {
     /**
+     * The `A` point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * The `B` point.
+     *
+     * @type {Point}
+     */
+    _b: Point;
+
+    /**
      * Construct a new immutable line out of two points.
      *
      * @param {Point} a The `A` point..
      * @param {Point} b The `B` point.
      * @return {void}
      */
-    constructor(a, b) {
+    constructor(a: Point, b: Point) {
         this._a = a;
         this._b = b;
+    }
+
+    /**
+     * Create a new line from an array. The first index should be point
+     * `A` and the second index should be point `B`.
+     *
+     * @param {LineArray} array Input array with at least two values.
+     * @return {Line} Resulting line.
+     */
+    static fromArray(array: LineArray): Line {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            if (!Array.isArray(array) || array.length &lt; 2) {
+                throw new Error(&apos;Expected an array with at least two values.&apos;);
+            }
+        }
+
+        return new Line(
+            Point.fromArray(array[0]),
+            Point.fromArray(array[1])
+        );
+    }
+
+    /**
+     * Create a new line from an object. The object should have an `a` and
+     * `b` property.
+     *
+     * @param {LineObject} object Input object with `a` and `b` property.
+     * @return {Line} Resulting line.
+     */
+    static fromObject(object: LineObject): Line {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            if (typeof object !== &apos;object&apos;) {
+                throw new Error(&apos;Expected an object.&apos;);
+            }
+        }
+
+        return new Line(
+            Point.fromObject(object.a),
+            Point.fromObject(object.b)
+        );
     }
 
     /**
@@ -69,7 +134,7 @@ export default class Line {
      *
      * @return {Point} Point `A`.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -78,17 +143,38 @@ export default class Line {
      *
      * @return {Point} Point `B`.
      */
-    get b() {
+    get b(): Point {
         return this._b;
     }
 
     /**
      * Return the length.
      *
-     * @return {float} length of line, which is infinity, per definition.
+     * @return {number} length of line, which is infinity, per definition.
      */
-    get length() {
+    get length(): number {
         return Infinity;
+    }
+
+    /**
+     * Return an array representation of this instance.
+     *
+     * @return {LineArray} Array representation [a, b].
+     */
+    toArray(): LineArray {
+        return [this._a.toArray(), this._b.toArray()];
+    }
+
+    /**
+     * Return an object representation of this instance.
+     *
+     * @return {LineObject} Object representation {a, b}.
+     */
+    toObject(): LineObject {
+        return {
+            a: this._a.toObject(),
+            b: this._b.toObject(),
+        };
     }
 
     /**
@@ -96,16 +182,16 @@ export default class Line {
      *
      * @return {Line} Cloned instance.
      */
-    clone() {
+    clone(): Line {
         return new Line(this._a, this._b);
     }
 
     /**
      * Return true if the line is defined and finite.
      *
-     * @return {Boolean} True if line is valid.
+     * @return {boolean} True if line is valid.
      */
-    isValid() {
+    isValid(): boolean {
         return this._a.isValid() &amp;&amp; this._b.isValid();
     }
 }
@@ -114,7 +200,7 @@ export default class Line {
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

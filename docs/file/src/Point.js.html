@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/Point.js | API Document</title>
+  <title data-ice="title">src/Point.js | es6-geometry</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="es6-geometry"><meta property="twitter:description" content="Collection of immutable ES6 classes for simple 2D geometric objects and calculations."></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -43,7 +40,19 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/Point.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Vector from &apos;./Vector&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+
+import Vector from &apos;./Vector&apos;;
+
+/**
+ * Definition of an array representing a point.
+ */
+export type PointArray = [number, number];
+
+/**
+ * Definition of an object representing a point.
+ */
+export type PointObject = { x: number, y: number };
 
 /**
  * Immutable point class.
@@ -51,9 +60,24 @@
  * A point is an absolute place in space, at a given x and y coordinate.
  *
  * The difference between a Point and a vector is explained in this source:
- * http://math.stackexchange.com/a/645827
+ * http://math.stackexchange.com/a/645827 and
+ * http://geomalgorithms.com/points_and_vectors.html.
  */
 export default class Point {
+    /**
+     * The x coordinate.
+     *
+     * @type {number}
+     */
+    _x: number;
+
+    /**
+     * The y coordinate.
+     *
+     * @type {number}
+     */
+    _y: number;
+
     /**
      * Construct a new point, using a x and y coordinate.
      *
@@ -64,7 +88,7 @@ export default class Point {
      * @param {number} y The y coordinate.
      * @return {void}
      */
-    constructor(x, y) {
+    constructor(x: number, y: number) {
         this._x = x;
         this._y = y;
     }
@@ -73,10 +97,10 @@ export default class Point {
      * Create a new point from an array. The first index is considered the x
      * coordinate, the second index is considered the y coordinate.
      *
-     * @param {Array} array Input array with at least two values.
+     * @param {PointArray} array Input array with at least two values.
      * @return {Point} Resulting point.
      */
-    static fromArray(array) {
+    static fromArray(array: PointArray): Point {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!Array.isArray(array) || array.length &lt; 2) {
                 throw new Error(&apos;Expected an array with at least two values.&apos;);
@@ -90,12 +114,12 @@ export default class Point {
      * Create a new point from an object. The object should have an x and y
      * property.
      *
-     * @param {object} object Input object with x and y property.
+     * @param {PointObject} object Input object with x and y property.
      * @return {Point} Resulting point.
      */
-    static fromObject(object) {
+    static fromObject(object: PointObject): Point {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
-            if (typeof(object) !== &apos;object&apos;) {
+            if (typeof object !== &apos;object&apos;) {
                 throw new Error(&apos;Expected an object.&apos;);
             }
         }
@@ -108,7 +132,7 @@ export default class Point {
      *
      * @return {number} The x coordinate.
      */
-    get x() {
+    get x(): number {
         return this._x;
     }
 
@@ -117,7 +141,7 @@ export default class Point {
      *
      * @return {number} The y coordinate.
      */
-    get y() {
+    get y(): number {
         return this._y;
     }
 
@@ -129,115 +153,56 @@ export default class Point {
      * @param {Vector} vector Vector to add to this point.
      * @return {Point} Point with the vector added to it.
      */
-    add(vector) {
-        if (vector instanceof Point) {
-            throw new Error(&apos;Addition of two points is undefined.&apos;);
+    add(vector: Vector): Point {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            // $FlowFixMe
+            if (vector instanceof Point) {
+                throw new Error(&apos;Addition of two points is undefined.&apos;);
+            }
         }
 
         return new Point(this._x + vector._x, this._y + vector._y);
     }
 
     /**
-     * Subtract a Point or a Vector.
+     * Subtract a Point from this point, to calculate the displacement.
      *
-     * @param {Point|Vector} that Point or vector to subtract.
-     * @return {Point} If `that` is a Vector, it will return the new point.
-     * @return {Vector} If `that` is a Point, it will return the displacement.
+     * @param {Point} that Point to subtract.
+     * @return {Vector} The displacement as a Vector.
      */
-    subtract(that) {
-        if (that instanceof Point) {
-            return this.toVector().subtract(that);
+    subtract(that: Point): Vector {
+        if (process.env.NODE_ENV !== &apos;production&apos;) {
+            // $FlowFixMe
+            if (that instanceof Vector) {
+                throw new Error(
+                    &apos;Cannot subract Vector. Use `subtractVector` instead.&apos;
+                );
+            }
         }
 
-        return new Point(this._x - that._x, this._y - that._y);
+        return new Vector(this._x - that._x, this._y - that._y);
     }
 
     /**
-     * Invert the x and y coordinate, relative to (0, 0).
+     * Subtract a Vector from this Point.
      *
-     * @return {Point} Inverted point.
+     * @param {Vector} vector Vector to subtract.
+     * @return {Point} If `that` is a Vector, it will return the new point.
      */
-    invert() {
-        return new Point(-this._x, -this._y);
+    subtractVector(vector: Vector): Point {
+        return new Point(this._x - vector._x, this._y - vector._y);
     }
 
     /**
-     * @return {Point}
+     * Snap a point to a fixed number.
+     *
+     * @param {number} to The number to fix to.
+     * @return {Point} New point snapped to the given number.
      */
-    multiply(scalar) {
-        return new Point(this._x * scalar, this._y * scalar);
-    }
-
-    /**
-     * @return {Point}
-     */
-    multiplyXY(scalarX, scalarY) {
-        return new Point(this._x * scalarX, this._y * scalarY);
-    }
-
-    /**
-     * @return {Point}
-     */
-    divide(scalar) {
-        return new Point(this._x / scalar, this._y / scalar);
-    }
-
-    /**
-     * @return {Point}
-     */
-    divideXY(scalarX, scalarY) {
-        return new Point(this._x / scalarX, this._y / scalarY);
-    }
-
-    /**
-     * @return {Point}
-     */
-    mix(that, amount = 0.5) {
-        return this.multiply(1 - amount).add(that.multiply(amount));
-    }
-
-    /**
-     * @return {Point}
-     */
-    perpendicular() {
-        return new Point(-this._y, this._x);
-    }
-
-    /**
-     * @return {Point}
-     */
-    snap(to) {
+    snap(to: number): Point {
         const round = (val) =&gt; Math.round(val / to) * to;
 
         return new Point(round(this._x), round(this._y));
-    }
-
-    /**
-     * @return {number}
-     */
-    dot(that) {
-        return this._x * that._x + this._y * that._y;
-    }
-
-    /**
-     * @return {number}
-     */
-    angle() {
-        return Math.atan2(this._y, this._x);
-    }
-
-    /**
-     * @return {number}
-     */
-    angleDeg() {
-        return Math.atan2(this._y, this._x) * 180 / Math.PI;
-    }
-
-    /**
-     * @return {number}
-     */
-    slope() {
-        return this._y / this._x;
     }
 
     /**
@@ -249,7 +214,7 @@ export default class Point {
      * @param {Point} point The other point.
      * @return {number} The distance between both points.
      */
-    distanceSq(point) {
+    distanceSq(point: Point): number {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
             if (!(point instanceof Point)) {
                 throw new Error(&apos;Must be a point.&apos;);
@@ -268,36 +233,37 @@ export default class Point {
      * @param {Point} point The other point.
      * @return {number} The distance between both points.
      */
-    distance(point) {
+    distance(point: Point): number {
         return Math.sqrt(this.distanceSq(point));
     }
 
     /**
      * Convert point into a vector.
      *
-     * Note: this is an utility method. A proper conversion does not exist.
+     * Note: this is an utility method. A mathematical definition of a
+     * conversion does not exist.
      *
      * @return {Vector} The point converted as vector.
      */
-    toVector() {
+    toVector(): Vector {
         return new Vector(this._x, this._y);
     }
 
     /**
      * Convert this point into an array.
      *
-     * @return {Array} Array representation (x, y).
+     * @return {PointArray} Array representation (x, y).
      */
-    toArray() {
+    toArray(): PointArray {
         return [this._x, this._y];
     }
 
     /**
      * Convert this point into an object.
      *
-     * @return {object} Object representation (x, y).
+     * @return {PointObject} Object representation (x, y).
      */
-    toObject() {
+    toObject(): PointObject {
         return { x: this._x, y: this._y };
     }
 
@@ -306,7 +272,7 @@ export default class Point {
      *
      * @return {string} String representation (x, y).
      */
-    toString() {
+    toString(): string {
         return `(${this._x}, ${this._y})`;
     }
 
@@ -317,9 +283,9 @@ export default class Point {
      * @param {number} digits Number of digits to use for representation.
      * @return {string} String representation (x, y).
      */
-    toFixed(digits) {
+    toFixed(digits: number): string {
         if (process.env.NODE_ENV !== &apos;production&apos;) {
-            if (typeof(digits) !== &apos;number&apos;) {
+            if (typeof digits !== &apos;number&apos;) {
                 throw new Error(&apos;Number of digits must be a number.&apos;);
             }
         }
@@ -332,7 +298,7 @@ export default class Point {
      *
      * @return {Point} Cloned instance.
      */
-    clone() {
+    clone(): Point {
         return new Point(this._x, this._y);
     }
 
@@ -340,10 +306,10 @@ export default class Point {
      * Return true if this point is equal to another point. Two points are
      * equal when both x and y coordinates are equal.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both points are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &amp;&amp;
             this._x === that._x &amp;&amp; this._y === that._y;
     }
@@ -351,11 +317,11 @@ export default class Point {
     /**
      * Return true if the point is defined and finite.
      *
-     * @return {Boolean} True if point is fully defined and valid.
+     * @return {boolean} True if point is fully defined and valid.
      */
-    isValid() {
-        return typeof(this._x) === &apos;number&apos; &amp;&amp; isFinite(this._x) &amp;&amp;
-            typeof(this._y) === &apos;number&apos; &amp;&amp; isFinite(this._y);
+    isValid(): boolean {
+        return typeof this._x === &apos;number&apos; &amp;&amp; isFinite(this._x) &amp;&amp;
+            typeof this._y === &apos;number&apos; &amp;&amp; isFinite(this._y);
     }
 }
 </code></pre>
@@ -363,7 +329,7 @@ export default class Point {
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
