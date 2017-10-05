@@ -1,12 +1,14 @@
 # Changelog
 
 ## v2.0.0
-Released xx October 2017
+Released 05 October 2017
 
 Highlights:
 * Updated: project structure.
 * Added: Flow type annotations.
 * Removed: dynamic checks on types in production mode (use static typing instead).
+* Removed: several methods (`invert`, `multiply`, `divide`, `mix`) from the `Point` class, which made no sense, considering the mathematical definition of a point.
+* Improved: documentation on methods.
 
 The full list of commits can be found [here](https://github.com/basilfx/es6-geometry/compare/v1.3.0...v2.0.0).
 

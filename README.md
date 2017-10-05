@@ -5,6 +5,7 @@ Collection of immutable ES6 classes for simple 2D geometric objects and calculat
 
 ## Features
 * Immutable classes.
+* Statically typed using [Flow](https://flow.org).
 * Arguments checking (zero overhead in production).
 * Inspired by [Victor.js](http://victorjs.org/).
 
@@ -14,7 +15,7 @@ Collection of immutable ES6 classes for simple 2D geometric objects and calculat
 ## Usage
 As an example:
 
-```es6
+```js
 import { Point, Rectangle, Vector } from 'es6-geometry';
 
 // A vector is an offset with a certain length (magnitude) and direction.
@@ -35,7 +36,7 @@ See the documentation for more information.
 ## Development
 To (re)compile, run `npm run compile`. If you prefer to have a Webpack bundle, run `npm run bundle`.
 
-Tests can be invoked using `npm run test`. Karma is used as a test runner.
+Tests can be invoked using `npm run test`. Mocha is used as the test framework.
 
 ## License
 See the `LICENSE.md` file (MIT).
