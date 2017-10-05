@@ -2,21 +2,40 @@
 
 import Point from './Point';
 
+import type { PointArray, PointObject } from './Point';
+
+export type LineSegmentArray = Array<PointArray>;
+export type LineSegmentObject = { A: PointObject, y: PointObject }
+
 /**
- * Immutable line class.
+ * Immutable line segment class.
  *
  * A line is defined by two points, `a` and `b`. It has no thickness and its
- * length is inifite (e.g. it extends beyond point `a` and `b`).
+ * length is defined by the absolute difference between `a` and `b`.
  */
 export default class LineSegment {
     /**
-     * Construct a new immutable line out of two points.
+     * The `A` point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * The `B` point.
+     *
+     * @type {Point}
+     */
+    _b: Point;
+
+    /**
+     * Construct a new immutable line segment out of two points.
      *
      * @param {Point} a The `A` point..
      * @param {Point} b The `B` point.
      * @return {void}
      */
-    constructor(a, b) {
+    constructor(a: Point, b: Point) {
         this._a = a;
         this._b = b;
     }
@@ -26,7 +45,7 @@ export default class LineSegment {
      *
      * @return {Point} Point `A`.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -35,16 +54,16 @@ export default class LineSegment {
      *
      * @return {Point} Point `B`.
      */
-    get b() {
+    get b(): Point {
         return this._b;
     }
 
     /**
      * Return the length.
      *
-     * @return {float} length of line, which is infinity, per definition.
+     * @return {number} length of line, which is infinity, per definition.
      */
-    get length() {
+    get length(): number {
         return this._a.distance(this._b);
     }
 
@@ -55,9 +74,9 @@ export default class LineSegment {
      * Algorithm is based on http://stackoverflow.com/a/35457290/1423623.
      *
      * @param {LineSegment} other The other line segment.
-     * @return {Point?} Point of intersection, if any.
+     * @return {?Point} Point of intersection, if any.
      */
-    intersection(other) {
+    intersection(other: LineSegment): ?Point {
         const dx1 = this._b._x - this._a._x;
         const dy1 = this._b._y - this._a._y;
 
@@ -85,8 +104,6 @@ export default class LineSegment {
                 }
             }
         }
-
-        return null;
     }
 
     /**
@@ -94,16 +111,16 @@ export default class LineSegment {
      *
      * @return {LineSegment} Cloned instance.
      */
-    clone() {
+    clone(): LineSegment {
         return new LineSegment(this._a, this._b);
     }
 
     /**
      * Return true if the line segment is defined and finite.
      *
-     * @return {Boolean} True if line segment is valid.
+     * @return {boolean} True if line segment is valid.
      */
-    isValid() {
+    isValid(): boolean {
         return this._a.isValid() && this._b.isValid();
     }
 }

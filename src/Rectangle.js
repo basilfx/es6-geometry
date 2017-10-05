@@ -5,10 +5,31 @@ import LineSegment from './LineSegment';
 import Vector from './Vector';
 import Circle from './Circle';
 
+import type { PointArray, PointObject } from './Point';
+
+export type RectangleArray = Array<PointArray>;
+export type RectangleObject = { a: PointObject, b: PointObject };
+
+export type BoundingObject = { top: number, left: number, width: number, height: number }
+
 /**
  * Immutable rectangle class.
  */
 export default class Rectangle {
+    /**
+     * The `A` point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * The `B` point.
+     *
+     * @type {Point}
+     */
+    _b: Point;
+
     /**
      * Construct a new immutable rectangle of two points.
      *
@@ -16,7 +37,7 @@ export default class Rectangle {
      * @param {Point} b The `B` point.
      * @return {void}
      */
-    constructor(a, b) {
+    constructor(a: Point, b: Point) {
         this._a = a;
         this._b = b;
     }
@@ -25,10 +46,10 @@ export default class Rectangle {
      * Create a new rectangle from an array. The first index should be point
      * `A` and the second index should be point `B`.
      *
-     * @param {Array} array Input array with at least two values.
+     * @param {RectangleArray} array Input array with at least two values.
      * @return {Rectangle} Resulting rectangle.
      */
-    static fromArray(array) {
+    static fromArray(array: RectangleArray): Rectangle {
         if (process.env.NODE_ENV !== 'production') {
             if (!Array.isArray(array) || array.length < 2) {
                 throw new Error('Expected an array with at least two values.');
@@ -45,12 +66,12 @@ export default class Rectangle {
      * Create a new rectangle from an object. The object should have an `a` and
      * `b` property.
      *
-     * @param {object} object Input object with `a` and `b` property.
+     * @param {RectangleObject} object Input object with `a` and `b` property.
      * @return {Rectangle} Resulting rectangle.
      */
-    static fromObject(object) {
+    static fromObject(object: RectangleObject): Rectangle {
         if (process.env.NODE_ENV !== 'production') {
-            if (typeof(object) !== 'object') {
+            if (typeof object !== 'object') {
                 throw new Error('Expected an object.');
             }
         }
@@ -66,10 +87,10 @@ export default class Rectangle {
      * However, it accepts any object with a `left`, `top, `width` and `height`
      * property.
      *
-     * @param {object} boundingRect Input bounding rectangle.
+     * @param {Object} boundingRect Input bounding rectangle.
      * @return {Rectangle} Rectangle based on given bounding rectangle.
      */
-    static fromBoundingRect(boundingRect) {
+    static fromBoundingRect(boundingRect: BoundingObject): Rectangle {
         return new Rectangle(
             new Point(boundingRect.left, boundingRect.top),
             new Point(
@@ -84,7 +105,7 @@ export default class Rectangle {
      *
      * @return {Point} Point `A`.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -93,7 +114,7 @@ export default class Rectangle {
      *
      * @return {Point} Point `B`.
      */
-    get b() {
+    get b(): Point {
         return this._b;
     }
 
@@ -102,7 +123,7 @@ export default class Rectangle {
      *
      * @return {number} Left x coordinate.
      */
-    get left() {
+    get left(): number {
         // return Math.min(this._a._x, this._b._x);
         return this._a._x;
     }
@@ -112,7 +133,7 @@ export default class Rectangle {
      *
      * @return {number} Right x coordinate.
      */
-    get right() {
+    get right(): number {
         // return Math.max(this._a._x, this._b._x);
         return this._b._x;
     }
@@ -122,7 +143,7 @@ export default class Rectangle {
      *
      * @return {number} Top y coordinate.
      */
-    get top() {
+    get top(): number {
         // return Math.min(this._a._y, this._b._y);
         return this._a._y;
     }
@@ -132,7 +153,7 @@ export default class Rectangle {
      *
      * @return {number} Bottom y coordinate.
      */
-    get bottom() {
+    get bottom(): number {
         // return Math.max(this._a._y, this._b._y);
         return this._b._y;
     }
@@ -143,7 +164,7 @@ export default class Rectangle {
      *
      * @return {number} Width of the rectangle.
      */
-    get width() {
+    get width(): number {
         return this.right - this.left;
     }
 
@@ -153,7 +174,7 @@ export default class Rectangle {
      *
      * @return {number} Height of the rectangle.
      */
-    get height() {
+    get height(): number {
         return this.bottom - this.top;
     }
 
@@ -162,7 +183,7 @@ export default class Rectangle {
      *
      * @return {Point} Center of this rectangle.
      */
-    center() {
+    center(): Point {
         const x = (this._a._x + this._b._x) / 2;
         const y = (this._a._y + this._b._y) / 2;
 
@@ -174,7 +195,7 @@ export default class Rectangle {
      *
      * @return {Vector} Relative center point offset of this rectangle.
      */
-    centerOffset() {
+    centerOffset(): Vector {
         return this.center().subtract(this._a);
     }
 
@@ -185,7 +206,7 @@ export default class Rectangle {
      * @param {Rectangle} rectangle Other rectangle to merge with.
      * @return {Rectangle} New rectangle containing both rectangles.
      */
-    merge(rectangle) {
+    merge(rectangle: Rectangle): Rectangle {
         if (process.env.NODE_ENV !== 'production') {
             if (!(rectangle instanceof Rectangle)) {
                 throw new Error('Must merge with another rectangle.');
@@ -210,7 +231,7 @@ export default class Rectangle {
      * @param {Vector} vector Offset vector.
      * @return {Rectangle} Moved rectangle.
      */
-    move(vector) {
+    move(vector: Vector): Rectangle {
         if (process.env.NODE_ENV !== 'production') {
             if (!(vector instanceof Vector)) {
                 throw new Error('Offset must be a vector.');
@@ -227,7 +248,7 @@ export default class Rectangle {
      * @param {Vector} vectorB Offset vector for `b` point.
      * @return {Rectangle} Moved rectangle.
      */
-    moveAB(vectorA, vectorB) {
+    moveAB(vectorA: Vector, vectorB: Vector): Rectangle {
         if (process.env.NODE_ENV !== 'production') {
             if (!(vectorA instanceof Vector) || !(vectorB instanceof Vector)) {
                 throw new Error('Offset must be a vector.');
@@ -247,7 +268,7 @@ export default class Rectangle {
      * @param {Vector} vector The offset vector to expand with.
      * @return {Rectangle} Expanded rectangle.
      */
-    expand(vector) {
+    expand(vector: Vector): Rectangle {
         return this.moveAB(vector.invert(), vector);
     }
 
@@ -257,7 +278,7 @@ export default class Rectangle {
      * @param {Point} point Point to test with.
      * @return {boolean} True if point is within rectangle.
      */
-    containsPoint(point) {
+    containsPoint(point: Point): boolean {
         if (process.env.NODE_ENV !== 'production') {
             if (!(point instanceof Point)) {
                 throw new Error('Must be a point.');
@@ -278,9 +299,9 @@ export default class Rectangle {
      * both point `A` and `B` are within this rectangle.
      *
      * @param {Rectangle} rectangle The rectangle to check for.
-     * @return {booleam} True if the rectangle is within this rectangle.
+     * @return {boolean} True if the rectangle is within this rectangle.
      */
-    containsRectangle(rectangle) {
+    containsRectangle(rectangle: Rectangle): boolean {
         if (process.env.NODE_ENV !== 'production') {
             if (!(rectangle instanceof Rectangle)) {
                 throw new Error('Must be a rectangle.');
@@ -297,7 +318,7 @@ export default class Rectangle {
      * @param {Rectangle} rectangle Other rectangle to compare with.
      * @return {boolean} True if the given rectangle collides with this one.
      */
-    collidesRectangle(rectangle) {
+    collidesRectangle(rectangle: Rectangle): boolean {
         if (process.env.NODE_ENV !== 'production') {
             if (!(rectangle instanceof Rectangle)) {
                 throw new Error('Must be a rectangle.');
@@ -314,7 +335,7 @@ export default class Rectangle {
      * @param {Circle} circle Other circle to compare with.
      * @return {boolean} True if the given circles collides with this one.
      */
-    collidesCircle(circle) {
+    collidesCircle(circle: Circle): boolean {
         if (process.env.NODE_ENV !== 'production') {
             if (!(circle instanceof Circle)) {
                 throw new Error('Must be a circle.');
@@ -336,25 +357,25 @@ export default class Rectangle {
      *
      * @return {number} The rectangle area.
      */
-    area() {
+    area(): number {
         return (this._b._x - this._a._x) * (this._b._y - this._a._y);
     }
 
     /**
      * Return an array representation of this instance.
      *
-     * @return {Array} Array representation [a, b].
+     * @return {RectangleArray} Array representation [a, b].
      */
-    toArray() {
+    toArray(): RectangleArray {
         return [this._a.toArray(), this._b.toArray()];
     }
 
     /**
      * Return an object representation of this instance.
      *
-     * @return {object} Object representation {a, b}.
+     * @return {RectangleObject} Object representation {a, b}.
      */
-    toObject() {
+    toObject(): RectangleObject {
         return {
             a: this._a.toObject(),
             b: this._b.toObject(),
@@ -365,9 +386,9 @@ export default class Rectangle {
      * Return an object representation of the bounding rectangle of this
      * instance.
      *
-     * @return {object} Object representation { left, top, width, height }.
+     * @return {BoundingObject} Object representation { left, top, width, height }.
      */
-    toBoundingRect() {
+    toBoundingRect(): BoundingObject {
         return {
             left: this.left,
             top: this.top,
@@ -381,7 +402,7 @@ export default class Rectangle {
      *
      * @return {string} String representation.
      */
-    toString() {
+    toString(): string {
         return `(${this._a.toString()}, ${this._b.toString()})`;
     }
 
@@ -390,7 +411,7 @@ export default class Rectangle {
      *
      * @return {Array<LineSegment>} Array of line segments.
      */
-    toLineSegments() {
+    toLineSegments(): Array<LineSegment> {
         const c = new Point(this._a._x, this._b._y);
         const d = new Point(this._b._x, this._a._y);
 
@@ -407,7 +428,7 @@ export default class Rectangle {
      *
      * @return {Rectangle} Cloned instance.
      */
-    clone() {
+    clone(): Rectangle {
         return new Rectangle(this._a, this._b);
     }
 
@@ -417,7 +438,7 @@ export default class Rectangle {
      *
      * @return {Rectangle} The normalized rectangle.
      */
-    normalize() {
+    normalize(): Rectangle {
         return new Rectangle(
             new Point(this.left, this.top),
             new Point(this.right, this.bottom)
@@ -431,10 +452,10 @@ export default class Rectangle {
      * may not be equal, because they may have been defined from different
      * points.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both rectangles are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &&
             this._a.equals(that._b) && this._b.equals(that._b);
     }
@@ -442,9 +463,9 @@ export default class Rectangle {
     /**
      * Return true if the rectangle is defined and finite.
      *
-     * @return {Boolean} True if rectangle is valid.
+     * @return {boolean} True if rectangle is valid.
      */
-    isValid() {
+    isValid(): boolean {
         return this._a.isValid() && this._b.isValid();
     }
 }

@@ -2,10 +2,13 @@
 
 import Point from './Point';
 
+export type VectorArray = Array<number>;
+export type VectorObject = { x: number, y: number }
+
 /**
  * Immutable vector class.
  *
- * A vector represents a displacement, using a x an y component to represent
+ * A vector represents a displacement, using a x an `y` component to represent
  * the length (magnitude) and direction.
  *
  * The difference between a Vector and a Point is explained in this source:
@@ -13,34 +16,48 @@ import Point from './Point';
  */
 export default class Vector {
     /**
+     * The x coordinate.
+     *
+     * @type {number}
+     */
+    _x: number;
+
+    /**
+     * The y coordinate.
+     *
+     * @type {number}
+     */
+    _y: number;
+
+    /**
      * Definition of the unit vector.
      */
     static Unit = new Vector(1, 1);
 
     /**
-     * Construct a new vector, using a x and y component to represent the
+     * Construct a new vector, using a x and `y` component to represent the
      * length (magnitude) and direction relative to (0, 0).
      *
      * An vector is immutable. All subsequent operations will return a new
      * vector instance.
      *
-     * @param {number} x The x component.
-     * @param {number} y The y component.
+     * @param {number} x The `x` component.
+     * @param {number} y The `y` component.
      * @return {void}
      */
-    constructor(x, y) {
+    constructor(x: number, y: number) {
         this._x = x;
         this._y = y;
     }
 
     /**
      * Create a new vector from an array. The first index is considered the x
-     * component, the second index is considered the y component.
+     * component, the second index is considered the `y` component.
      *
-     * @param {Array} array Input array with at least two values.
+     * @param {VectorArray} array Input array with at least two values.
      * @return {Vector} Resulting vector.
      */
-    static fromArray(array) {
+    static fromArray(array: VectorArray): Vector {
         if (process.env.NODE_ENV !== 'production') {
             if (!Array.isArray(array) || array.length < 2) {
                 throw new Error('Expected an array with at least two values.');
@@ -54,12 +71,12 @@ export default class Vector {
      * Create a new vector from an object. The object should have an x and y
      * property.
      *
-     * @param {object} object Input object with x and y property.
+     * @param {VectorObject} object Input object with x and y property.
      * @return {Vector} Resulting vector.
      */
-    static fromObject(object) {
+    static fromObject(object: VectorObject): Vector {
         if (process.env.NODE_ENV !== 'production') {
-            if (typeof(object) !== 'object') {
+            if (typeof object !== 'object') {
                 throw new Error('Expected an object.');
             }
         }
@@ -74,25 +91,25 @@ export default class Vector {
      * @param {number} number Input number for x and y property.
      * @return {Vector} Resulting vector.
      */
-    static fromNumber(number) {
+    static fromNumber(number: number): Vector {
         return new Vector(number, number);
     }
 
     /**
-     * Get the x component.
+     * Get the `x` component.
      *
-     * @return {number} The x component.
+     * @return {number} The `x` component.
      */
-    get x() {
+    get x(): number {
         return this._x;
     }
 
     /**
-     * Get the y component.
+     * Get the `y` component.
      *
-     * @return {number} The y component.
+     * @return {number} The `y` component.
      */
-    get y() {
+    get y(): number {
         return this._y;
     }
 
@@ -102,10 +119,10 @@ export default class Vector {
      * If the input is a point, the result will be a point with this vector
      * as offset.
      *
-     * @param {Point|Vector} that Point or vector to add.
-     * @return {Point|Vector} New Vector if adding vector, point otherwise.
+     * @param {Point | Vector} that Point or vector to add.
+     * @return {Point | Vector} New Vector if adding vector, point otherwise.
      */
-    add(that) {
+    add(that: Point | Vector): Point | Vector {
         if (that instanceof Point) {
             return that.add(this);
         }
@@ -114,12 +131,12 @@ export default class Vector {
     }
 
     /**
-     * Subtract a given scalar from the `x` and `y` component of this vector.
+     * Subtract another vector from this vector.
      *
-     * @param {number} that Scalar value to subtract.
-     * @return {Vector}
+     * @param {Vector} that Vector to subtract.
+     * @return {Vector} New vector with other vector subtracted from this.
      */
-    subtract(that) {
+    subtract(that: Vector): Vector {
         return new Vector(this._x - that._x, this._y - that._y);
     }
 
@@ -128,56 +145,56 @@ export default class Vector {
      *
      * @return {Vector}
      */
-    invert() {
+    invert(): Vector {
         return new Vector(-this._x, -this._y);
     }
 
     /**
      * @return {Vector}
      */
-    multiply(scalar) {
+    multiply(scalar: number): Vector {
         return new Vector(this._x * scalar, this._y * scalar);
     }
 
     /**
      * @return {Vector}
      */
-    multiplyXY(scalarX, scalarY) {
+    multiplyXY(scalarX: number, scalarY: number): Vector {
         return new Vector(this._x * scalarX, this._y * scalarY);
     }
 
     /**
      * @return {Vector}
      */
-    divide(scalar) {
+    divide(scalar: number): Vector {
         return new Vector(this._x / scalar, this._y / scalar);
     }
 
     /**
      * @return {Vector}
      */
-    divideXY(scalarX, scalarY) {
+    divideXY(scalarX: number, scalarY: number): Vector {
         return new Vector(this._x / scalarX, this._y / scalarY);
     }
 
     /**
      * @return {Vector}
      */
-    mix(that, amount = 0.5) {
+    mix(that: Vector, amount: number = 0.5): Vector {
         return this.multiply(1 - amount).add(that.multiply(amount));
     }
 
     /**
      * @return {Vector}
      */
-    perpendicular() {
+    perpendicular(): Vector {
         return new Vector(-this._y, this._x);
     }
 
     /**
      * @return {Vector}
      */
-    snap(to) {
+    snap(to: number): Vector {
         const round = (val) => Math.round(val / to) * to;
 
         return new Vector(round(this._x), round(this._y));
@@ -186,28 +203,28 @@ export default class Vector {
     /**
      * @return {number}
      */
-    dot(that) {
+    dot(that: Vector): number {
         return this._x * that._x + this._y * that._y;
     }
 
     /**
      * @return {number}
      */
-    angle() {
+    angle(): number {
         return Math.atan2(this._y, this._x);
     }
 
     /**
      * @return {number}
      */
-    angleDeg() {
+    angleDeg(): number {
         return Math.atan2(this._y, this._x) * 180 / Math.PI;
     }
 
     /**
      * @return {number}
      */
-    slope() {
+    slope(): number {
         return this._y / this._x;
     }
 
@@ -219,7 +236,7 @@ export default class Vector {
      *
      * @return {number} The squared length of this vector.
      */
-    lengthSq() {
+    lengthSq(): number {
         return this._x * this._x + this._y * this._y;
     }
 
@@ -228,57 +245,56 @@ export default class Vector {
      *
      * @return {number} The length of the vector.
      */
-    length() {
+    length(): number {
         return Math.sqrt(this.lengthSq());
     }
 
     /**
-     * [minLength description]
-     * @param {[type]} length [description]
-     * @return {[type]}
+     * @return {Vector}
      */
-    minLength(length) {
+    minLength(length: number): Vector {
         return this.length() < length ? this.normalize(length) : this;
     }
 
-    maxLength(length) {
+    maxLength(length: number): Vector {
         return this.length() > length ? this.normalize(length) : this;
     }
 
-    normalize(scalar = 1) {
+    normalize(scalar: number = 1): Vector {
         return this.divide(this.length()).multiply(scalar);
     }
 
-    projectOnto(that) {
+    projectOnto(that: Vector): Vector {
         return that.multiply(this.dot(that) / that.lengthSq());
     }
 
     /**
      * Convert vector into a point.
      *
-     * Note: this is an utility method. A proper conversion does not exist.
+     * Note: this is an utility method. A mathematical definition of a
+     * conversion does not exist.
      *
      * @return {Point} The vector converted as point.
      */
-    toPoint() {
+    toPoint(): Point {
         return new Point(this._x, this._y);
     }
 
     /**
      * Convert this vector into an array.
      *
-     * @return {Array} Array representation (x, y).
+     * @return {VectorArray} Array representation (x, y).
      */
-    toArray() {
+    toArray(): VectorArray {
         return [this._x, this._y];
     }
 
     /**
      * Convert this vector into an object.
      *
-     * @return {object} Object representation (x, y).
+     * @return {Object} Object representation (x, y).
      */
-    toObject() {
+    toObject(): VectorObject {
         return { x: this._x, y: this._y };
     }
 
@@ -287,7 +303,7 @@ export default class Vector {
      *
      * @return {string} String representation (x, y).
      */
-    toString() {
+    toString(): string {
         return `(${this._x}, ${this._y})`;
     }
 
@@ -298,9 +314,9 @@ export default class Vector {
      * @param {number} digits Number of digits to use for representation.
      * @return {string} String representation (x, y).
      */
-    toFixed(digits) {
+    toFixed(digits: number): string {
         if (process.env.NODE_ENV !== 'production') {
-            if (typeof(digits) !== 'number') {
+            if (typeof digits !== 'number') {
                 throw new Error('Number of digits must be a number.');
             }
         }
@@ -313,18 +329,18 @@ export default class Vector {
      *
      * @return {Vector} Cloned instance.
      */
-    clone() {
+    clone(): Vector {
         return new Vector(this._x, this._y);
     }
 
     /**
      * Return true if this vector is equal to another vector. Two vectors are
-     * equal when both x and y components are equal.
+     * equal when both x and `y` components are equal.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both points are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &&
             this._x === that._x && this._y === that._y;
     }
@@ -332,10 +348,10 @@ export default class Vector {
     /**
      * Return true if the vector is defined and finite.
      *
-     * @return {Boolean} True if vector is fully defined and valid.
+     * @return {boolean} True if vector is fully defined and valid.
      */
-    isValid() {
-        return typeof(this._x) === 'number' && isFinite(this._x) &&
-            typeof(this._y) === 'number' && isFinite(this._y);
+    isValid(): boolean {
+        return typeof this._x === 'number' && isFinite(this._x) &&
+            typeof this._y === 'number' && isFinite(this._y);
     }
 }

@@ -2,6 +2,9 @@
 
 import Vector from './Vector';
 
+export type PointArray = Array<number>;
+export type PointObject = { x: number, y: number };
+
 /**
  * Immutable point class.
  *
@@ -12,6 +15,20 @@ import Vector from './Vector';
  */
 export default class Point {
     /**
+     * The x coordinate.
+     *
+     * @type {number}
+     */
+    _x: number;
+
+    /**
+     * The y coordinate.
+     *
+     * @type {number}
+     */
+    _y: number;
+
+    /**
      * Construct a new point, using a x and y coordinate.
      *
      * An point is immutable. All subsequent operations will return a new point
@@ -21,7 +38,7 @@ export default class Point {
      * @param {number} y The y coordinate.
      * @return {void}
      */
-    constructor(x, y) {
+    constructor(x: number, y: number) {
         this._x = x;
         this._y = y;
     }
@@ -30,10 +47,10 @@ export default class Point {
      * Create a new point from an array. The first index is considered the x
      * coordinate, the second index is considered the y coordinate.
      *
-     * @param {Array} array Input array with at least two values.
+     * @param {PointArray} array Input array with at least two values.
      * @return {Point} Resulting point.
      */
-    static fromArray(array) {
+    static fromArray(array: PointArray): Point {
         if (process.env.NODE_ENV !== 'production') {
             if (!Array.isArray(array) || array.length < 2) {
                 throw new Error('Expected an array with at least two values.');
@@ -47,12 +64,12 @@ export default class Point {
      * Create a new point from an object. The object should have an x and y
      * property.
      *
-     * @param {object} object Input object with x and y property.
+     * @param {PointObject} object Input object with x and y property.
      * @return {Point} Resulting point.
      */
-    static fromObject(object) {
+    static fromObject(object: PointObject): Point {
         if (process.env.NODE_ENV !== 'production') {
-            if (typeof(object) !== 'object') {
+            if (typeof object !== 'object') {
                 throw new Error('Expected an object.');
             }
         }
@@ -65,7 +82,7 @@ export default class Point {
      *
      * @return {number} The x coordinate.
      */
-    get x() {
+    get x(): number {
         return this._x;
     }
 
@@ -74,7 +91,7 @@ export default class Point {
      *
      * @return {number} The y coordinate.
      */
-    get y() {
+    get y(): number {
         return this._y;
     }
 
@@ -86,9 +103,11 @@ export default class Point {
      * @param {Vector} vector Vector to add to this point.
      * @return {Point} Point with the vector added to it.
      */
-    add(vector) {
-        if (vector instanceof Point) {
-            throw new Error('Addition of two points is undefined.');
+    add(vector: Vector): Point {
+        if (process.env.NODE_ENV !== 'production') {
+            if (vector instanceof Point) {
+                throw new Error('Addition of two points is undefined.');
+            }
         }
 
         return new Point(this._x + vector._x, this._y + vector._y);
@@ -97,11 +116,11 @@ export default class Point {
     /**
      * Subtract a Point or a Vector.
      *
-     * @param {Point|Vector} that Point or vector to subtract.
+     * @param {Point | Vector} that Point or vector to subtract.
      * @return {Point} If `that` is a Vector, it will return the new point.
      * @return {Vector} If `that` is a Point, it will return the displacement.
      */
-    subtract(that) {
+    subtract(that: Point | Vector) {
         if (that instanceof Point) {
             return this.toVector().subtract(that);
         }
@@ -114,56 +133,56 @@ export default class Point {
      *
      * @return {Point} Inverted point.
      */
-    invert() {
+    invert(): Point {
         return new Point(-this._x, -this._y);
     }
 
     /**
      * @return {Point}
      */
-    multiply(scalar) {
+    multiply(scalar: number): Point {
         return new Point(this._x * scalar, this._y * scalar);
     }
 
     /**
      * @return {Point}
      */
-    multiplyXY(scalarX, scalarY) {
+    multiplyXY(scalarX: number, scalarY: number): Point {
         return new Point(this._x * scalarX, this._y * scalarY);
     }
 
     /**
      * @return {Point}
      */
-    divide(scalar) {
+    divide(scalar: number): Point {
         return new Point(this._x / scalar, this._y / scalar);
     }
 
     /**
      * @return {Point}
      */
-    divideXY(scalarX, scalarY) {
+    divideXY(scalarX: number, scalarY: number): Point {
         return new Point(this._x / scalarX, this._y / scalarY);
     }
 
     /**
      * @return {Point}
      */
-    mix(that, amount = 0.5) {
+    mix(that: Point, amount: number = 0.5): Point {
         return this.multiply(1 - amount).add(that.multiply(amount));
     }
 
     /**
      * @return {Point}
      */
-    perpendicular() {
+    perpendicular(): Point {
         return new Point(-this._y, this._x);
     }
 
     /**
      * @return {Point}
      */
-    snap(to) {
+    snap(to: number): Point {
         const round = (val) => Math.round(val / to) * to;
 
         return new Point(round(this._x), round(this._y));
@@ -172,28 +191,28 @@ export default class Point {
     /**
      * @return {number}
      */
-    dot(that) {
+    dot(that: Point): number {
         return this._x * that._x + this._y * that._y;
     }
 
     /**
      * @return {number}
      */
-    angle() {
+    angle(): number {
         return Math.atan2(this._y, this._x);
     }
 
     /**
      * @return {number}
      */
-    angleDeg() {
+    angleDeg(): number {
         return Math.atan2(this._y, this._x) * 180 / Math.PI;
     }
 
     /**
      * @return {number}
      */
-    slope() {
+    slope(): number {
         return this._y / this._x;
     }
 
@@ -206,7 +225,7 @@ export default class Point {
      * @param {Point} point The other point.
      * @return {number} The distance between both points.
      */
-    distanceSq(point) {
+    distanceSq(point: Point): number {
         if (process.env.NODE_ENV !== 'production') {
             if (!(point instanceof Point)) {
                 throw new Error('Must be a point.');
@@ -225,18 +244,19 @@ export default class Point {
      * @param {Point} point The other point.
      * @return {number} The distance between both points.
      */
-    distance(point) {
+    distance(point: Point): number {
         return Math.sqrt(this.distanceSq(point));
     }
 
     /**
      * Convert point into a vector.
      *
-     * Note: this is an utility method. A proper conversion does not exist.
+     * Note: this is an utility method. A mathematical definition of a
+     * conversion does not exist.
      *
      * @return {Vector} The point converted as vector.
      */
-    toVector() {
+    toVector(): Vector {
         return new Vector(this._x, this._y);
     }
 
@@ -245,16 +265,16 @@ export default class Point {
      *
      * @return {Array} Array representation (x, y).
      */
-    toArray() {
+    toArray(): Array<number> {
         return [this._x, this._y];
     }
 
     /**
      * Convert this point into an object.
      *
-     * @return {object} Object representation (x, y).
+     * @return {Object} Object representation (x, y).
      */
-    toObject() {
+    toObject(): Object {
         return { x: this._x, y: this._y };
     }
 
@@ -263,7 +283,7 @@ export default class Point {
      *
      * @return {string} String representation (x, y).
      */
-    toString() {
+    toString(): string {
         return `(${this._x}, ${this._y})`;
     }
 
@@ -274,9 +294,9 @@ export default class Point {
      * @param {number} digits Number of digits to use for representation.
      * @return {string} String representation (x, y).
      */
-    toFixed(digits) {
+    toFixed(digits: number): string {
         if (process.env.NODE_ENV !== 'production') {
-            if (typeof(digits) !== 'number') {
+            if (typeof digits !== 'number') {
                 throw new Error('Number of digits must be a number.');
             }
         }
@@ -289,7 +309,7 @@ export default class Point {
      *
      * @return {Point} Cloned instance.
      */
-    clone() {
+    clone(): Point {
         return new Point(this._x, this._y);
     }
 
@@ -297,10 +317,10 @@ export default class Point {
      * Return true if this point is equal to another point. Two points are
      * equal when both x and y coordinates are equal.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both points are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &&
             this._x === that._x && this._y === that._y;
     }
@@ -308,10 +328,10 @@ export default class Point {
     /**
      * Return true if the point is defined and finite.
      *
-     * @return {Boolean} True if point is fully defined and valid.
+     * @return {boolean} True if point is fully defined and valid.
      */
-    isValid() {
-        return typeof(this._x) === 'number' && isFinite(this._x) &&
-            typeof(this._y) === 'number' && isFinite(this._y);
+    isValid(): boolean {
+        return typeof this._x === 'number' && isFinite(this._x) &&
+            typeof this._y === 'number' && isFinite(this._y);
     }
 }

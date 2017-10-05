@@ -8,5 +8,10 @@ import Rectangle from './Rectangle';
 import Vector from './Vector';
 
 export {
-    Circle, Line, LineSegment, Point, Rectangle, Vector,
+    Circle,
+    Line,
+    LineSegment,
+    Point,
+    Rectangle,
+    Vector,
 };

@@ -3,10 +3,29 @@
 import Point from './Point';
 import Rectangle from './Rectangle';
 
+import type { PointArray, PointObject } from './Point';
+
+export type CircleArray = Array<number>;
+export type CircleObject = { a: PointArray, r: number };
+
 /**
  * Immutable circle class.
  */
 export default class Circle {
+    /**
+     * Circle center point.
+     *
+     * @type {Point}
+     */
+    _a: Point;
+
+    /**
+     * Circle radius.
+     *
+     * @type {number}
+     */
+    _r: number;
+
     /**
      * Construct a new circle using center point `A` and radius `r`.
      *
@@ -24,7 +43,7 @@ export default class Circle {
      *
      * @return {Point} Center point.
      */
-    get a() {
+    get a(): Point {
         return this._a;
     }
 
@@ -33,7 +52,7 @@ export default class Circle {
      *
      * @return {number} Circle center x coordinate.
      */
-    get x() {
+    get x(): number {
         return this._a._x;
     }
 
@@ -42,7 +61,7 @@ export default class Circle {
      *
      * @return {number} Circle center y coordinate.
      */
-    get y() {
+    get y(): number {
         return this._a._y;
     }
 
@@ -51,7 +70,7 @@ export default class Circle {
      *
      * @return {number} Circle radius.
      */
-    get r() {
+    get r(): number {
         return this._r;
     }
 
@@ -60,7 +79,7 @@ export default class Circle {
      *
      * @return {number} The circle diameter.
      */
-    get d() {
+    get d(): number {
         return this._r * 2;
     }
 
@@ -69,11 +88,9 @@ export default class Circle {
      *
      * @return {Rectangle} Converted rectangle.
      */
-    toRectangle() {
-        const a = new Point(
-            this._a._x - this.radius, this._a._y - this.radius);
-        const b = new Point(
-            this._a._x + this.radius, this._a._y + this.radius);
+    toRectangle(): Rectangle {
+        const a = new Point(this._a._x - this._r, this._a._y - this._r);
+        const b = new Point(this._a._x + this._r, this._a._y + this._r);
 
         return new Rectangle(a, b);
     }
@@ -81,9 +98,9 @@ export default class Circle {
     /**
      * Convert this circle into an object.
      *
-     * @return {object} Object representation (x, y, r).
+     * @return {Object} Object representation (x, y, r).
      */
-    toObject() {
+    toObject(): Object {
         return {
             x: this._a._x,
             y: this._a._y,
@@ -94,9 +111,9 @@ export default class Circle {
     /**
      * Convert this circle into an array.
      *
-     * @return {Array} Array representation (x, y, r).
+     * @return {Array<number>} Array representation (x, y, r).
      */
-    toArray() {
+    toArray(): Array<number> {
         return [this._a._x, this._a._y, this._r];
     }
 
@@ -105,7 +122,7 @@ export default class Circle {
      *
      * @return {string} String representation (x, y, r).
      */
-    toString() {
+    toString(): string {
         return `(${this._a._x}, ${this._a._y}, ${this._r})`;
     }
 
@@ -114,7 +131,7 @@ export default class Circle {
      *
      * @return {Circle} Cloned instance.
      */
-    clone() {
+    clone(): Circle {
         return new Circle(this._a, this._r);
     }
 
@@ -122,10 +139,10 @@ export default class Circle {
      * Return true if this circle is equal to another circle. Two circles are
      * equal if and only if the center point and radius are equal.
      *
-     * @param {object} that Other instance to compare to.
+     * @param {Object} that Other instance to compare to.
      * @return {boolean} True if both circles are equal, false otherwise.
      */
-    equals(that) {
+    equals(that: Object): boolean {
         return this.constructor.name === that.constructor.name &&
             this._a.equals(that._a) && this._r === that._r;
     }
@@ -133,10 +150,10 @@ export default class Circle {
     /**
      * Return true if the circle is defined, finite and valid.
      *
-     * @return {Boolean} True if the circle is fully defined, finite and valid.
+     * @return {boolean} True if the circle is fully defined, finite and valid.
      */
-    isValid() {
-        return this._a.isValid() && typeof(this._r) === 'number' &&
+    isValid(): boolean {
+        return this._a.isValid() && typeof this._r === 'number' &&
             isFinite(this._r) && this._r >= 0;
     }
 }
