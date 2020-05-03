@@ -133,7 +133,7 @@ export default class Point {
             // $FlowFixMe
             if (that instanceof Vector) {
                 throw new Error(
-                    'Cannot subract Vector. Use `subtractVector` instead.'
+                    'Cannot subract Vector. Use `subtractVector` instead.',
                 );
             }
         }

@@ -69,7 +69,7 @@ export default class Rectangle {
 
         return new Rectangle(
             Point.fromArray(array[0]),
-            Point.fromArray(array[1])
+            Point.fromArray(array[1]),
         );
     }
 
@@ -89,7 +89,7 @@ export default class Rectangle {
 
         return new Rectangle(
             Point.fromObject(object.a),
-            Point.fromObject(object.b)
+            Point.fromObject(object.b),
         );
     }
 
@@ -106,8 +106,8 @@ export default class Rectangle {
             new Point(boundingRect.left, boundingRect.top),
             new Point(
                 boundingRect.left + boundingRect.width,
-                boundingRect.top + boundingRect.height
-            )
+                boundingRect.top + boundingRect.height,
+            ),
         );
     }
 
@@ -228,11 +228,11 @@ export default class Rectangle {
 
         const a = new Point(
             Math.min(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),
-            Math.min(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)
+            Math.min(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y),
         );
         const b = new Point(
             Math.max(this._a._x, this._b._x, rectangle._a._x, rectangle._b._x),
-            Math.max(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y)
+            Math.max(this._a._y, this._b._y, rectangle._a._y, rectangle._b._y),
         );
 
         return new Rectangle(a, b);
@@ -359,7 +359,7 @@ export default class Rectangle {
 
         const closest = new Point(
             clamp(circle._a._x, this._a._x, this._b._x),
-            clamp(circle._a._y, this._a._y, this._b._y)
+            clamp(circle._a._y, this._a._y, this._b._y),
         );
 
         return closest.distanceSq(circle._a) < (circle._r * circle._r);
@@ -454,7 +454,7 @@ export default class Rectangle {
     normalize(): Rectangle {
         return new Rectangle(
             new Point(this.left, this.top),
-            new Point(this.right, this.bottom)
+            new Point(this.right, this.bottom),
         );
     }
 

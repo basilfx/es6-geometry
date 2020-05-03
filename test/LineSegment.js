@@ -43,11 +43,11 @@ describe('Via operations, a line segment', () => {
     it('has an intersection', () => {
         const a = new LineSegment(
             new Point(0, 0),
-            new Point(5, 5)
+            new Point(5, 5),
         );
         const b = new LineSegment(
             new Point(0, 5),
-            new Point(5, 0)
+            new Point(5, 0),
         );
 
         const c = a.intersection(b);
@@ -58,11 +58,11 @@ describe('Via operations, a line segment', () => {
     it('has no intersection', () => {
         const a = new LineSegment(
             new Point(3, 0),
-            new Point(3, 4)
+            new Point(3, 4),
         );
         const b = new LineSegment(
             new Point(0, 5),
-            new Point(5, 5)
+            new Point(5, 5),
         );
 
         const c = a.intersection(b);

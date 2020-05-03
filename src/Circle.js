@@ -56,14 +56,14 @@ export default class Circle {
         if (process.env.NODE_ENV !== 'production') {
             if (!Array.isArray(array) || array.length < 2) {
                 throw new Error(
-                    'Expected an array with at least two values.'
+                    'Expected an array with at least two values.',
                 );
             }
         }
 
         return new Circle(
             Point.fromArray(array[0]),
-            array[1]
+            array[1],
         );
     }
 
@@ -83,7 +83,7 @@ export default class Circle {
 
         return new Circle(
             Point.fromObject(object.a),
-            object.r
+            object.r,
         );
     }
 

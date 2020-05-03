@@ -63,7 +63,7 @@ export default class Line {
 
         return new Line(
             Point.fromArray(array[0]),
-            Point.fromArray(array[1])
+            Point.fromArray(array[1]),
         );
     }
 
@@ -83,7 +83,7 @@ export default class Line {
 
         return new Line(
             Point.fromObject(object.a),
-            Point.fromObject(object.b)
+            Point.fromObject(object.b),
         );
     }
 

@@ -35,7 +35,7 @@ describe('A rectangle', () => {
 describe('Via operations, a rectangle', () => {
     const rectangle = new Rectangle(
         new Point(100, 100),
-        new Point(200, 200)
+        new Point(200, 200),
     );
 
     it('can be expanded', () => {

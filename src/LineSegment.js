@@ -62,7 +62,7 @@ export default class LineSegment {
 
         return new LineSegment(
             Point.fromArray(array[0]),
-            Point.fromArray(array[1])
+            Point.fromArray(array[1]),
         );
     }
 
@@ -83,7 +83,7 @@ export default class LineSegment {
 
         return new LineSegment(
             Point.fromObject(object.a),
-            Point.fromObject(object.b)
+            Point.fromObject(object.b),
         );
     }
 
@@ -146,7 +146,7 @@ export default class LineSegment {
 
                     return new Point(
                         this._a._x + u * dx1,
-                        this._a._y + u * dy1
+                        this._a._y + u * dy1,
                     );
                 }
             }
