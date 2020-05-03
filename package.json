@@ -12,8 +12,8 @@
     "build-src": "babel -d lib/ src/",
     "build-docs": "esdoc -c esdoc.json",
     "bundle": "npm run bundle-prod && npm run bundle-dev",
-    "bundle-prod": "NODE_ENV=production webpack --config webpack.config.production.js",
-    "bundle-dev": "webpack --config webpack.config.js",
+    "bundle-prod": "webpack --mode production --config webpack.config.production.js",
+    "bundle-dev": "webpack --mode development --config webpack.config.js",
     "lint": "eslint src/ test/",
     "test": "nyc mocha --require chai/register-expect --require babel-core/register",
     "prepublish": "npm run build && npm run bundle"
@@ -55,7 +55,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^7.0.0",
     "nyc": "^15.0.0",
-    "webpack": "^3.12.0"
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.0.0"
   },
   "repository": {
     "type": "git",
