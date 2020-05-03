@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.0.1
+Released 03 May 2020
+
+Highlights:
+* Updated: dependencies.
+* Improved: fixed several linting errors.
+
+The full list of commits can be found [here](https://github.com/basilfx/es6-geometry/compare/v2.0.0...v2.0.1).
+
 ## v2.0.0
 Released 05 October 2017
 
